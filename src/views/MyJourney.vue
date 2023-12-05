@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import globe3d from "../components/Globe3D.vue";
+import globe3d from "../components/globe3d";
 
 export default {
   name: "MyJourney",
