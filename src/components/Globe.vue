@@ -6,7 +6,7 @@
 import * as THREE from "three";
 
 export default {
-  name: "globe3d",
+  name: "globe",
   methods: {
     initThreeScene() {
       console.log("test");

@@ -1,14 +1,14 @@
 <template>
-  <globe3d />
+  <globe />
 </template>
 
 <script>
-import globe3d from "../components/globe3d";
+import globe3d from "../components/Globe.vue";
 
 export default {
   name: "MyJourney",
   components: {
-    globe3d,
+    globe,
   },
 };
 </script>
