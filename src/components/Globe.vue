@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div @mousemove=""></div>
 </template>
 
 <script>
@@ -9,7 +9,6 @@ export default {
   name: "globe",
   methods: {
     initThreeScene() {
-      console.log("test");
       // Create a scene
       const scene = new THREE.Scene();
 
@@ -31,7 +30,7 @@ export default {
       // Add a cube to the scene
       const geometry = new THREE.SphereGeometry(5, 50, 50);
       const texture = new THREE.TextureLoader().load(
-        new URL("../assets/globe.jpeg", import.meta.url).toString()
+        new URL("../assets/images/globe.jpeg", import.meta.url).toString()
       );
 
       const material = new THREE.MeshBasicMaterial({
