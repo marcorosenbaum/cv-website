@@ -20,17 +20,18 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 20;
+      camera.position.z = 25;
 
       // Create a renderer
-      const renderer = new THREE.WebGLRenderer();
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(innerWidth, innerHeight);
+      renderer.setPixelRatio(window.pixelDeviceRatio);
       this.$el.appendChild(renderer.domElement);
 
       // Add a cube to the scene
-      const geometry = new THREE.SphereGeometry(5, 100, 100);
+      const geometry = new THREE.SphereGeometry(5, 50, 50);
       const texture = new THREE.TextureLoader().load(
-        new URL("../assets/globe2.jpeg", import.meta.url).toString()
+        new URL("../assets/globe.jpeg", import.meta.url).toString()
       );
 
       const material = new THREE.MeshBasicMaterial({
