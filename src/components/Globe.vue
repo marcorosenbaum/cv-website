@@ -1,11 +1,13 @@
 <template>
   <div>
     <div ref="sceneContainer"></div>
+    <canvas id="globecanvas"></canvas>
   </div>
 </template>
 
 <script>
 import * as THREE from "three";
+import { render } from "vue";
 
 export default {
   name: "globe",
@@ -21,10 +23,14 @@ export default {
         1000
       );
       camera.position.z = 25;
-
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      const globecanvas = document.getElementById("globecanvas");
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        canvas: globecanvas,
+      });
       renderer.setSize(innerWidth, innerHeight);
       renderer.setPixelRatio(window.pixelDeviceRatio);
+
       this.$refs.sceneContainer.appendChild(renderer.domElement);
 
       const geometry = new THREE.SphereGeometry(5, 100, 100);
@@ -41,6 +47,14 @@ export default {
 
       const group = new THREE.Group();
       scene.add(group);
+
+      window.addEventListener("resize", onWindowResize);
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        render();
+      }
 
       const mouse = {
         x: 0,
