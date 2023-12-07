@@ -7,7 +7,7 @@
       <h2 class="text-3xl mb-4">- Junior Frontend Developer</h2>
       <img
         class="rounded-3xl"
-        src="../assets/images/img001.jpg"
+        src="../assets/images/img001.jpeg"
         alt="photo of marco"
       />
       <p>
