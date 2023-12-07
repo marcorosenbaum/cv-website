@@ -24,12 +24,12 @@
       </p>
     </div>
     <div class="flex p-2 bg-gray-300 col-start-5 col-end-11">
-      <button>left</button>
-      <div class="flex flex-col h-[100%] w-[100%]">
+      <div class="flex flex-col w-[100%]">
         <div class="text-center h-[10%] w-[100%] bg-red-200">Side preview</div>
-        <div class="h-[90%] w-[100%] bg-green-200"></div>
+        <div class="w-[100%] bg-green-200">
+          <myjourney />
+        </div>
       </div>
-      <button>right</button>
     </div>
     <div class="bg-gray-300 col-start-5 col-end-7"></div>
     <div class="bg-gray-300 col-start-7 col-end-11">
@@ -48,8 +48,13 @@
 </template>
 
 <script>
+import myjourney from "../views/MyJourney.vue";
+
 export default {
   name: "Home",
+  components: {
+    myjourney,
+  },
 };
 </script>
 

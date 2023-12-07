@@ -6,7 +6,7 @@
 import globe from "../components/Globe.vue";
 
 export default {
-  name: "MyJourney",
+  name: "myjourney",
   components: {
     globe,
   },

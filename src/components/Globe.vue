@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <div ref="sceneContainer"></div>
-    <canvas id="globecanvas"></canvas>
+  <div id="scene-container" ref="sceneContainer">
+    <canvas id="globecanvas" ref="globecanvas"></canvas>
   </div>
 </template>
 
@@ -18,7 +17,8 @@ export default {
 
       const camera = new THREE.PerspectiveCamera(
         35,
-        window.innerWidth / window.innerHeight,
+        this.$refs.sceneContainer.clientWidth /
+          this.$refs.sceneContainer.clientHeight,
         0.1,
         1000
       );
@@ -28,7 +28,10 @@ export default {
         antialias: true,
         canvas: globecanvas,
       });
-      renderer.setSize(innerWidth, innerHeight);
+      renderer.setSize(
+        this.$refs.sceneContainer.clientWidth,
+        this.$refs.sceneContainer.clientHeight
+      );
       renderer.setPixelRatio(window.pixelDeviceRatio);
 
       this.$refs.sceneContainer.appendChild(renderer.domElement);
@@ -50,9 +53,20 @@ export default {
 
       window.addEventListener("resize", onWindowResize);
       function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        // this.$refs.sceneContainer.style.width =
+        //   this.$refs.sceneContainer.parentElement.offsetWidth;
+        // this.$refs.sceneContainer.style.height = "inherit";
+
+        document.getElementById("globecanvas").style.width = "inherit";
+        document.getElementById("globecanvas").style.height = "inherit";
+
+        camera.aspect =
+          this.$refs.sceneContainer.width / this.$refs.sceneContainer.height;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(
+          this.$refs.sceneContainer.width,
+          this.$refs.sceneContainer.height
+        );
         render();
       }
 
@@ -100,3 +114,15 @@ export default {
   },
 };
 </script>
+
+<style>
+#scene-container {
+  width: inherit;
+  height: inherit;
+}
+
+#globecanvas {
+  width: inherit;
+  height: inherit;
+}
+</style>
