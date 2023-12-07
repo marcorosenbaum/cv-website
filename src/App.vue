@@ -1,5 +1,5 @@
 <template>
-  <nav class="p-4">
+  <nav class="p-4 h-[5vh]">
     <router-link class="p-4" :to="{ name: 'home' }">Home</router-link>
     <router-link class="p-4" :to="{ name: 'education' }">Education</router-link>
     <router-link class="p-4" :to="{ name: 'experience' }"

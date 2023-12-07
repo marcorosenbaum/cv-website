@@ -1,5 +1,5 @@
 <template>
-  <globe />
+  <globe ref="globeRef" />
 </template>
 
 <script>
