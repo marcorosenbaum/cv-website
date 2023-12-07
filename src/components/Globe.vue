@@ -1,5 +1,7 @@
 <template>
-  <div @mousemove=""></div>
+  <div>
+    <div ref="sceneContainer"></div>
+  </div>
 </template>
 
 <script>
@@ -7,12 +9,11 @@ import * as THREE from "three";
 
 export default {
   name: "globe",
+
   methods: {
     initThreeScene() {
-      // Create a scene
       const scene = new THREE.Scene();
 
-      // Create a camera
       const camera = new THREE.PerspectiveCamera(
         35,
         window.innerWidth / window.innerHeight,
@@ -21,14 +22,12 @@ export default {
       );
       camera.position.z = 25;
 
-      // Create a renderer
       const renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(innerWidth, innerHeight);
       renderer.setPixelRatio(window.pixelDeviceRatio);
-      this.$el.appendChild(renderer.domElement);
+      this.$refs.sceneContainer.appendChild(renderer.domElement);
 
-      // Add a cube to the scene
-      const geometry = new THREE.SphereGeometry(5, 50, 50);
+      const geometry = new THREE.SphereGeometry(5, 100, 100);
       const texture = new THREE.TextureLoader().load(
         new URL("../assets/images/globe.jpeg", import.meta.url).toString()
       );
@@ -37,24 +36,51 @@ export default {
         map: texture,
       });
       const globe = new THREE.Mesh(geometry, material);
+
       scene.add(globe);
 
-      // Animation loop
+      const group = new THREE.Group();
+      scene.add(group);
+
+      const mouse = {
+        x: 0,
+        y: 0,
+      };
+
       const animate = function () {
         requestAnimationFrame(animate);
 
-        // Rotate the cube
-
-        globe.rotation.x = THREE.MathUtils.degToRad(0);
-        globe.rotation.y += 0.005;
+        globe.rotation.x = THREE.MathUtils.degToRad(10);
+        globe.rotation.y += mouse.x * 0.01;
 
         renderer.render(scene, camera);
       };
-
-      // Start the animation loop
       animate();
+
+      let mousedown = false;
+      let preMousePosition = 0;
+
+      addEventListener("mousedown", (event) => {
+        console.log(event);
+        mousedown = true;
+      });
+
+      addEventListener("mouseup", (event) => {
+        mousedown = false;
+        mouse.x = 0;
+        preMousePosition = (event.clientX / innerWidth) * 2 - 1;
+        console.log(preMousePosition);
+      });
+
+      addEventListener("mousemove", (event) => {
+        if (mousedown) {
+          console.log((event.clientX / innerWidth) * 2 - 1);
+          mouse.x = (event.clientX / innerWidth) * 2 - 1;
+        }
+      });
     },
   },
+
   mounted() {
     this.initThreeScene();
   },
