@@ -1,5 +1,7 @@
 <template>
-  <globe ref="globeRef" />
+  <div id="globe-container">
+    <globe ref="globeRef" />
+  </div>
 </template>
 
 <script>
@@ -12,3 +14,9 @@ export default {
   },
 };
 </script>
+
+<style>
+#globe-container {
+  width: 100%;
+}
+</style>
