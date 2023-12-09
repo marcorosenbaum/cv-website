@@ -75,12 +75,16 @@ export default {
 
       // stars
       const starGeometry = new THREE.BufferGeometry();
-      const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+      const starMaterial = new THREE.PointsMaterial({
+        color: 0xffffff,
+        blending: THREE.AdditiveBlending,
+        side: THREE.BackSide,
+      });
       const starVertices = [];
-      for (let i = 0; i < 100000; i++) {
-        const x = (Math.random() - 0.5) * 2000;
-        const y = (Math.random() - 0.5) * 2000;
-        const z = -80 - Math.random() * (1000 - 80);
+      for (let i = 0; i < 1000000; i++) {
+        const x = (Math.random() - 0.5) * 1000;
+        const y = (Math.random() - 0.5) * 1000;
+        const z = (Math.random() * (300 - -300) + -500) * 100;
         starVertices.push(x, y, z);
       }
       starGeometry.setAttribute(
