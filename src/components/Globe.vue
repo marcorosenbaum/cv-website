@@ -112,8 +112,8 @@ export default {
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.update();
 
-      const stats = new Stats();
-      this.$refs.sceneContainer.appendChild(stats.domElement);
+      // const stats = new Stats();
+      // this.$refs.sceneContainer.appendChild(stats.domElement);
 
       const animate = function () {
         requestAnimationFrame(animate);
@@ -123,7 +123,7 @@ export default {
         controls.update();
 
         renderer.render(scene, camera);
-        stats.update();
+        // stats.update();
       };
       animate();
     },
