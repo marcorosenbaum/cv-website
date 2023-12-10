@@ -8,11 +8,13 @@
 import * as THREE from "three";
 import { render } from "vue";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import Stats from "../../node_modules/three/examples/jsm/libs/stats.module";
+// import Stats from "../../node_modules/three/examples/jsm/libs/stats.module";
 import vertexShader from "../assets/shaders/vertex.glsl";
 import fragmentShader from "../assets/shaders/fragment.glsl";
 import atmosphereVertexshader from "../assets/shaders/atmosphereVertex.glsl";
 import atmosphereFragmentshader from "../assets/shaders/atmosphereFragment.glsl";
+
+// import countries from "../../src/three-files/custom-geo.json";
 
 export default {
   name: "globe",
@@ -28,7 +30,7 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 25;
+      camera.position.z = 15;
 
       const globecanvas = document.getElementById("globecanvas");
       const renderer = new THREE.WebGLRenderer({
@@ -45,7 +47,7 @@ export default {
       this.$refs.sceneContainer.appendChild(renderer.domElement);
 
       // globe
-      const geometry = new THREE.SphereGeometry(5, 50, 50);
+      const geometry = new THREE.SphereGeometry(5, 100, 100);
       const material = new THREE.ShaderMaterial({
         vertexShader,
         fragmentShader,
@@ -58,11 +60,12 @@ export default {
         },
       });
       const globe = new THREE.Mesh(geometry, material);
-      scene.add(globe);
+
+      // scene.add(globe);
 
       // atmosphere
       const atmosphere = new THREE.Mesh(
-        new THREE.SphereGeometry(5, 50, 50),
+        new THREE.SphereGeometry(5, 100, 100),
         new THREE.ShaderMaterial({
           vertexShader: atmosphereVertexshader,
           fragmentShader: atmosphereFragmentshader,
@@ -71,7 +74,7 @@ export default {
         })
       );
       atmosphere.scale.set(1.2, 1.2, 1.2);
-      scene.add(atmosphere);
+      // scene.add(atmosphere);
 
       // stars
       const starGeometry = new THREE.BufferGeometry();
@@ -92,7 +95,11 @@ export default {
         new THREE.Float32BufferAttribute(starVertices, 3)
       );
       const stars = new THREE.Points(starGeometry, starMaterial);
-      scene.add(stars);
+      //scene.add(stars);
+
+      // --------- GROUP
+      const group = new THREE.Group();
+      group.add(globe, stars, atmosphere);
 
       window.addEventListener("resize", onWindowResize);
       function onWindowResize() {
@@ -115,11 +122,41 @@ export default {
       // const stats = new Stats();
       // this.$refs.sceneContainer.appendChild(stats.domElement);
 
+      // Function to add a data point to the globe
+      function addDataPoint(latitude, longitude, color) {
+        const phi = (90 - latitude) * (Math.PI / 180);
+        const theta = longitude - 140 * (Math.PI / 180);
+        const radius = 5; // Adjust the radius of the sphere
+
+        // Create a point
+        const pointGeometry = new THREE.SphereGeometry(0.05);
+        const pointMaterial = new THREE.MeshBasicMaterial({ color });
+        const point = new THREE.Mesh(pointGeometry, pointMaterial);
+
+        point.position.x = radius * Math.sin(phi) * Math.cos(theta);
+        point.position.y = radius * Math.cos(phi);
+        point.position.z = radius * Math.sin(phi) * Math.sin(theta);
+
+        group.add(point);
+      }
+
+      // Add data points to the globe
+      addDataPoint(53.98, -22.83, 0xff00ff); // Bremerhaven
+      addDataPoint(44.5, -22.67, 0xff0000); // Bidard
+      addDataPoint(37, -22.62, 0xaaaa00); // Benalmadena
+      addDataPoint(-8.9, 0.44, 0xff0000); // Bali
+      addDataPoint(-33.6, -0.19, 0xff0000); // Sydney
+      addDataPoint(-36.5, -0.6, 0xff0000); // Auckland
+      addDataPoint(-13, -1.15, 0xff0000); // Rarotonga
+      addDataPoint(13.5, 0.7, 0xff0000); // Bangkok
+
+      scene.add(group);
+
       const animate = function () {
         requestAnimationFrame(animate);
 
-        globe.rotation.x = THREE.MathUtils.degToRad(10);
-        globe.rotation.y += 0.002;
+        group.rotation.x = THREE.MathUtils.degToRad(0);
+        group.rotation.y = 3;
         controls.update();
 
         renderer.render(scene, camera);
