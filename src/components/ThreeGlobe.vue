@@ -71,23 +71,26 @@ export default {
         "../assets/images/globe.jpeg",
         import.meta.url
       ).toString();
+
       const globe = new ThreeGlobe({
         waitForGlobeReady: true,
         animateIn: true,
       })
+        .globeImageUrl("//unpkg.com/three-globe/example/img/earth-night.jpg")
         .globeMaterial({
           vertexShader,
           fragmentShader,
-          uniforms: {
-            globeTexture: {
-              value: new THREE.TextureLoader().load(
-                new URL(
-                  "../assets/images/globe.jpeg",
-                  import.meta.url
-                ).toString()
-              ),
-            },
-          },
+
+          // uniforms: {
+          //   globeTexture: {
+          //     value: new THREE.TextureLoader().load(
+          //       new URL(
+          //         "../assets/images/globe.jpeg",
+          //         import.meta.url
+          //       ).toString()
+          //     ),
+          //   },
+          // },
         })
         .hexPolygonsData(countries.features)
         .hexPolygonResolution(3)

@@ -30,7 +30,7 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 15;
+      camera.position.z = 25;
 
       const globecanvas = document.getElementById("globecanvas");
       const renderer = new THREE.WebGLRenderer({
@@ -99,7 +99,7 @@ export default {
 
       // --------- GROUP
       const group = new THREE.Group();
-      group.add(globe, stars, atmosphere);
+      group.add(globe, atmosphere);
 
       window.addEventListener("resize", onWindowResize);
       function onWindowResize() {
@@ -140,23 +140,75 @@ export default {
         group.add(point);
       }
 
-      // Add data points to the globe
-      addDataPoint(53.98, -22.83, 0xff00ff); // Bremerhaven
-      addDataPoint(44.5, -22.67, 0xff0000); // Bidard
-      addDataPoint(37, -22.62, 0xaaaa00); // Benalmadena
-      addDataPoint(-8.9, 0.44, 0xff0000); // Bali
-      addDataPoint(-33.6, -0.19, 0xff0000); // Sydney
-      addDataPoint(-36.5, -0.6, 0xff0000); // Auckland
-      addDataPoint(-13, -1.15, 0xff0000); // Rarotonga
-      addDataPoint(13.5, 0.7, 0xff0000); // Bangkok
+      function convertPointData(latitude, longitude) {
+        const phi = (90 - latitude) * (Math.PI / 180);
+        const theta = longitude - 140 * (Math.PI / 180);
+        const radius = 5; // Adjust the radius of the sphere
 
-      scene.add(group);
+        // point.position.x = radius * Math.sin(phi) * Math.cos(theta);
+        // point.position.y = radius * Math.cos(phi);
+        // point.position.z = radius * Math.sin(phi) * Math.sin(theta);
+        return {
+          x: radius * Math.sin(phi) * Math.cos(theta),
+          y: radius * Math.cos(phi),
+          z: radius * Math.sin(phi) * Math.sin(theta),
+        };
+      }
+
+      // Add data points to the globe
+      addDataPoint(53.98, -22.83, 0xff0000); // Bremerhaven
+      addDataPoint(44.5, -22.67, 0xff0000); // france
+      addDataPoint(37, -22.62, 0xff0000); // spain
+      addDataPoint(-8.9, 0.44, 0xff0000); // bali
+      addDataPoint(-33.6, -0.19, 0xff0000); // Sydney
+      addDataPoint(-36.5, -0.6, 0xff0000); // newzealand
+      addDataPoint(-13, -1.15, 0xff0000); // rarotonga
+      addDataPoint(13.5, 0.7, 0xff0000); // thailand
+      const bremerhaven = convertPointData(53.98, -22.83);
+      const france = convertPointData(44.5, -22.67);
+      const spain = convertPointData(37, -22.62);
+      const bali = convertPointData(-8.9, 0.44);
+      const sydney = convertPointData(-33.6, -0.19);
+      const newzealand = convertPointData(-36.5, -0.6);
+      const rarotonga = convertPointData(-13, -1.15);
+      const thailand = convertPointData(13.5, 0.7);
+
+      // path ----------------------- - -- - - - - -- - - --
+      function getPath(p1, p2) {
+        let v1 = new THREE.Vector3(p1.x, p1.y, p1.z);
+        let v2 = new THREE.Vector3(p2.x, p2.y, p2.z);
+        let points = [];
+        for (let i = 0; i <= 20; i++) {
+          let p = new THREE.Vector3().lerpVectors(v1, v2, i / 20);
+          p.multiplyScalar(1 + 0.5 * Math.sin((Math.PI * i) / 20));
+          points.push(p);
+        }
+        let path = new THREE.CatmullRomCurve3(points);
+
+        const geometry = new THREE.TubeGeometry(path, 20, 0.01, 8, false);
+        const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+        const mesh = new THREE.Mesh(geometry, material);
+
+        group.add(mesh);
+      }
+      getPath(bremerhaven, france);
+      getPath(france, spain);
+      getPath(spain, bremerhaven);
+      getPath(bremerhaven, bali);
+      getPath(bali, sydney);
+      getPath(sydney, newzealand);
+      getPath(newzealand, rarotonga);
+      getPath(rarotonga, newzealand);
+      getPath(newzealand, thailand);
+      getPath(thailand, bremerhaven);
+
+      scene.add(group, stars);
 
       const animate = function () {
         requestAnimationFrame(animate);
 
-        group.rotation.x = THREE.MathUtils.degToRad(0);
-        group.rotation.y = 3;
+        group.rotation.x = THREE.MathUtils.degToRad(10);
+        group.rotation.y += 0.002;
         controls.update();
 
         renderer.render(scene, camera);
