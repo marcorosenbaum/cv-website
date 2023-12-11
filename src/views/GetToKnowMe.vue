@@ -1,19 +1,17 @@
 <template>
-  <h1>
-    on this view comes a quiz about me, some interests and similiar informations
-  </h1>
+  <h1>check</h1>
   <div id="globe-container">
-    <threeglobe ref="globeRef" />
+    <globe ref="globeRef" />
   </div>
 </template>
 
 <script>
-import threeglobe from "../components/ThreeGlobe.vue";
+import globe from "../components/ThreeGlobe.vue";
 
 export default {
-  name: "getToKnowMe",
+  name: "gettoknowme",
   components: {
-    threeglobe,
+    globe,
   },
 };
 </script>

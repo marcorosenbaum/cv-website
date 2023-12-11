@@ -14,16 +14,12 @@ import fragmentShader from "../assets/shaders/fragment.glsl";
 import atmosphereVertexshader from "../assets/shaders/atmosphereVertex.glsl";
 import atmosphereFragmentshader from "../assets/shaders/atmosphereFragment.glsl";
 
-import countries from "../../src/three-files/custom-geo.json";
-
-import ThreeGlobe from "three-globe";
-
 export default {
   name: "globe",
 
   methods: {
     initThreeScene() {
-      // const scene = new THREE.Scene();
+      const scene = new THREE.Scene();
 
       const camera = new THREE.PerspectiveCamera(
         35,
@@ -32,7 +28,7 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 500;
+      camera.position.z = 5;
 
       const globecanvas = document.getElementById("globecanvas");
       const renderer = new THREE.WebGLRenderer({
@@ -48,61 +44,34 @@ export default {
 
       this.$refs.sceneContainer.appendChild(renderer.domElement);
 
+      const ambientlight = new THREE.AmbientLight(0xffffff, 0.2);
+      scene.add(ambientlight);
+
       // globe
-      // const geometry = new THREE.SphereGeometry(5, 50, 50);
-      // const material = new THREE.ShaderMaterial({
-      //   vertexShader,
-      //   fragmentShader,
-      //   uniforms: {
-      //     globeTexture: {
-      //       value: new THREE.TextureLoader().load(
-      //         new URL("../assets/images/globe.jpeg", import.meta.url).toString()
-      //       ),
-      //     },
-      //   },
-      // });
-      // const globe = new THREE.Mesh(geometry, material);
-      //
-      //
-      // -----------------------------------------
-      //  - - - - - - THREE GLOBE
-      // -----------------------------------------
-      const globeImage = new URL(
-        "../assets/images/globe.jpeg",
-        import.meta.url
-      ).toString();
+      const geometry = new THREE.SphereGeometry(1, 100, 100);
 
-      const globe = new ThreeGlobe({
-        waitForGlobeReady: true,
-        animateIn: true,
-      })
-        .globeImageUrl("//unpkg.com/three-globe/example/img/earth-night.jpg")
-        .globeMaterial({
-          vertexShader,
-          fragmentShader,
+      const material = new THREE.MeshPhongMaterial({
+        map: new THREE.TextureLoader().load(
+          new URL(
+            "../assets/images/earthclouds.jpeg",
+            import.meta.url
+          ).toString()
+        ),
+        bumpMap: new THREE.TextureLoader().load(
+          new URL("../assets/images/earthbump.jpeg", import.meta.url).toString()
+        ),
+        bumpScale: 0.1,
+      });
+      console.log(
+        new URL("../assets/images/earthclouds.jpeg", import.meta.url).toString()
+      );
+      const globe = new THREE.Mesh(geometry, material);
 
-          // uniforms: {
-          //   globeTexture: {
-          //     value: new THREE.TextureLoader().load(
-          //       new URL(
-          //         "../assets/images/globe.jpeg",
-          //         import.meta.url
-          //       ).toString()
-          //     ),
-          //   },
-          // },
-        })
-        .hexPolygonsData(countries.features)
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0.7);
+      // scene.add(globe);
 
-      // .pointsData(myData);
-      const scene = new THREE.Scene();
-      scene.add(globe);
-
-      // ----------atmosphere
+      // atmosphere
       // const atmosphere = new THREE.Mesh(
-      //   new THREE.SphereGeometry(5, 50, 50),
+      //   new THREE.SphereGeometry(1, 100, 100),
       //   new THREE.ShaderMaterial({
       //     vertexShader: atmosphereVertexshader,
       //     fragmentShader: atmosphereFragmentshader,
@@ -111,57 +80,34 @@ export default {
       //   })
       // );
       // atmosphere.scale.set(1.2, 1.2, 1.2);
-      // scene.add(atmosphere);
 
-      // ----------stars
-      // const starGeometry = new THREE.BufferGeometry();
-      // const starMaterial = new THREE.PointsMaterial({
-      //   color: 0xffffff,
-      //   blending: THREE.AdditiveBlending,
-      //   side: THREE.BackSide,
-      // });
-      // const starVertices = [];
-      // for (let i = 0; i < 1000000; i++) {
-      //   const x = (Math.random() - 0.5) * 2000;
-      //   const y = (Math.random() - 0.5) * 2000;
-      //   const z = (Math.random() * (300 - -300) + -500) * 100;
-      //   starVertices.push(x, y, z);
-      // }
-      // starGeometry.setAttribute(
-      //   "position",
-      //   new THREE.Float32BufferAttribute(starVertices, 3)
-      // );
-      // const stars = new THREE.Points(starGeometry, starMaterial);
-      // scene.add(stars);
+      // --------- GROUP
+      const group = new THREE.Group();
+      group.add(globe); // add atmosphere here
 
-      // --------resize
-      // window.addEventListener("resize", onWindowResize);
-      // function onWindowResize() {
-      //   document.getElementById("globecanvas").style.width = "inherit";
-      //   document.getElementById("globecanvas").style.height = "inherit";
+      window.addEventListener("resize", onWindowResize);
+      function onWindowResize() {
+        document.getElementById("globecanvas").style.width = "inherit";
+        document.getElementById("globecanvas").style.height = "inherit";
 
-      //   camera.aspect =
-      //     this.$refs.sceneContainer.width / this.$refs.sceneContainer.height;
-      //   camera.updateProjectionMatrix();
-      //   renderer.setSize(
-      //     this.$refs.sceneContainer.width,
-      //     this.$refs.sceneContainer.height
-      //   );
-      //   render();
-      // }
+        camera.aspect =
+          this.$refs.sceneContainer.width / this.$refs.sceneContainer.height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(
+          this.$refs.sceneContainer.width,
+          this.$refs.sceneContainer.height
+        );
+        render();
+      }
 
-      //--------mouse control
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.update();
-
-      // const stats = new Stats();
-      // this.$refs.sceneContainer.appendChild(stats.domElement);
 
       const animate = function () {
         requestAnimationFrame(animate);
 
-        // globe.rotation.x = THREE.MathUtils.degToRad(10);
-        // globe.rotation.y += 0.002;
+        group.rotation.x = THREE.MathUtils.degToRad(10);
+        group.rotation.y = 4;
         controls.update();
 
         renderer.render(scene, camera);
