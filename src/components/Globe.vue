@@ -55,8 +55,16 @@ export default {
               new URL("../assets/images/globe.jpeg", import.meta.url).toString()
             ),
           },
+          // bumpMap: new THREE.TextureLoader().load(
+          //   new URL(
+          //     "../assets/images/earthbump.jpeg",
+          //     import.meta.url
+          //   ).toString()
+          // ),
+          // bumpScale: 1.1, // Adjust the bump scale as needed
         },
       });
+
       const globe = new THREE.Mesh(geometry, material);
 
       // scene.add(globe);
@@ -72,7 +80,6 @@ export default {
         })
       );
       atmosphere.scale.set(1.2, 1.2, 1.2);
-      // scene.add(atmosphere);
 
       // stars
       const starGeometry = new THREE.BufferGeometry();
@@ -93,7 +100,6 @@ export default {
         new THREE.Float32BufferAttribute(starVertices, 3)
       );
       const stars = new THREE.Points(starGeometry, starMaterial);
-      //scene.add(stars);
 
       // --------- GROUP
       const group = new THREE.Group();
@@ -165,12 +171,21 @@ export default {
         };
       }
 
-      // path ----------------------- - -- - - - - -- - - --
+      // sphere/ BALL to move along the path
+      const ballGeometry = new THREE.SphereGeometry(0.01, 100, 100);
+      const ballMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
+      const ball = new THREE.Mesh(ballGeometry, ballMaterial);
+      ball.position.x = 0;
+      ball.position.z = 2;
+      group.add(ball);
+
+      // path ----------------------- - -- - - - - -- - - --
       function getPath(p1, p2) {
         let v1 = new THREE.Vector3(p1.x, p1.y, p1.z);
         let v2 = new THREE.Vector3(p2.x, p2.y, p2.z);
         let points = [];
+        let path = new THREE.CatmullRomCurve3(points);
         for (let i = 0; i <= 20; i++) {
           let p = new THREE.Vector3().lerpVectors(v1, v2, i / 20);
           p.normalize();
@@ -178,12 +193,11 @@ export default {
 
           points.push(p);
         }
-        let path = new THREE.CatmullRomCurve3(points);
 
         const geometry = new THREE.TubeGeometry(path, 40, 0.005, 8, false);
         const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
         const mesh = new THREE.Mesh(geometry, material);
-        mesh.visible = false;
+        // mesh.visible = false;
         globe.add(mesh);
         return path;
       }
@@ -231,61 +245,147 @@ export default {
 
       console.log(globe);
       console.log(path1);
-
-      function animatePaths() {
-        setTimeout(() => {
-          globe.children[0].visible = true;
+      console.log(path2);
+      // animate ball path
+      function animateBallOnPaths() {
+        for (let i = 0; i <= 20; i++) {
           setTimeout(() => {
-            globe.children[0].visible = false;
-            globe.children[1].visible = true;
-            setTimeout(() => {
-              globe.children[1].visible = false;
-              globe.children[2].visible = true;
-              setTimeout(() => {
-                globe.children[2].visible = false;
-                globe.children[3].visible = true;
-                setTimeout(() => {
-                  globe.children[3].visible = false;
-                  globe.children[4].visible = true;
-                  setTimeout(() => {
-                    globe.children[4].visible = false;
-                    globe.children[5].visible = true;
-                    setTimeout(() => {
-                      globe.children[5].visible = false;
-                      globe.children[6].visible = true;
-                      setTimeout(() => {
-                        globe.children[6].visible = false;
-                        globe.children[7].visible = true;
-                        setTimeout(() => {
-                          globe.children[7].visible = false;
-                          globe.children[8].visible = true;
-                          setTimeout(() => {
-                            globe.children[8].visible = false;
-                            globe.children[9].visible = true;
-                            setTimeout(() => {
-                              globe.children[9].visible = false;
-                              animatePaths();
-                            }, 4000);
-                          }, 2000);
-                        }, 2000);
-                      }, 2000);
-                    }, 2000);
-                  }, 2000);
-                }, 2000);
-              }, 2000);
-            }, 2000);
-          }, 2000);
-        }, 2000);
-      }
-      animatePaths();
+            ball.position.x = path1.points[i].x;
+            ball.position.y = path1.points[i].y;
+            ball.position.z = path1.points[i].z;
+          }, i * 100);
+        }
 
+        // if (ball.position.x === path2.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path3.points[i].x;
+        //       ball.position.y = path3.points[i].y;
+        //       ball.position.z = path3.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path3.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path4.points[i].x;
+        //       ball.position.y = path4.points[i].y;
+        //       ball.position.z = path4.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path4.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path5.points[i].x;
+        //       ball.position.y = path5.points[i].y;
+        //       ball.position.z = path5.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path5.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path6.points[i].x;
+        //       ball.position.y = path6.points[i].y;
+        //       ball.position.z = path6.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path6.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path7.points[i].x;
+        //       ball.position.y = path7.points[i].y;
+        //       ball.position.z = path7.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path7.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path8.points[i].x;
+        //       ball.position.y = path8.points[i].y;
+        //       ball.position.z = path8.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path8.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path9.points[i].x;
+        //       ball.position.y = path9.points[i].y;
+        //       ball.position.z = path9.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+        // if (ball.position.x === path9.points[20].x) {
+        //   for (let i = 0; i <= 20; i++) {
+        //     setTimeout(() => {
+        //       ball.position.x = path10.points[i].x;
+        //       ball.position.y = path10.points[i].y;
+        //       ball.position.z = path10.points[i].z;
+        //     }, i * 100);
+        //   }
+        // }
+      }
+      animateBallOnPaths();
+
+      // function animatePaths() {
+      //   setTimeout(() => {
+      //     globe.children[0].visible = true;
+      //     setTimeout(() => {
+      //       globe.children[0].visible = false;
+      //       globe.children[1].visible = true;
+      //       setTimeout(() => {
+      //         globe.children[1].visible = false;
+      //         globe.children[2].visible = true;
+      //         setTimeout(() => {
+      //           globe.children[2].visible = false;
+      //           globe.children[3].visible = true;
+      //           setTimeout(() => {
+      //             globe.children[3].visible = false;
+      //             globe.children[4].visible = true;
+      //             setTimeout(() => {
+      //               globe.children[4].visible = false;
+      //               globe.children[5].visible = true;
+      //               setTimeout(() => {
+      //                 globe.children[5].visible = false;
+      //                 globe.children[6].visible = true;
+      //                 setTimeout(() => {
+      //                   globe.children[6].visible = false;
+      //                   globe.children[7].visible = true;
+      //                   setTimeout(() => {
+      //                     globe.children[7].visible = false;
+      //                     globe.children[8].visible = true;
+      //                     setTimeout(() => {
+      //                       globe.children[8].visible = false;
+      //                       globe.children[9].visible = true;
+      //                       setTimeout(() => {
+      //                         globe.children[9].visible = false;
+      //                         animatePaths();
+      //                       }, 4000);
+      //                     }, 2000);
+      //                   }, 2000);
+      //                 }, 2000);
+      //               }, 2000);
+      //             }, 2000);
+      //           }, 2000);
+      //         }, 2000);
+      //       }, 2000);
+      //     }, 2000);
+      //   }, 2000);
+      // }
+      // animatePaths();
+
+      // animate ball path
       scene.add(group, stars);
       group.rotation.y = 4.4;
       const animate = function () {
         requestAnimationFrame(animate);
 
         group.rotation.x = THREE.MathUtils.degToRad(10);
-        group.rotation.y -= 0.004;
+        //group.rotation.y -= 0.004;
         controls.update();
 
         renderer.render(scene, camera);
