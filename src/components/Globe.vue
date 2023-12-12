@@ -8,7 +8,8 @@
 import * as THREE from "three";
 import { render } from "vue";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-// import Stats from "../../node_modules/three/examples/jsm/libs/stats.module";
+import { CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
+import { CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
 import vertexShader from "../assets/shaders/vertex.glsl";
 import fragmentShader from "../assets/shaders/fragment.glsl";
 import atmosphereVertexshader from "../assets/shaders/atmosphereVertex.glsl";
@@ -67,8 +68,6 @@ export default {
 
       const globe = new THREE.Mesh(geometry, material);
 
-      // scene.add(globe);
-
       // atmosphere
       const atmosphere = new THREE.Mesh(
         new THREE.SphereGeometry(1, 100, 100),
@@ -120,6 +119,24 @@ export default {
         render();
       }
 
+      // _________________-----------____________________
+      // // Labels
+      // const labelRenderer = new CSS2DRenderer();
+      // labelRenderer.setSize(window.innerWidth, window.innerHeight);
+      // labelRenderer.domElement.style.position = "absolute";
+      // labelRenderer.domElement.style.top = "0px";
+      // this.$refs.sceneContainer.appendChild(labelRenderer.domElement);
+
+      // // label
+      // let labelDiv = document.createElement("div");
+      // labelDiv.className = "label";
+      // labelDiv.textContent = "Label";
+      // labelDiv.style.marginTop = "-1em";
+      // let labelElement = new CSS2DObject(labelDiv);
+      // labelElement.position.copy(particles.geometry.vertices[i]);
+      // particles.add(labelElement);
+
+      // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.update();
 
@@ -173,7 +190,7 @@ export default {
 
       // sphere/ BALL to move along the path
       const ballGeometry = new THREE.SphereGeometry(0.01, 100, 100);
-      const ballMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const ballMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 
       const ball = new THREE.Mesh(ballGeometry, ballMaterial);
       ball.position.x = 0;
@@ -186,16 +203,20 @@ export default {
         let v2 = new THREE.Vector3(p2.x, p2.y, p2.z);
         let points = [];
         let path = new THREE.CatmullRomCurve3(points);
-        for (let i = 0; i <= 20; i++) {
-          let p = new THREE.Vector3().lerpVectors(v1, v2, i / 20);
+        for (let i = 0; i <= 100; i++) {
+          let p = new THREE.Vector3().lerpVectors(v1, v2, i / 100);
           p.normalize();
-          p.multiplyScalar(1 + 0.15 * Math.sin((Math.PI * i) / 20));
+          p.multiplyScalar(1 + 0.03 * Math.sin((Math.PI * i) / 100));
 
           points.push(p);
         }
 
         const geometry = new THREE.TubeGeometry(path, 40, 0.005, 8, false);
-        const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+        const material = new THREE.MeshBasicMaterial({
+          color: 0xff0000,
+          transparent: true,
+          opacity: 0,
+        });
         const mesh = new THREE.Mesh(geometry, material);
         // mesh.visible = false;
         globe.add(mesh);
@@ -243,93 +264,41 @@ export default {
         convertPointData(bremerhaven.lat, bremerhaven.long)
       );
 
-      console.log(globe);
-      console.log(path1);
-      console.log(path2);
       // animate ball path
-      function animateBallOnPaths() {
-        for (let i = 0; i <= 20; i++) {
-          setTimeout(() => {
-            ball.position.x = path1.points[i].x;
-            ball.position.y = path1.points[i].y;
-            ball.position.z = path1.points[i].z;
-          }, i * 100);
-        }
 
-        // if (ball.position.x === path2.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path3.points[i].x;
-        //       ball.position.y = path3.points[i].y;
-        //       ball.position.z = path3.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path3.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path4.points[i].x;
-        //       ball.position.y = path4.points[i].y;
-        //       ball.position.z = path4.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path4.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path5.points[i].x;
-        //       ball.position.y = path5.points[i].y;
-        //       ball.position.z = path5.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path5.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path6.points[i].x;
-        //       ball.position.y = path6.points[i].y;
-        //       ball.position.z = path6.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path6.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path7.points[i].x;
-        //       ball.position.y = path7.points[i].y;
-        //       ball.position.z = path7.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path7.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path8.points[i].x;
-        //       ball.position.y = path8.points[i].y;
-        //       ball.position.z = path8.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path8.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path9.points[i].x;
-        //       ball.position.y = path9.points[i].y;
-        //       ball.position.z = path9.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
-        // if (ball.position.x === path9.points[20].x) {
-        //   for (let i = 0; i <= 20; i++) {
-        //     setTimeout(() => {
-        //       ball.position.x = path10.points[i].x;
-        //       ball.position.y = path10.points[i].y;
-        //       ball.position.z = path10.points[i].z;
-        //     }, i * 100);
-        //   }
-        // }
+      let travelPath = { points: [] };
+
+      function createWholePath() {
+        path1.points.forEach((point) => travelPath.points.push(point));
+        path2.points.forEach((point) => travelPath.points.push(point));
+        path3.points.forEach((point) => travelPath.points.push(point));
+        path4.points.forEach((point) => travelPath.points.push(point));
+        path5.points.forEach((point) => travelPath.points.push(point));
+        path6.points.forEach((point) => travelPath.points.push(point));
+        path7.points.forEach((point) => travelPath.points.push(point));
+        path8.points.forEach((point) => travelPath.points.push(point));
+        path9.points.forEach((point) => travelPath.points.push(point));
+        path10.points.forEach((point) => travelPath.points.push(point));
+        console.log(travelPath);
       }
-      animateBallOnPaths();
+      createWholePath();
+
+      function animateBallOnPaths() {
+        for (let i = 0; i <= 1009; i++) {
+          setTimeout(() => {
+            ball.position.x = travelPath.points[i].x;
+            ball.position.y = travelPath.points[i].y;
+            ball.position.z = travelPath.points[i].z;
+
+            if (ball.position.x === travelPath.points[1009].x) {
+              animateBallOnPaths();
+            }
+          }, i * 20);
+        }
+      }
+      setTimeout(() => {
+        animateBallOnPaths();
+      }, 1000);
 
       // function animatePaths() {
       //   setTimeout(() => {
