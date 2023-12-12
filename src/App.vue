@@ -41,7 +41,7 @@
 
       <div class="flex gap-10">
         <router-link :to="{ name: 'home' }">Home</router-link>
-        <router-link :to="{ name: 'education' }">My work</router-link>
+        <router-link :to="{ name: 'MyWork' }">My work</router-link>
         <router-link :to="{ name: 'gettoknowme' }">About me</router-link>
         <router-link :to="{ name: 'myjourney' }">My travel journey</router-link>
       </div>
