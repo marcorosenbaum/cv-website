@@ -19,12 +19,6 @@
           <span style="--i: 14">m</span>
         </div>
         <div class="waviy occupation">
-          <span style="--i: 15">J</span>
-          <span style="--i: 16">u</span>
-          <span style="--i: 17">n</span>
-          <span style="--i: 18">i</span>
-          <span style="--i: 19">o</span>
-          <span style="--i: 20">r</span>
           <span class="ml-4" style="--i: 21">F</span>
           <span style="--i: 22">r</span>
           <span style="--i: 23">o</span>
@@ -73,7 +67,7 @@
   font-size: 3rem;
   text-transform: uppercase;
   animation: flip 3s infinite;
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
   animation-delay: calc(0.07s * var(--i));
 }
 
