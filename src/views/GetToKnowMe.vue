@@ -1,18 +1,10 @@
 <template>
   <h1>check</h1>
-  <div id="globe-container">
-    <globe ref="globeRef" />
-  </div>
 </template>
 
 <script>
-import globe from "../components/ThreeGlobe.vue";
-
 export default {
   name: "gettoknowme",
-  components: {
-    globe,
-  },
 };
 </script>
 

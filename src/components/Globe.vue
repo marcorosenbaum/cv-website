@@ -8,8 +8,6 @@
 import * as THREE from "three";
 import { render } from "vue";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { CSS2DRenderer } from "three/addons/renderers/CSS2DRenderer.js";
-import { CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
 import vertexShader from "../assets/shaders/vertex.glsl";
 import fragmentShader from "../assets/shaders/fragment.glsl";
 import atmosphereVertexshader from "../assets/shaders/atmosphereVertex.glsl";
@@ -56,13 +54,6 @@ export default {
               new URL("../assets/images/globe.jpeg", import.meta.url).toString()
             ),
           },
-          // bumpMap: new THREE.TextureLoader().load(
-          //   new URL(
-          //     "../assets/images/earthbump.jpeg",
-          //     import.meta.url
-          //   ).toString()
-          // ),
-          // bumpScale: 1.1, // Adjust the bump scale as needed
         },
       });
 
@@ -100,9 +91,9 @@ export default {
       );
       const stars = new THREE.Points(starGeometry, starMaterial);
 
-      // --------- GROUP
+      //  group
       const group = new THREE.Group();
-      group.add(globe, atmosphere); // add atmosphere here
+      group.add(globe, atmosphere);
 
       window.addEventListener("resize", onWindowResize);
       function onWindowResize() {
@@ -118,23 +109,6 @@ export default {
         );
         render();
       }
-
-      // _________________-----------____________________
-      // // Labels
-      // const labelRenderer = new CSS2DRenderer();
-      // labelRenderer.setSize(window.innerWidth, window.innerHeight);
-      // labelRenderer.domElement.style.position = "absolute";
-      // labelRenderer.domElement.style.top = "0px";
-      // this.$refs.sceneContainer.appendChild(labelRenderer.domElement);
-
-      // // label
-      // let labelDiv = document.createElement("div");
-      // labelDiv.className = "label";
-      // labelDiv.textContent = "Label";
-      // labelDiv.style.marginTop = "-1em";
-      // let labelElement = new CSS2DObject(labelDiv);
-      // labelElement.position.copy(particles.geometry.vertices[i]);
-      // particles.add(labelElement);
 
       // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -188,7 +162,7 @@ export default {
         };
       }
 
-      // sphere/ BALL to move along the path
+      // Ball object for moving along the path
       const ballGeometry = new THREE.SphereGeometry(0.01, 100, 100);
       const ballMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 
@@ -197,7 +171,7 @@ export default {
       ball.position.z = 2;
       group.add(ball);
 
-      // path ----------------------- - -- - - - - -- - - --
+      // paths
       function getPath(p1, p2) {
         let v1 = new THREE.Vector3(p1.x, p1.y, p1.z);
         let v2 = new THREE.Vector3(p2.x, p2.y, p2.z);
@@ -206,19 +180,14 @@ export default {
         for (let i = 0; i <= 100; i++) {
           let p = new THREE.Vector3().lerpVectors(v1, v2, i / 100);
           p.normalize();
-          p.multiplyScalar(1 + 0.03 * Math.sin((Math.PI * i) / 100));
+          p.multiplyScalar(1 + 0.05 * Math.sin((Math.PI * i) / 100));
 
           points.push(p);
         }
 
         const geometry = new THREE.TubeGeometry(path, 40, 0.005, 8, false);
-        const material = new THREE.MeshBasicMaterial({
-          color: 0xff0000,
-          transparent: true,
-          opacity: 0,
-        });
-        const mesh = new THREE.Mesh(geometry, material);
-        // mesh.visible = false;
+        const mesh = new THREE.Mesh(geometry);
+        mesh.visible = false;
         globe.add(mesh);
         return path;
       }
@@ -265,7 +234,6 @@ export default {
       );
 
       // animate ball path
-
       let travelPath = { points: [] };
 
       function createWholePath() {
@@ -300,65 +268,17 @@ export default {
         animateBallOnPaths();
       }, 1000);
 
-      // function animatePaths() {
-      //   setTimeout(() => {
-      //     globe.children[0].visible = true;
-      //     setTimeout(() => {
-      //       globe.children[0].visible = false;
-      //       globe.children[1].visible = true;
-      //       setTimeout(() => {
-      //         globe.children[1].visible = false;
-      //         globe.children[2].visible = true;
-      //         setTimeout(() => {
-      //           globe.children[2].visible = false;
-      //           globe.children[3].visible = true;
-      //           setTimeout(() => {
-      //             globe.children[3].visible = false;
-      //             globe.children[4].visible = true;
-      //             setTimeout(() => {
-      //               globe.children[4].visible = false;
-      //               globe.children[5].visible = true;
-      //               setTimeout(() => {
-      //                 globe.children[5].visible = false;
-      //                 globe.children[6].visible = true;
-      //                 setTimeout(() => {
-      //                   globe.children[6].visible = false;
-      //                   globe.children[7].visible = true;
-      //                   setTimeout(() => {
-      //                     globe.children[7].visible = false;
-      //                     globe.children[8].visible = true;
-      //                     setTimeout(() => {
-      //                       globe.children[8].visible = false;
-      //                       globe.children[9].visible = true;
-      //                       setTimeout(() => {
-      //                         globe.children[9].visible = false;
-      //                         animatePaths();
-      //                       }, 4000);
-      //                     }, 2000);
-      //                   }, 2000);
-      //                 }, 2000);
-      //               }, 2000);
-      //             }, 2000);
-      //           }, 2000);
-      //         }, 2000);
-      //       }, 2000);
-      //     }, 2000);
-      //   }, 2000);
-      // }
-      // animatePaths();
-
-      // animate ball path
       scene.add(group, stars);
       group.rotation.y = 4.4;
+
       const animate = function () {
         requestAnimationFrame(animate);
 
         group.rotation.x = THREE.MathUtils.degToRad(10);
-        //group.rotation.y -= 0.004;
+        group.rotation.y -= 0.003;
         controls.update();
 
         renderer.render(scene, camera);
-        // stats.update();
       };
       animate();
     },
