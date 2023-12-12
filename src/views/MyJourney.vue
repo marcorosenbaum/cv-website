@@ -18,5 +18,6 @@ export default {
 <style>
 #globe-container {
   width: 100%;
+  height: 100%;
 }
 </style>
