@@ -45,7 +45,7 @@
 import globe from "../components/Globe.vue";
 
 export default {
-  name: "Education",
+  name: "Home",
   data() {
     return {
       github: false,

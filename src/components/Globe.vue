@@ -122,7 +122,7 @@ export default {
 
         // Create a point
         const pointGeometry = new THREE.SphereGeometry(0.01);
-        const pointMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+        const pointMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
         const point = new THREE.Mesh(pointGeometry, pointMaterial);
 
         point.position.x = radius * Math.sin(phi) * Math.cos(theta);
@@ -167,8 +167,10 @@ export default {
       const ballMaterial = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
 
       const ball = new THREE.Mesh(ballGeometry, ballMaterial);
-      ball.position.x = 0;
-      ball.position.z = 2;
+      ball.position.x = convertPointData(bremerhaven.lat, bremerhaven.long).x;
+      ball.position.y = convertPointData(bremerhaven.lat, bremerhaven.long).y;
+      ball.position.z = convertPointData(bremerhaven.lat, bremerhaven.long).z;
+
       group.add(ball);
 
       // paths
@@ -257,6 +259,7 @@ export default {
             ball.position.x = travelPath.points[i].x;
             ball.position.y = travelPath.points[i].y;
             ball.position.z = travelPath.points[i].z;
+            // updateParticles();
 
             if (ball.position.x === travelPath.points[1009].x) {
               animateBallOnPaths();
