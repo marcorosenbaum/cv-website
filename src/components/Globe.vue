@@ -27,7 +27,7 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 5;
+      camera.position.z = 66;
 
       const globecanvas = document.getElementById("globecanvas");
       const renderer = new THREE.WebGLRenderer({
@@ -112,6 +112,7 @@ export default {
 
       // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
+      controls.minDistance = 2;
       controls.update();
 
       // Function to add a data point to the globe
@@ -259,7 +260,6 @@ export default {
             ball.position.x = travelPath.points[i].x;
             ball.position.y = travelPath.points[i].y;
             ball.position.z = travelPath.points[i].z;
-            // updateParticles();
 
             if (ball.position.x === travelPath.points[1009].x) {
               animateBallOnPaths();
@@ -274,6 +274,14 @@ export default {
       scene.add(group, stars);
       group.rotation.y = 4.4;
 
+      function globeZoomAnimation() {
+        for (let i = 0; i <= 60; i++) {
+          setTimeout(() => {
+            camera.position.z -= 1;
+          }, i * 40);
+        }
+      }
+      globeZoomAnimation();
       const animate = function () {
         requestAnimationFrame(animate);
 
