@@ -164,7 +164,7 @@ export default {
 
       // Ball object for moving along the path
       const ballGeometry = new THREE.SphereGeometry(0.01, 100, 100);
-      const ballMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      const ballMaterial = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
 
       const ball = new THREE.Mesh(ballGeometry, ballMaterial);
       ball.position.x = 0;
