@@ -114,7 +114,7 @@ export default {
 
       // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
-      controls.minDistance = 2;
+      controls.minDistance = 3.5;
       controls.update();
 
       // Function to add a data point to the globe

@@ -1,7 +1,7 @@
 <template>
-  <div class="h-[10vh] sticky top-0 flex flex-col">
-    <nav class="flex justify-between p-2 bg-black">
-      <div class="flex flex-col items-center text-white">
+  <div class="h-[10vh] bg-blackground sticky top-0 flex flex-col">
+    <nav class="flex justify-between">
+      <div class="flex flex-col items-center">
         <div class="waviy">
           <span style="--i: 1">M</span>
           <span style="--i: 2">a</span>
@@ -20,10 +20,8 @@
         </div>
       </div>
 
-      <div class="flex gap-10 text-white">
-        <router-link class="text-white" :to="{ name: 'home' }"
-          >Home</router-link
-        >
+      <div id="nav" class="flex items-center gap-[3rem]">
+        <router-link :to="{ name: 'home' }">Home</router-link>
         <router-link :to="{ name: 'MyWork' }">My work</router-link>
         <router-link :to="{ name: 'gettoknowme' }">About me</router-link>
         <router-link :to="{ name: 'myjourney' }">My travel journey</router-link>
@@ -32,48 +30,80 @@
   </div>
 
   <main>
-    <section class="border border-2-white h-[90vh]">
-      This is the about me site
+    <section class="flex gap-[3rem] h-[90vh]">
+      <div class="w-[60%]">
+        <h1 class="text-7xl mt-[2rem]">About me.</h1>
+        <h2 class="text-5xl mt-[2rem]">
+          I'm <span id="span-marco">Marco</span>. A developer, an optimist and
+          problem solver.
+        </h2>
+        <p class="mt-[4rem] text-xl">
+          I like the challenge to solve problems logically and I like to build
+          things.
+        </p>
+        <p class="mt-[1rem] text-xl">
+          Believing that there is nothing I cannot do but only things I am not
+          trained to do motivates me to continous learn.
+        </p>
+      </div>
+
+      <div class="w-[40%]">
+        <img
+          id="photo-marco"
+          class="rounded-3xl block mx-auto"
+          src="../assets/images/img001.jpeg"
+          alt="photo marco"
+        />
+      </div>
+      <img
+        class="orange block absolute bottom-10 left-[50%] justify-center w-10 h-10"
+        src="../assets/svg/scroll-down.svg"
+        alt=""
+      />
     </section>
-    <section
-      class="flex justify-around gap-8 text-white border border-2-white h-[90vh]"
-    >
-      <div class="w-[40%] p-4 m-4 border border-2-white text-center">
+
+    <section class="flex justify-around gap-8 text-white">
+      <div class="skills w-[40%] p-4 m-4 rounded-3xl text-center">
         <h1 class="text-3xl">Technical skills</h1>
-        <div class="flex">
+        <div class="flex gap-4">
           <div class="w-[50%] flex flex-col items-end">
+            <img class="w-10" src="../assets/svg/html5.svg" alt="html icon" />
+            <img class="w-10" src="../assets/svg/css3.svg" alt="css icon" />
             <img
               class="w-10"
-              src="../assets/svg/html-5-svgrepo-com.svg"
-              alt="html icon"
+              src="../assets/svg/tailwind.svg"
+              alt="tailwind icon"
             />
             <img
               class="w-10"
-              src="../assets/svg/html-5-svgrepo-com.svg"
-              alt="html icon"
+              src="../assets/svg/javascript.svg"
+              alt="js icon"
             />
             <img
               class="w-10"
-              src="../assets/svg/html-5-svgrepo-com.svg"
-              alt="html icon"
+              src="../assets/svg/nodejs.svg"
+              alt="nodejs icon"
+            />
+            <img class="w-10" src="../assets/svg/vue.svg" alt="vue icon" />
+            <img
+              class="w-10 h-10"
+              src="../assets/svg/pinia.svg"
+              alt="pinia icon"
             />
           </div>
-          <div class="w-[50%] flex flex-col align-middle items-start">
+
+          <div class="w-[50%] flex flex-col items-start">
             <p class="h-10">HTML</p>
-            <p class="h-10">HTML</p>
-            <p class="h-10">HTML</p>
+            <p class="h-10">CSS</p>
+            <p class="h-10">Tailwind</p>
+            <p class="h-10">JavaScript</p>
+            <p class="h-10">node.js</p>
+            <p class="h-10">Vue</p>
+            <p class="h-10">Pinia</p>
           </div>
         </div>
-
-        <!-- <p>CSS</p>
-        <p>Tailwind</p>
-        <p>JavaScript</p>
-        <p>Pinia</p>
-        <p>vue.js</p>
-        <p>node.js</p>
-        <p>three.js</p> -->
       </div>
-      <div class="w-[40%] p-4 m-4 border border-2-white text-center">
+      <div class="skills w-[40%] p-4 m-4 rounded-3xl text-center">
         <h1 class="text-3xl">other skills</h1>
         <p>Team leading</p>
         <p>scrum</p>
@@ -85,10 +115,10 @@
         <p>three.js</p>
       </div>
     </section>
-    <section class="border border-2-white h-[90vh]">my projects site</section>
-    <section
-      class="flex justify-center items-center border border-2-white h-[90vh]"
-    >
+    <section class="h-[90vh]">
+      <div></div>
+    </section>
+    <section class="flex justify-center items-center h-[90vh]">
       <div id="globe-container">
         <globe />
       </div>
@@ -150,10 +180,16 @@ export default {
 </script>
 
 <style>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+#nav {
+  color: rgb(255, 200, 100);
+}
+
+.orange {
+  color: orange;
+}
+
+#span-marco {
+  color: orange;
 }
 
 .waviy span {
@@ -161,7 +197,7 @@ export default {
   display: inline-block;
   color: #fff;
   font-size: 2rem;
-  text-transform: uppercase;
+  _text-transform: uppercase;
   animation: flip 0.5s infinite;
   animation-iteration-count: 1;
   animation-delay: calc(0.05s * var(--i));
@@ -179,5 +215,14 @@ export default {
 #globe-container {
   width: 70vw;
   height: 70vh;
+}
+
+.skills {
+  background: linear-gradient(
+    40deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(139, 190, 123, 1) 54%,
+    rgba(253, 187, 45, 1) 100%
+  );
 }
 </style>
