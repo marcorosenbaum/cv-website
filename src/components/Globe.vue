@@ -15,7 +15,9 @@ import atmosphereFragmentshader from "../assets/shaders/atmosphereFragment.glsl"
 
 export default {
   name: "globe",
-
+  data() {
+    return {};
+  },
   methods: {
     initThreeScene() {
       const scene = new THREE.Scene();
@@ -282,6 +284,7 @@ export default {
         }
       }
       globeZoomAnimation();
+
       const animate = function () {
         requestAnimationFrame(animate);
 
