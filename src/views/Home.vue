@@ -1,7 +1,8 @@
 <template>
-  <div class="h-[5vh] bg-blackground flex flex-col">
-    <nav class="flex justify-between">
-      <div class="flex flex-col items-center">
+  <div
+    class="h-[5vh] bg-opacity-50 bg-blackground sticky top-0 flex justify-end"
+  >
+    <!-- <div class="flex flex-col items-center">
         <div class="waviy">
           <span style="--i: 1">M</span>
           <span style="--i: 2">a</span>
@@ -18,17 +19,16 @@
           <span style="--i: 13">u</span>
           <span style="--i: 14">m</span>
         </div>
-      </div>
+      </div> -->
 
-      <div id="nav" class="flex items-center gap-[3rem]">
-        <a href="#aboutme">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#mywork">my work</a>
+    <div id="nav" class="flex items-end gap-[3rem]">
+      <a href="#aboutme">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#mywork">my work</a>
 
-        <!-- <router-link :to="{ name: 'myjourney' }">My travel journey</router-link> -->
-      </div>
-    </nav>
+      <!-- <router-link :to="{ name: 'myjourney' }">My travel journey</router-link> -->
+    </div>
   </div>
 
   <main>
@@ -53,7 +53,7 @@
         <div class="w-[40%]">
           <img
             id="photo-marco"
-            class="rounded-xl block mx-auto mt-[2rem]"
+            class="w-[100%] rounded-xl block mx-auto mt-[2rem]"
             src="../assets/images/img001.jpeg"
             alt="photo marco"
           />
