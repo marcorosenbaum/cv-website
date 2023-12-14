@@ -114,7 +114,7 @@ export default {
 
       // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
-      controls.minDistance = 2;
+      controls.minDistance = 3.5;
       controls.update();
 
       // Function to add a data point to the globe
@@ -277,7 +277,7 @@ export default {
       group.rotation.y = 4.4;
 
       function globeZoomAnimation() {
-        for (let i = 0; i <= 60; i++) {
+        for (let i = 0; i <= 61; i++) {
           setTimeout(() => {
             camera.position.z -= 1;
           }, i * 40);

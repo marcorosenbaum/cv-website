@@ -3,7 +3,7 @@ export default {
   content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   theme: {
     colors: {
-      black: "#101010",
+      blackground: "#1e1e1e",
     },
     extend: {},
   },
