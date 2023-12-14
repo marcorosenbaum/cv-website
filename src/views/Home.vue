@@ -62,9 +62,9 @@
       />
     </section>
 
-    <section class="flex justify-around gap-8 text-white">
-      <div class="skills w-[40%] p-4 m-4 rounded-3xl text-center">
-        <h1 class="text-3xl">Technical skills</h1>
+    <section class="flex justify-around gap-16 text-white">
+      <div class="bg-gradient w-[50%] p-4 rounded-3xl text-center">
+        <h1 class="text-4xl">Technical skills</h1>
         <div class="flex gap-4">
           <div class="w-[50%] flex flex-col items-end">
             <img class="w-10" src="../assets/svg/html5.svg" alt="html icon" />
@@ -92,7 +92,7 @@
             />
           </div>
 
-          <div class="w-[50%] flex flex-col items-start">
+          <div class="w-[60%] flex flex-col items-start text-2xl">
             <p class="h-10">HTML</p>
             <p class="h-10">CSS</p>
             <p class="h-10">Tailwind</p>
@@ -103,26 +103,208 @@
           </div>
         </div>
       </div>
-      <div class="skills w-[40%] p-4 m-4 rounded-3xl text-center">
-        <h1 class="text-3xl">other skills</h1>
+      <div
+        class="bg-gradient w-[50%] p-4 rounded-3xl text-center text-2xl flex flex-col justify-between"
+      >
+        <h1 class="text-4xl">other skills</h1>
         <p>Team leading</p>
-        <p>scrum</p>
-        <p>project management</p>
-        <p>JavaScript</p>
-        <p>Pinia</p>
-        <p>vue.js</p>
-        <p>node.js</p>
-        <p>three.js</p>
+        <p>Project management</p>
+        <p>Scrum</p>
+        <p>Problem solving</p>
+        <p>Patience</p>
+        <p>Time management</p>
       </div>
     </section>
+
     <section class="h-[90vh]">
-      <div></div>
-    </section>
-    <section class="flex justify-center items-center h-[90vh]">
-      <div id="globe-container">
-        <globe />
+      <h1 class="text-7xl mt-[2rem]">Experience.</h1>
+
+      <div class="flex flex-col gap-4">
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full px-8 text-xl">
+            <span class="w-[40%]">Coding Bootcamp</span>
+            <img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">Coding Bootcamps Europe, remote</span>
+            <span class="w-[20%] text-right">2023</span>
+          </div>
+          <div
+            v-on:click="codingIsOpen = !codingIsOpen"
+            class="text-2xl px-8"
+            v-text="codingIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+
+        <div v-if="codingIsOpen" class="h-[100px] border border-white-2">
+          hi BOOTCAMP
+        </div>
+
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full justify-between px-8 text-xl">
+            <span class="w-[40%]">Team leader - Installation</span>
+            <img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">Future Energy, New Zealand</span>
+            <span class="w-[20%] text-right">2022</span>
+          </div>
+          <div
+            v-on:click="futureIsOpen = !futureIsOpen"
+            class="text-2xl px-8"
+            v-text="futureIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+
+        <div v-if="futureIsOpen" class="h-[100px] border border-white-2">
+          hi FUTRE ERNERGY
+        </div>
+
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full justify-between px-8 text-xl">
+            <span class="w-[40%]">Travel</span
+            ><img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">mother earth</span>
+            <span class="w-[20%] text-right">2021 - 2023</span>
+          </div>
+          <div
+            v-on:click="travelIsOpen = !travelIsOpen"
+            class="text-2xl px-8"
+            v-text="travelIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+        <div v-if="travelIsOpen" class="flex border border-white-2">
+          <div class="w-[50%]">
+            <p>
+              On this journey I traveled to Belgium, France, Spain, Indonesia,
+              Thailand, Rarotonga and Australia.
+            </p>
+            <p>
+              I also spent a year in New Zealand traveling the north and the
+              south. During this time I developed a great sense to organize
+              myself in stressful situations and increased my capability to
+              communicate fluently in english. The opportunity to live and work
+              in New Zealand was a very insightful and knowledgable experience.
+            </p>
+            <p>
+              The globe on the right simulates my travel path. There is a blue
+              ball traveling my journey in a endless loop.
+            </p>
+            <p>Click on the globe to get a full screen view!</p>
+          </div>
+          <div class="w-[50%]">
+            <router-link :to="{ name: 'myjourney' }">
+              <div id="globe-container">
+                <globe v-if="travelIsOpen" />
+              </div>
+            </router-link>
+          </div>
+        </div>
+
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full justify-between px-8 text-xl">
+            <span class="w-[40%]">State certified technical engineer</span
+            ><img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">IQuando GmbH</span>
+            <span class="w-[20%] text-right">2018 - 2020</span>
+          </div>
+          <div
+            v-on:click="iquandoIsOpen = !iquandoIsOpen"
+            class="text-2xl px-8"
+            v-text="iquandoIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+        <div v-if="iquandoIsOpen" class="h-[100px] border border-white-2">
+          hi FUTRE ERNERGY
+        </div>
+
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full justify-between px-8 text-xl">
+            <span class="w-[40%]">Team leader</span
+            ><img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">Eurogate Technical Services GmbH</span>
+            <span class="w-[20%] text-right">2018 - 2021</span>
+          </div>
+          <div
+            v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
+            class="text-2xl px-8"
+            v-text="teamLeadEgtsIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+        <div v-if="teamLeadEgtsIsOpen" class="h-[100px] border border-white-2">
+          hi FUTRE ERNERGY
+        </div>
+
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full justify-between px-8 text-xl">
+            <span class="w-[40%]">Electronic technician</span
+            ><img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">Eurogate Technical Services GmbH</span>
+            <span class="w-[20%] text-right">2016 - 2018</span>
+          </div>
+          <div
+            v-on:click="technicianEgtsIsOpen = !technicianEgtsIsOpen"
+            class="text-2xl px-8"
+            v-text="technicianEgtsIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+        <div
+          v-if="technicianEgtsIsOpen"
+          class="h-[100px] border border-white-2"
+        >
+          hi FUTRE ERNERGY
+        </div>
+
+        <div class="flex justify-between bg-gradient">
+          <div class="flex w-full justify-between px-8 text-xl">
+            <span class="w-[40%]">Mechatronics trainee</span
+            ><img
+              class="map-svg"
+              src="../assets/svg/map-pin.svg
+            "
+              alt="map pin"
+            />
+            <span class="w-[40%]">Eurogate Technical Services GmbH</span>
+            <span class="w-[20%] text-right">2012 - 2016</span>
+          </div>
+          <div
+            v-on:click="traineeIsOpen = !traineeIsOpen"
+            class="text-2xl px-8"
+            v-text="traineeIsOpen ? '-' : '+'"
+          ></div>
+        </div>
+        <div v-if="traineeIsOpen" class="h-[100px] border border-white-2">
+          hi FUTRE ERNERGY
+        </div>
       </div>
     </section>
+    <section class="flex justify-center items-center h-[90vh]"></section>
   </main>
 
   <!-- <div class="flex h-full">
@@ -170,8 +352,27 @@ export default {
   name: "Education",
   data() {
     return {
-      showGlobe: false,
+      codingIsOpen: false,
+      futureIsOpen: false,
+      travelIsOpen: false,
+      iquandoIsOpen: false,
+      teamLeadEgtsIsOpen: false,
+      technicianEgtsIsOpen: false,
+      traineeIsOpen: false,
     };
+  },
+  computed: {},
+  methods: {
+    unfoldAllExperiences() {
+      this.codingIsOpen = false;
+      this.futureIsOpen = false;
+      this.travelIsOpen = false;
+      this.iquandoIsOpen = false;
+      this.teamLeadEgtsIsOpen = false;
+      this.technicianEgtsIsOpen = false;
+      this.traineeIsOpen = false;
+    },
+    appendGlobe() {},
   },
   components: {
     globe,
@@ -213,11 +414,10 @@ export default {
   }
 }
 #globe-container {
-  width: 70vw;
-  height: 70vh;
+  width: 100%;
 }
 
-.skills {
+.bg-gradient {
   background: linear-gradient(
     40deg,
     rgba(34, 193, 195, 1) 0%,
