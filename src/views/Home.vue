@@ -30,36 +30,62 @@
   </div>
 
   <main>
-    <section class="flex gap-[3rem] h-[90vh]">
-      <div class="w-[60%]">
-        <h1 class="text-7xl mt-[2rem]">About me.</h1>
-        <h2 class="text-5xl mt-[2rem]">
-          I'm <span id="span-marco">Marco</span>. A developer, an optimist and
-          problem solver.
-        </h2>
-        <p class="mt-[4rem] text-xl">
-          I like the challenge to solve problems logically and I like to build
-          things.
-        </p>
-        <p class="mt-[1rem] text-xl">
-          Believing that there is nothing I cannot do but only things I am not
-          trained to do motivates me to continous learn.
-        </p>
+    <section class="flex flex-col gap-[3rem] h-[90vh]">
+      <div class="flex h-[70vh]">
+        <div class="w-[60%]">
+          <h1 class="text-7xl mt-[2rem]">About me.</h1>
+          <h2 class="text-5xl mt-[2rem]">
+            I'm <span id="span-marco">Marco</span>. A developer, an optimist and
+            problem solver.
+          </h2>
+          <p class="mt-[4rem] text-xl">
+            I like the challenge to solve problems logically and I like to build
+            things.
+          </p>
+          <p class="mt-[1rem] text-xl">
+            Believing that there is nothing I cannot do but only things I am not
+            trained to do motivates me to continous learn.
+          </p>
+        </div>
+
+        <div class="w-[40%]">
+          <img
+            id="photo-marco"
+            class="rounded-3xl block mx-auto"
+            src="../assets/images/img001.jpeg"
+            alt="photo marco"
+          />
+        </div>
       </div>
 
-      <div class="w-[40%]">
-        <img
-          id="photo-marco"
-          class="rounded-3xl block mx-auto"
-          src="../assets/images/img001.jpeg"
-          alt="photo marco"
-        />
+      <div class="flex justify-around">
+        <a
+          class="text-white transition-transform transform hover:scale-110 duration-1000"
+          target="_blank"
+          href="https://github.com/marcorosenbaum"
+          >Github</a
+        >
+
+        <a
+          class="text-white"
+          target="_blank"
+          href="https://www.linkedin.com/in/marcorosenbaum"
+          >LinkedIn</a
+        >
+
+        <a
+          class="text-white"
+          target="_blank"
+          href="https://www.codewars.com/users/marcorosenbaum"
+          >Codewars</a
+        >
+
+        <!-- <img
+          class="w-10 h-10"
+          src="../assets/svg/scroll-down.svg"
+          alt="scroll icon"
+        /> -->
       </div>
-      <img
-        class="orange block absolute bottom-10 left-[50%] justify-center w-10 h-10"
-        src="../assets/svg/scroll-down.svg"
-        alt=""
-      />
     </section>
 
     <section class="flex justify-around gap-16 text-white">
@@ -120,7 +146,7 @@
       <h1 class="text-7xl mt-[2rem]">Experience.</h1>
 
       <div class="flex flex-col gap-4">
-        <div class="flex justify-between bg-gradient">
+        <div class="flex py-4 justify-between bg-gradient">
           <div class="flex w-full px-8 text-xl">
             <span class="w-[40%]">Coding Bootcamp</span>
             <img
@@ -140,10 +166,13 @@
         </div>
 
         <div v-if="codingIsOpen" class="h-[100px] border border-white-2">
-          hi BOOTCAMP
+          During this training I learned the basics of frontend development
+          including JavaScript, Vue.js and Node.js. At the end of the course I
+          worked on a final project and learned how to build and deploy a single
+          page application in a team.
         </div>
 
-        <div class="flex justify-between bg-gradient">
+        <div class="flex justify-between py-4 bg-gradient">
           <div class="flex w-full justify-between px-8 text-xl">
             <span class="w-[40%]">Team leader - Installation</span>
             <img
@@ -163,10 +192,11 @@
         </div>
 
         <div v-if="futureIsOpen" class="h-[100px] border border-white-2">
-          hi FUTRE ERNERGY
+          <p>Supervising employees on site</p>
+          <p>Installation and debugging of solar systems</p>
         </div>
 
-        <div class="flex justify-between bg-gradient">
+        <div class="flex justify-between py-4 bg-gradient">
           <div class="flex w-full justify-between px-8 text-xl">
             <span class="w-[40%]">Travel</span
             ><img
@@ -175,7 +205,7 @@
             "
               alt="map pin"
             />
-            <span class="w-[40%]">mother earth</span>
+            <span class="w-[40%]">planet earth</span>
             <span class="w-[20%] text-right">2021 - 2023</span>
           </div>
           <div
@@ -212,7 +242,7 @@
           </div>
         </div>
 
-        <div class="flex justify-between bg-gradient">
+        <div class="flex justify-between py-4 bg-gradient">
           <div class="flex w-full justify-between px-8 text-xl">
             <span class="w-[40%]">State certified technical engineer</span
             ><img
@@ -234,7 +264,7 @@
           hi FUTRE ERNERGY
         </div>
 
-        <div class="flex justify-between bg-gradient">
+        <div class="flex justify-between py-4 bg-gradient">
           <div class="flex w-full justify-between px-8 text-xl">
             <span class="w-[40%]">Team leader</span
             ><img
@@ -243,7 +273,9 @@
             "
               alt="map pin"
             />
-            <span class="w-[40%]">Eurogate Technical Services GmbH</span>
+            <span class="w-[40%]"
+              >Eurogate Technical Services GmbH, Germany</span
+            >
             <span class="w-[20%] text-right">2018 - 2021</span>
           </div>
           <div
@@ -253,10 +285,12 @@
           ></div>
         </div>
         <div v-if="teamLeadEgtsIsOpen" class="h-[100px] border border-white-2">
-          hi FUTRE ERNERGY
+          <p>Supervising employees in different projects</p>
+          <p>Analysing systems and equipment and planning upgrades</p>
+          <p>Monitoring costs and appointments in projects</p>
         </div>
 
-        <div class="flex justify-between bg-gradient">
+        <div class="flex justify-between py-4 bg-gradient">
           <div class="flex w-full justify-between px-8 text-xl">
             <span class="w-[40%]">Electronic technician</span
             ><img
@@ -265,7 +299,9 @@
             "
               alt="map pin"
             />
-            <span class="w-[40%]">Eurogate Technical Services GmbH</span>
+            <span class="w-[40%]"
+              >Eurogate Technical Services GmbH, Germany</span
+            >
             <span class="w-[20%] text-right">2016 - 2018</span>
           </div>
           <div
@@ -278,10 +314,11 @@
           v-if="technicianEgtsIsOpen"
           class="h-[100px] border border-white-2"
         >
-          hi FUTRE ERNERGY
+          <p>Execution of maintenance and repairs</p>
+          <p>Debugging of equipment during operation</p>
         </div>
 
-        <div class="flex justify-between bg-gradient">
+        <div class="flex justify-between py-4 bg-gradient">
           <div class="flex w-full justify-between px-8 text-xl">
             <span class="w-[40%]">Mechatronics trainee</span
             ><img
@@ -290,7 +327,9 @@
             "
               alt="map pin"
             />
-            <span class="w-[40%]">Eurogate Technical Services GmbH</span>
+            <span class="w-[40%]"
+              >Eurogate Technical Services GmbH, Germany</span
+            >
             <span class="w-[20%] text-right">2012 - 2016</span>
           </div>
           <div
@@ -300,7 +339,12 @@
           ></div>
         </div>
         <div v-if="traineeIsOpen" class="h-[100px] border border-white-2">
-          hi FUTRE ERNERGY
+          <p>Maintenance of mechatronic and hydraulic systems</p>
+          <p>Reparations of mechatronic and hydraulic systems</p>
+          <p>
+            Learning the basics of mechanical-, electrical, and
+            mechatronic-systems
+          </p>
         </div>
       </div>
     </section>
