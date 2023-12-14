@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[10vh] bg-blackground sticky top-0 flex flex-col">
+  <div class="h-[5vh] bg-blackground flex flex-col">
     <nav class="flex justify-between">
       <div class="flex flex-col items-center">
         <div class="waviy">
@@ -21,16 +21,18 @@
       </div>
 
       <div id="nav" class="flex items-center gap-[3rem]">
-        <router-link :to="{ name: 'home' }">Home</router-link>
-        <router-link :to="{ name: 'MyWork' }">My work</router-link>
-        <router-link :to="{ name: 'gettoknowme' }">About me</router-link>
-        <router-link :to="{ name: 'myjourney' }">My travel journey</router-link>
+        <a href="#aboutme">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#mywork">my work</a>
+
+        <!-- <router-link :to="{ name: 'myjourney' }">My travel journey</router-link> -->
       </div>
     </nav>
   </div>
 
   <main>
-    <section class="flex flex-col gap-[3rem] h-[90vh]">
+    <section id="aboutme" class="flex flex-col gap-[3rem]">
       <div class="flex h-[70vh]">
         <div class="w-[60%]">
           <h1 class="text-7xl mt-[2rem]">About me.</h1>
@@ -51,7 +53,7 @@
         <div class="w-[40%]">
           <img
             id="photo-marco"
-            class="rounded-3xl block mx-auto"
+            class="rounded-xl block mx-auto mt-[2rem]"
             src="../assets/images/img001.jpeg"
             alt="photo marco"
           />
@@ -87,63 +89,66 @@
         /> -->
       </div>
     </section>
+    <hr class="my-[4rem]" />
+    <section class="">
+      <h1 id="skills" class="text-7xl mt-[2rem]">Skills.</h1>
+      <div class="flex justify-around gap-16 mt-[2rem]">
+        <div class="bg-gradient w-[50%] p-4 rounded-3xl text-center">
+          <h1 class="text-4xl">Technical skills</h1>
+          <div class="flex gap-4">
+            <div class="w-[50%] flex flex-col items-end">
+              <img class="w-10" src="../assets/svg/html5.svg" alt="html icon" />
+              <img class="w-10" src="../assets/svg/css3.svg" alt="css icon" />
+              <img
+                class="w-10"
+                src="../assets/svg/tailwind.svg"
+                alt="tailwind icon"
+              />
+              <img
+                class="w-10"
+                src="../assets/svg/javascript.svg"
+                alt="js icon"
+              />
+              <img
+                class="w-10"
+                src="../assets/svg/nodejs.svg"
+                alt="nodejs icon"
+              />
+              <img class="w-10" src="../assets/svg/vue.svg" alt="vue icon" />
+              <img
+                class="w-10 h-10"
+                src="../assets/svg/pinia.svg"
+                alt="pinia icon"
+              />
+            </div>
 
-    <section class="flex justify-around gap-16 text-white">
-      <div class="bg-gradient w-[50%] p-4 rounded-3xl text-center">
-        <h1 class="text-4xl">Technical skills</h1>
-        <div class="flex gap-4">
-          <div class="w-[50%] flex flex-col items-end">
-            <img class="w-10" src="../assets/svg/html5.svg" alt="html icon" />
-            <img class="w-10" src="../assets/svg/css3.svg" alt="css icon" />
-            <img
-              class="w-10"
-              src="../assets/svg/tailwind.svg"
-              alt="tailwind icon"
-            />
-            <img
-              class="w-10"
-              src="../assets/svg/javascript.svg"
-              alt="js icon"
-            />
-            <img
-              class="w-10"
-              src="../assets/svg/nodejs.svg"
-              alt="nodejs icon"
-            />
-            <img class="w-10" src="../assets/svg/vue.svg" alt="vue icon" />
-            <img
-              class="w-10 h-10"
-              src="../assets/svg/pinia.svg"
-              alt="pinia icon"
-            />
-          </div>
-
-          <div class="w-[60%] flex flex-col items-start text-2xl">
-            <p class="h-10">HTML</p>
-            <p class="h-10">CSS</p>
-            <p class="h-10">Tailwind</p>
-            <p class="h-10">JavaScript</p>
-            <p class="h-10">node.js</p>
-            <p class="h-10">Vue</p>
-            <p class="h-10">Pinia</p>
+            <div class="w-[60%] flex flex-col items-start text-2xl">
+              <p class="h-10">HTML</p>
+              <p class="h-10">CSS</p>
+              <p class="h-10">Tailwind</p>
+              <p class="h-10">JavaScript</p>
+              <p class="h-10">node.js</p>
+              <p class="h-10">Vue</p>
+              <p class="h-10">Pinia</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="bg-gradient w-[50%] p-4 rounded-3xl text-center text-2xl flex flex-col justify-between"
-      >
-        <h1 class="text-4xl">other skills</h1>
-        <p>Team leading</p>
-        <p>Project management</p>
-        <p>Scrum</p>
-        <p>Problem solving</p>
-        <p>Patience</p>
-        <p>Time management</p>
+        <div
+          class="bg-gradient w-[50%] p-4 rounded-3xl text-center text-2xl flex flex-col justify-between"
+        >
+          <h1 class="text-4xl">other skills</h1>
+          <p>Team leading</p>
+          <p>Project management</p>
+          <p>Scrum</p>
+          <p>Problem solving</p>
+          <p>Patience</p>
+          <p>Time management</p>
+        </div>
       </div>
     </section>
-
+    <hr class="my-[4rem]" />
     <section class="h-[90vh]">
-      <h1 class="text-7xl mt-[2rem]">Experience.</h1>
+      <h1 id="experience" class="text-7xl mt-[2rem]">Experience.</h1>
 
       <div class="flex flex-col gap-4">
         <div class="flex py-4 justify-between bg-gradient">
@@ -191,9 +196,18 @@
           ></div>
         </div>
 
-        <div v-if="futureIsOpen" class="h-[100px] border border-white-2">
-          <p>Supervising employees on site</p>
-          <p>Installation and debugging of solar systems</p>
+        <div v-if="futureIsOpen" class="h-[100px] flex border border-white-2">
+          <div class="w-[75%]">
+            <p>Supervising employees on site</p>
+            <p>Installation and debugging of solar systems</p>
+          </div>
+          <div class="w-[25%]">
+            <!-- <img
+              class="h-[100px]"
+              src="../assets/images/future-energy-logo.png"
+              alt="future energy logo"
+            /> -->
+          </div>
         </div>
 
         <div class="flex justify-between py-4 bg-gradient">
@@ -348,34 +362,16 @@
         </div>
       </div>
     </section>
-    <section class="flex justify-center items-center h-[90vh]"></section>
+
+    <hr />
+
+    <section id="mywork" class="">
+      <h1 class="text-7xl mt-[2rem]">my work.</h1>
+    </section>
   </main>
 
   <!-- <div class="flex h-full">
-    <div class="w-[10%] flex flex-col justify-around text-2xl text-center">
-      <a
-        @mouseover="github = true"
-        @mouseleave="github = false"
-        class="text-white transition-transform transform hover:scale-110 duration-1000"
-        target="_blank"
-        href="https://github.com/marcorosenbaum"
-        >Github</a
-      >
-
-      <a
-        class="text-white"
-        target="_blank"
-        href="https://www.linkedin.com/in/marcorosenbaum"
-        >LinkedIn</a
-      >
-
-      <a
-        class="text-white"
-        target="_blank"
-        href="https://www.codewars.com/users/marcorosenbaum"
-        >Codewars</a
-      >
-    </div>
+    
     <div class="w-[80%] flex flex-col justify-center">
       <div id="preview-container" class="bg-gray-300 h-max">
         <div class="w-[100%]">
@@ -468,5 +464,9 @@ export default {
     rgba(139, 190, 123, 1) 54%,
     rgba(253, 187, 45, 1) 100%
   );
+}
+
+hr {
+  color: orange;
 }
 </style>
