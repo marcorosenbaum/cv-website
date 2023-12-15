@@ -408,7 +408,7 @@
     <hr />
 
     <section id="mywork" class="">
-      <h1 class="text-7xl mt-[2rem]">my work.</h1>
+      <h1 class="text-7xl mt-[2rem]">My work.</h1>
 
       <div class="flex gap-[2rem] mt-[2rem]">
         <div class="w-[50%] flex flex-col gap-[2rem]">
@@ -421,7 +421,7 @@
               alt="website photo"
             />
 
-            <p class="text-center">
+            <p>
               This website represents my cv and its purpose is to give the
               visiter a quick description about me and what I do.
             </p>
@@ -457,14 +457,21 @@
           <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
             <p class="text-2xl text-center">3D Globe</p>
 
-            <div id="globe-container">
-              <globe />
+            <div class="relative" id="globe-container">
+              <globe class="globe" />
+              <div class="overlay"></div>
             </div>
 
-            <p class="text-center">
+            <!-- <router-link :to="{ name: 'myjourney' }">
+              <div class="relative" id="globe-container">
+                <globe class="globe" />
+                <div class="overlay"></div></div
+            ></router-link> -->
+
+            <p>
               This globe represents my travel in 2022/2023. I added the main
               locations as data points on the globe. The blue ball moves on the
-              path i traveled.
+              path I traveled.
             </p>
 
             <div class="flex justify-around">
@@ -499,8 +506,7 @@
           <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
             <p class="text-2xl text-center">Concert Compass</p>
             <div class="flex justify-center">
-              <!-- <div class="w-[50%]">CV-Website</div> -->
-              <div class="w-[100%] flex gap-4">
+              <div class="w-[100%] flex gap-4 justify-around">
                 <img
                   class="w-[30%]"
                   src="../assets/images/concert-compass-1.png"
@@ -574,10 +580,67 @@
               </div>
             </div>
           </div>
-          <div class="bg-gradient h-[300px] rounded-xl">
-            Coding Bootcamp tasks
+          <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
+            <p class="text-2xl text-center">Cooding Bootcamp tasks</p>
+
+            <div class="flex w-[100%] gap-4 p-4 justify-around">
+              <img
+                class="w-[50%]"
+                src="../assets/images/shopping-layout.png"
+                alt="shopping layout"
+              />
+              <img
+                class="w-[40%]"
+                src="../assets/images/todo-app.png"
+                alt="todo app"
+              />
+            </div>
+
+            <p>
+              You can find several tasks of the coding bootcamp in this
+              repository. For example a todo app that is working with a todo api
+              on a local backend, the rebuild of a shopping layout and the
+              implementation of testing (cypress, jest) in a project.
+            </p>
+
+            <div class="flex justify-around flex-wrap">
+              <div class="">CSS</div>
+              <div class="">JavaScript</div>
+              <div class="">Vue</div>
+              <div class="">Cypress</div>
+              <div class="">Jest</div>
+              <div class="">Node</div>
+            </div>
+
+            <div class="flex gap-2 justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="2rem"
+                height="2rem"
+                fill="white"
+                class="bi bi-github"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                />
+              </svg>
+              <a
+                class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                target="_blank"
+                href="https://github.com/marcorosenbaum/coding-bootcamp-tasks"
+                >Github</a
+              >
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+    <hr />
+    <section class="">
+      <h1 id="skills" class="text-7xl mt-[2rem]">Contact me.</h1>
+      <div class="flex justify-around gap-16 mt-[2rem]">
+        contact ciontact contact
       </div>
     </section>
   </main>
@@ -665,7 +728,7 @@ export default {
 }
 
 hr {
-  color: orange;
+  color: #ffa500;
   margin: 4rem 0 4rem 0;
 }
 
@@ -684,5 +747,20 @@ hr {
 
 .project-card * {
   padding: 0.5rem 0 0 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0); /* Adjust opacity as needed */
+  z-index: 100; /* Ensure the overlay is on top of the Three.js component */
+}
+
+.globe {
+  z-index: 1;
 }
 </style>
