@@ -198,7 +198,7 @@
     <section class="">
       <h1 id="experience" class="text-7xl mt-[2rem]">Experience.</h1>
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 mt-[2rem]">
         <div class="flex py-4 justify-between bg-gradient">
           <div class="flex w-full px-8 text-xl">
             <span class="w-[40%]">Coding Bootcamp</span>
@@ -295,13 +295,7 @@
             </p>
             <p>Click on the globe to get a full screen view!</p>
           </div>
-          <div class="w-[50%]">
-            <router-link :to="{ name: 'myjourney' }">
-              <div id="globe-container">
-                <globe v-if="travelIsOpen" />
-              </div>
-            </router-link>
-          </div>
+          <div class="w-[50%]"></div>
         </div>
 
         <div class="flex justify-between py-4 bg-gradient">
@@ -416,7 +410,7 @@
     <section id="mywork" class="">
       <h1 class="text-7xl mt-[2rem]">my work.</h1>
 
-      <div class="flex gap-[2rem]">
+      <div class="flex gap-[2rem] mt-[2rem]">
         <div class="w-[50%] flex flex-col gap-[2rem]">
           <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
             <p class="text-2xl text-center">My personal website</p>
@@ -463,21 +457,19 @@
           <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
             <p class="text-2xl text-center">3D Globe</p>
 
-            <img
-              class=""
-              src="../assets/images/3d-globe.png"
-              alt="website photo"
-            />
+            <div id="globe-container">
+              <globe />
+            </div>
 
             <p class="text-center">
               This globe represents my travel in 2022/2023. I added the main
-              locations as data points on the globe
+              locations as data points on the globe. The blue ball moves on the
+              path i traveled.
             </p>
 
             <div class="flex justify-around">
               <div class="">JavaScript</div>
-              <div class="">Vue</div>
-              <div class="">Tailwind</div>
+              <div class="">Three.js</div>
             </div>
 
             <div class="flex gap-2 justify-center">

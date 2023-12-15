@@ -125,7 +125,7 @@ export default {
 
         // Create a point
         const pointGeometry = new THREE.SphereGeometry(0.01);
-        const pointMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        const pointMaterial = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
         const point = new THREE.Mesh(pointGeometry, pointMaterial);
 
         point.position.x = radius * Math.sin(phi) * Math.cos(theta);
