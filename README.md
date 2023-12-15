@@ -2,6 +2,5 @@
 
 ## Website still in building process
 
-This website represents my cv in a dynamic, playable and entertaining way.
-
-Enjoy getting to know more about me!
+This website represents my cv. And my work.
+There is also a 3d globe representing my travel in 2022/2023
