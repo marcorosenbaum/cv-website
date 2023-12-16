@@ -29,7 +29,7 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 66;
+      camera.position.z = 6;
 
       const globecanvas = document.getElementById("globecanvas");
       const renderer = new THREE.WebGLRenderer({
@@ -277,14 +277,14 @@ export default {
       scene.add(group, stars);
       group.rotation.y = 4.4;
 
-      function globeZoomAnimation() {
-        for (let i = 0; i <= 61; i++) {
-          setTimeout(() => {
-            camera.position.z -= 1;
-          }, i * 40);
-        }
-      }
-      globeZoomAnimation();
+      // function globeZoomAnimation() {
+      //   for (let i = 0; i <= 61; i++) {
+      //     setTimeout(() => {
+      //       camera.position.z -= 1;
+      //     }, i * 40);
+      //   }
+      // }
+      // globeZoomAnimation();
 
       const animate = function () {
         requestAnimationFrame(animate);
@@ -314,5 +314,9 @@ export default {
 #globecanvas {
   width: inherit;
   height: inherit;
+}
+
+template {
+  margin: 0;
 }
 </style>
