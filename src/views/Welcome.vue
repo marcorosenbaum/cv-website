@@ -1,4 +1,104 @@
 <template>
+  <svg
+    id="cube1"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#ff0000"
+    stroke-width="0.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-box absolute top-[10.5%] right-[16%]"
+  >
+    <path
+      d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+    />
+    <path d="m3.3 7 8.7 5 8.7-5" />
+    <path d="M12 22V12" />
+  </svg>
+
+  <svg
+    id="cube2"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#ff9500"
+    stroke-width="0.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-box absolute top-[18.5%] right-[19%]"
+  >
+    <path
+      d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+    />
+    <path d="m3.3 7 8.7 5 8.7-5" />
+    <path d="M12 22V12" />
+  </svg>
+
+  <svg
+    id="cube3"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#ff6500"
+    stroke-width="0.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-box absolute top-[27%] right-[16.5%]"
+  >
+    <path
+      d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+    />
+    <path d="m3.3 7 8.7 5 8.7-5" />
+    <path d="M12 22V12" />
+  </svg>
+
+  <svg
+    id="cube4"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#779500"
+    stroke-width="0.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-box absolute top-[19%] right-[13.5%]"
+  >
+    <path
+      d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+    />
+    <path d="m3.3 7 8.7 5 8.7-5" />
+    <path d="M12 22V12" />
+  </svg>
+
+  <svg
+    id="cube5"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#bb9550"
+    stroke-width="0.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-box absolute top-[10.5%] right-[10.5%]"
+  >
+    <path
+      d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+    />
+    <path d="m3.3 7 8.7 5 8.7-5" />
+    <path d="M12 22V12" />
+  </svg>
+
   <div class="flex flex-col mt-[20%] items-center">
     <div class="waviy fadeInName">
       <span style="--i: 1">M</span>
@@ -94,5 +194,21 @@
 
 .fadeInLink {
   animation: fadeIn 7s ease-in;
+}
+
+#cube1 {
+  animation: fadeIn 10s ease-in;
+}
+#cube2 {
+  animation: fadeIn 12s ease-in;
+}
+#cube3 {
+  animation: fadeIn 7.5s ease-in;
+}
+#cube4 {
+  animation: fadeIn 3s ease-in;
+}
+#cube5 {
+  animation: fadeIn 5s ease-in;
 }
 </style>

@@ -4,6 +4,7 @@ export default {
   theme: {
     colors: {
       blackground: "#1e1e1e",
+      lightOrange: "#ffc864",
     },
     extend: {},
   },

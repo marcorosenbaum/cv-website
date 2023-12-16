@@ -29,7 +29,7 @@ export default {
         0.1,
         1000
       );
-      camera.position.z = 66;
+      camera.position.z = 6;
 
       const globecanvas = document.getElementById("globecanvas");
       const renderer = new THREE.WebGLRenderer({
@@ -115,6 +115,7 @@ export default {
       // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.minDistance = 3.5;
+      controls.maxDistance = 10;
       controls.update();
 
       // Function to add a data point to the globe
@@ -125,7 +126,7 @@ export default {
 
         // Create a point
         const pointGeometry = new THREE.SphereGeometry(0.01);
-        const pointMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        const pointMaterial = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
         const point = new THREE.Mesh(pointGeometry, pointMaterial);
 
         point.position.x = radius * Math.sin(phi) * Math.cos(theta);
@@ -276,14 +277,14 @@ export default {
       scene.add(group, stars);
       group.rotation.y = 4.4;
 
-      function globeZoomAnimation() {
-        for (let i = 0; i <= 61; i++) {
-          setTimeout(() => {
-            camera.position.z -= 1;
-          }, i * 40);
-        }
-      }
-      globeZoomAnimation();
+      // function globeZoomAnimation() {
+      //   for (let i = 0; i <= 61; i++) {
+      //     setTimeout(() => {
+      //       camera.position.z -= 1;
+      //     }, i * 40);
+      //   }
+      // }
+      // globeZoomAnimation();
 
       const animate = function () {
         requestAnimationFrame(animate);
@@ -313,5 +314,9 @@ export default {
 #globecanvas {
   width: inherit;
   height: inherit;
+}
+
+template {
+  margin: 0;
 }
 </style>
