@@ -1,5 +1,27 @@
 <template>
-  <div class="cube1-wrapper absolute top-[10.5%] right-[16%]">
+  <div class="cube3-wrapper text-3xl absolute top-[1%] right-[5%]">
+    &lt;/div&gt;
+  </div>
+  <div class="cube3-wrapper text-3xl absolute top-[5%] right-[2%]">
+    &lt;/div&gt;
+  </div>
+  <div class="cube3-wrapper text-3xl absolute top-[10%] right-[8%]">
+    &lt;/div&gt;
+  </div>
+  <div class="cube3-wrapper text-3xl absolute top-[15%] right-[5%]">
+    &lt;/div&gt;
+  </div>
+  <div class="cube3-wrapper text-3xl absolute top-[20%] right-[2%]">
+    &lt;/div&gt;
+  </div>
+  <div class="cube3-wrapper text-3xl absolute top-[25%] right-[0%]">
+    &lt;/div&gt;
+  </div>
+  <div class="cube3-wrapper text-3xl absolute top-[1%] right-[5%]">
+    &lt;/div&gt;
+  </div>
+
+  <!-- <div class="cube1-wrapper absolute top-[10.5%] right-[16%]">
     <svg
       id="cube1"
       xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +129,7 @@
       <path d="m3.3 7 8.7 5 8.7-5" />
       <path d="M12 22V12" />
     </svg>
-  </div>
+  </div> -->
 
   <div class="flex flex-col mt-[20%] items-center">
     <div class="waviy fadeInName">
@@ -211,7 +233,7 @@ export default {
 .waviy span {
   position: relative;
   display: inline-block;
-  color: #fff;
+  color: currentColor;
   font-size: 4rem;
   text-transform: uppercase;
   animation: flip 2s infinite;
@@ -259,7 +281,7 @@ export default {
   animation: fadeIn 10s ease-in;
 }
 .cube3-wrapper {
-  animation: fadeIn 7.5s ease-in;
+  animation: fadeIn 0.5s ease-in;
 }
 .cube4-wrapper {
   animation: fadeIn 3s ease-in;

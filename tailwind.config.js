@@ -3,8 +3,8 @@ export default {
   content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   theme: {
     colors: {
-      blackground: "#1e1e1e",
-      lightOrange: "#ffc864",
+      background: "#b1bdfb",
+      lightOrange: "#1f2b6a",
     },
     extend: {},
   },
