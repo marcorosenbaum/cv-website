@@ -214,7 +214,7 @@ export default {
   color: #fff;
   font-size: 4rem;
   text-transform: uppercase;
-  animation: flip 3s infinite;
+  animation: flip 2s infinite;
   animation-iteration-count: 1;
   animation-delay: calc(0.05s * var(--i));
 }
