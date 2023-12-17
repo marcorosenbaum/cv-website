@@ -45,8 +45,8 @@
         >
         <a
           class="transition-transform transform hover:scale-110 duration-300"
-          href="mailto:contact.marco.website@gmail.com"
-          >Contact me</a
+          href="#contact"
+          >Contact</a
         >
 
         <!-- <router-link :to="{ name: 'myjourney' }">My travel journey</router-link> -->
@@ -55,12 +55,12 @@
 
     <main>
       <section id="aboutme" class="flex flex-col gap-[3rem]">
-        <div class="flex gap-[2rem]">
-          <div class="w-[60%]">
+        <div id="aboutme-wrapper" class="flex gap-[2rem]">
+          <div class="w-[100%]">
             <h1 class="text-7xl mt-[2rem]">About me.</h1>
             <h2 class="text-5xl mt-[2rem]">
-              I'm <span id="span-marco">Marco</span>. A developer, an optimist
-              and problem solver.
+              I'm <span id="span-marco">Marco</span>. A&nbsp;developer, an
+              optimist and problem solver.
             </h2>
             <p class="mt-[4rem] text-xl">
               I like the challenge to solve problems logically and I like to
@@ -76,22 +76,23 @@
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
-              Click <strong>here</strong> to read more personal stuff about me.
+              Click <span class="text-lightOrange">here</span> to read more
+              personal stuff about me.
             </p>
 
             <p v-if="aboutMePersonal" class="mt-[1rem] text-xl">
               Apart from coding I try to spend as much time in nature as
               possible. I enjoy reading books like "Unlimited Memory" by Kevin
-              Horsley or "Limitless" by Jim Kwik. In my holidays I like to
+              Horsley or "Limitless" by Jim Kwik.<br />In my holidays I like to
               travel. Especially to places with unique landscapes. And I enjoy
               engaging in physically demanding sports that require focus, such
-              as climbing. But none of these things can compare to having dinner
-              with friends and playing a great strategy board game like Catan
-              afterward.
+              as climbing.<br />But none of these things can compare to having
+              dinner with friends and playing a great strategy board game like
+              Catan afterward.
             </p>
           </div>
 
-          <div class="w-[40%]">
+          <div id="photo-wrapper" class="w-[60%]">
             <img
               id="photo-marco"
               class="w-[100%] rounded-xl block mx-auto mt-[2rem]"
@@ -168,9 +169,12 @@
       <hr />
 
       <section id="skills">
-        <h1 id="skills" class="text-7xl mt-[2rem]">Skills.</h1>
-        <div class="flex justify-around gap-16 mt-[2rem]">
-          <div class="bg-gradient w-[50%] p-4 rounded-3xl text-center">
+        <h1 id="skills-header" class="text-7xl mt-[2rem]">Skills.</h1>
+        <div id="skills-wrapper" class="flex justify-around gap-16 mt-[2rem]">
+          <div
+            id="technical-wrapper"
+            class="bg-gradient w-[50%] p-4 rounded-3xl text-center"
+          >
             <h1 class="text-4xl">Technical</h1>
 
             <div class="flex">
@@ -243,7 +247,8 @@
             </div>
           </div>
           <div
-            class="bg-gradient w-[50%] p-4 rounded-3xl text-2xl flex flex-col justify-between space-x-8"
+            id="other-wrapper"
+            class="bg-gradient w-[50%] p-4 rounded-3xl text-2xl flex flex-col justify-between space-x-16"
           >
             <h1 class="text-4xl text-center">Other</h1>
 
@@ -261,25 +266,21 @@
         <h1 id="experience" class="text-7xl mt-[2rem]">Experience.</h1>
 
         <div class="flex flex-col gap-4 mt-[2rem]">
-          <div class="flex py-4 justify-between bg-gradient">
+          <div
+            v-on:click="codingIsOpen = !codingIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
+          >
             <div class="flex w-full px-8 text-xl">
               <span class="w-[40%]">Coding Bootcamp</span>
-              <img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
-              <span class="w-[40%]">Coding Bootcamps Europe, remote</span>
+
+              <span class="w-[40%]">@ Coding Bootcamps Europe, remote</span>
               <span class="w-[20%] text-right">2023</span>
             </div>
             <div
-              v-on:click="codingIsOpen = !codingIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="codingIsOpen ? '-' : '+'"
             ></div>
           </div>
-
           <div v-if="codingIsOpen" class="h-[100px] border border-white-2">
             During this training I learned the basics of frontend development
             including JavaScript, Vue.js and Node.js. At the end of the course I
@@ -287,20 +288,17 @@
             single page application in a team.
           </div>
 
-          <div class="flex justify-between py-4 bg-gradient">
+          <div
+            v-on:click="futureIsOpen = !futureIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
             <div class="flex w-full justify-between px-8 text-xl">
               <span class="w-[40%]">Team leader - Installation</span>
-              <img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
-              <span class="w-[40%]">Future Energy, New Zealand</span>
+
+              <span class="w-[40%]">@ Future Energy, New Zealand</span>
               <span class="w-[20%] text-right">2022</span>
             </div>
             <div
-              v-on:click="futureIsOpen = !futureIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="futureIsOpen ? '-' : '+'"
             ></div>
@@ -320,20 +318,16 @@
             </div>
           </div>
 
-          <div class="flex justify-between py-4 bg-gradient">
+          <div
+            v-on:click="travelIsOpen = !travelIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Travel</span
-              ><img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
-              <span class="w-[40%]">planet earth</span>
+              <span class="w-[40%]">Travel</span>
+              <span class="w-[40%]">@ planet earth</span>
               <span class="w-[20%] text-right">2021 - 2023</span>
             </div>
             <div
-              v-on:click="travelIsOpen = !travelIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="travelIsOpen ? '-' : '+'"
             ></div>
@@ -361,20 +355,16 @@
             <div class="w-[50%]"></div>
           </div>
 
-          <div class="flex justify-between py-4 bg-gradient">
+          <div
+            v-on:click="iquandoIsOpen = !iquandoIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">State certified technical engineer</span
-              ><img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
-              <span class="w-[40%]">IQuando GmbH</span>
+              <span class="w-[40%]">State certified technical engineer</span>
+              <span class="w-[40%]">@ IQuando GmbH, Germany</span>
               <span class="w-[20%] text-right">2018 - 2020</span>
             </div>
             <div
-              v-on:click="iquandoIsOpen = !iquandoIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="iquandoIsOpen ? '-' : '+'"
             ></div>
@@ -383,22 +373,18 @@
             hi FUTRE ERNERGY
           </div>
 
-          <div class="flex justify-between py-4 bg-gradient">
+          <div
+            v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Team leader</span
-              ><img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
+              <span class="w-[40%]">Team leader</span>
               <span class="w-[40%]"
-                >Eurogate Technical Services GmbH, Germany</span
+                >@ Eurogate Technical Services GmbH, Germany</span
               >
               <span class="w-[20%] text-right">2018 - 2021</span>
             </div>
             <div
-              v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="teamLeadEgtsIsOpen ? '-' : '+'"
             ></div>
@@ -412,22 +398,18 @@
             <p>Monitoring costs and appointments in projects</p>
           </div>
 
-          <div class="flex justify-between py-4 bg-gradient">
+          <div
+            v-on:click="technicianEgtsIsOpen = !technicianEgtsIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Electronic technician</span
-              ><img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
+              <span class="w-[40%]">Electronic technician</span>
               <span class="w-[40%]"
-                >Eurogate Technical Services GmbH, Germany</span
+                >@ Eurogate Technical Services GmbH, Germany</span
               >
               <span class="w-[20%] text-right">2016 - 2018</span>
             </div>
             <div
-              v-on:click="technicianEgtsIsOpen = !technicianEgtsIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="technicianEgtsIsOpen ? '-' : '+'"
             ></div>
@@ -440,22 +422,18 @@
             <p>Debugging of equipment during operation</p>
           </div>
 
-          <div class="flex justify-between py-4 bg-gradient">
+          <div
+            v-on:click="traineeIsOpen = !traineeIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Mechatronics trainee</span
-              ><img
-                class="map-svg"
-                src="../assets/svg/map-pin.svg
-            "
-                alt="map pin"
-              />
+              <span class="w-[40%]">Mechatronics trainee</span>
               <span class="w-[40%]"
-                >Eurogate Technical Services GmbH, Germany</span
+                >@ Eurogate Technical Services GmbH, Germany</span
               >
               <span class="w-[20%] text-right">2012 - 2016</span>
             </div>
             <div
-              v-on:click="traineeIsOpen = !traineeIsOpen"
               class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="traineeIsOpen ? '-' : '+'"
             ></div>
@@ -476,8 +454,8 @@
       <section id="mywork" class="">
         <h1 class="text-7xl mt-[2rem]">My work.</h1>
 
-        <div class="flex gap-[2rem] mt-[2rem]">
-          <div class="w-[50%] flex flex-col gap-[2rem]">
+        <div id="mywork-wrapper" class="flex gap-[2rem] mt-[2rem]">
+          <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
             <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
               <p class="text-2xl text-center">My personal website</p>
 
@@ -524,7 +502,7 @@
               <p class="text-2xl text-center">3D Globe</p>
 
               <div class="relative" id="globe-container">
-                <globe class="globe" />
+                <!-- <globe class="globe" /> -->
                 <div class="overlay"></div>
               </div>
 
@@ -575,7 +553,7 @@
             </div>
           </div>
 
-          <div class="w-[50%] flex flex-col gap-[2rem]">
+          <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
             <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
               <p class="text-2xl text-center">Concert Compass</p>
               <div class="flex justify-center">
@@ -710,7 +688,7 @@
         </div>
       </section>
       <hr />
-      <section class="">
+      <section id="contact">
         <h1 id="skills" class="text-7xl mt-[2rem]">Contact me.</h1>
         <div class="flex flex-col justify-around mt-[2rem]">
           <p class="text-xl mt-[2rem]">
@@ -886,5 +864,26 @@ hr {
 
 .fadeInHome {
   animation: fadeIn 1s ease-in;
+}
+
+@media screen and (max-width: 1100px) {
+  #aboutme-wrapper,
+  #skills-wrapper,
+  #mywork-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  #photo-wrapper,
+  #technical-wrapper,
+  #other-wrapper,
+  .project-card-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 10px;
+  }
 }
 </style>
