@@ -76,7 +76,7 @@
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
-              click here to read more personal stuff about me.
+              Click <strong>here</strong> to read more personal stuff about me.
             </p>
 
             <p v-if="aboutMePersonal" class="mt-[1rem] text-xl">
@@ -217,7 +217,7 @@
           <div
             class="bg-gradient w-[50%] p-4 rounded-3xl text-center text-2xl flex flex-col justify-between"
           >
-            <h1 class="text-4xl">other skills</h1>
+            <h1 class="text-4xl">Other skills</h1>
             <p>Team leading</p>
             <p>Project management</p>
             <p>Scrum</p>
@@ -246,7 +246,7 @@
             </div>
             <div
               v-on:click="codingIsOpen = !codingIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="codingIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -272,7 +272,7 @@
             </div>
             <div
               v-on:click="futureIsOpen = !futureIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="futureIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -305,7 +305,7 @@
             </div>
             <div
               v-on:click="travelIsOpen = !travelIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="travelIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -346,7 +346,7 @@
             </div>
             <div
               v-on:click="iquandoIsOpen = !iquandoIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="iquandoIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -370,7 +370,7 @@
             </div>
             <div
               v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="teamLeadEgtsIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -399,7 +399,7 @@
             </div>
             <div
               v-on:click="technicianEgtsIsOpen = !technicianEgtsIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="technicianEgtsIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -427,7 +427,7 @@
             </div>
             <div
               v-on:click="traineeIsOpen = !traineeIsOpen"
-              class="text-2xl px-8"
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
               v-text="traineeIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -485,7 +485,7 @@
                 <a
                   class="pl-4 transition-transform transform hover:scale-110 duration-300"
                   target="_blank"
-                  href="https://github.com/coding-bootcamps-eu/final-project-2023-08-concert-compass"
+                  href="https://github.com/marcorosenbaum/cv-website"
                   >Github</a
                 >
               </div>
@@ -809,12 +809,13 @@ export default {
 }
 
 .bg-gradient {
-  background: linear-gradient(
-    40deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(139, 190, 123, 1) 54%,
+  /* background: linear-gradient(
+    20deg,
+    rgba(62, 62, 62) 0%,
+    rgba(253, 187, 45, 0.405) 50%,
     rgba(253, 187, 45, 1) 100%
-  );
+  ); */
+  background-color: rgb(46, 46, 46);
 }
 
 hr {

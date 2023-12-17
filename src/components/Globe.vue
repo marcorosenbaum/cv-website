@@ -316,7 +316,7 @@ export default {
   height: inherit;
 }
 
-template {
+* {
   margin: 0;
 }
 </style>
