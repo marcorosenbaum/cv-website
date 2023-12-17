@@ -55,7 +55,7 @@
 
     <main>
       <section id="aboutme" class="flex flex-col gap-[3rem]">
-        <div class="flex gap-[2rem] h-[70vh]">
+        <div class="flex gap-[2rem]">
           <div class="w-[60%]">
             <h1 class="text-7xl mt-[2rem]">About me.</h1>
             <h2 class="text-5xl mt-[2rem]">
@@ -72,7 +72,7 @@
             </p>
 
             <p
-              class="mt-[6rem] w-[50%] cursor-pointer transition-transform transform hover:scale-105 duration-300"
+              class="mt-[6rem] inline-block cursor-pointer transition-transform transform hover:scale-105 duration-300"
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
@@ -167,57 +167,86 @@
       </section>
       <hr />
 
-      <section class="">
+      <section id="skills">
         <h1 id="skills" class="text-7xl mt-[2rem]">Skills.</h1>
         <div class="flex justify-around gap-16 mt-[2rem]">
           <div class="bg-gradient w-[50%] p-4 rounded-3xl text-center">
-            <h1 class="text-4xl">Technical skills</h1>
-            <div class="flex gap-4">
-              <div class="w-[50%] flex flex-col items-end">
-                <img
-                  class="w-10"
-                  src="../assets/svg/html5.svg"
-                  alt="html icon"
-                />
-                <img class="w-10" src="../assets/svg/css3.svg" alt="css icon" />
-                <img
-                  class="w-10"
-                  src="../assets/svg/tailwind.svg"
-                  alt="tailwind icon"
-                />
-                <img
-                  class="w-10"
-                  src="../assets/svg/javascript.svg"
-                  alt="js icon"
-                />
-                <img
-                  class="w-10"
-                  src="../assets/svg/nodejs.svg"
-                  alt="nodejs icon"
-                />
-                <img class="w-10" src="../assets/svg/vue.svg" alt="vue icon" />
-                <img
-                  class="w-10 h-10"
-                  src="../assets/svg/pinia.svg"
-                  alt="pinia icon"
-                />
+            <h1 class="text-4xl">Technical</h1>
+
+            <div class="flex">
+              <div class="w-[50%]">
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10"
+                    src="../assets/svg/html5.svg"
+                    alt="html icon"
+                  />
+                  <p class="text-2xl">HTML</p>
+                </div>
+
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10"
+                    src="../assets/svg/css3.svg"
+                    alt="css icon"
+                  />
+                  <p class="text-2xl">CSS</p>
+                </div>
+
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10"
+                    src="../assets/svg/tailwind.svg"
+                    alt="tailwind icon"
+                  />
+                  <p class="text-2xl">Tailwind</p>
+                </div>
+
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10"
+                    src="../assets/svg/javascript.svg"
+                    alt="js icon"
+                  />
+                  <p class="text-2xl">JavaScript</p>
+                </div>
               </div>
 
-              <div class="w-[60%] flex flex-col items-start text-2xl">
-                <p class="h-10">HTML</p>
-                <p class="h-10">CSS</p>
-                <p class="h-10">Tailwind</p>
-                <p class="h-10">JavaScript</p>
-                <p class="h-10">node.js</p>
-                <p class="h-10">Vue</p>
-                <p class="h-10">Pinia</p>
+              <div class="w-[50%]">
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10"
+                    src="../assets/svg/nodejs.svg"
+                    alt="nodejs icon"
+                  />
+                  <p class="text-2xl">Node</p>
+                </div>
+
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10 h-10"
+                    src="../assets/svg/pinia.svg"
+                    alt="pinia icon"
+                  />
+                  <p class="text-2xl">Pinia</p>
+                </div>
+
+                <div class="flex gap-2 items-center p-4">
+                  <img
+                    class="w-10"
+                    src="../assets/svg/vue.svg"
+                    alt="html icon"
+                  />
+                  <p class="text-2xl">Vue</p>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="bg-gradient w-[50%] p-4 rounded-3xl text-center text-2xl flex flex-col justify-between"
+            class="bg-gradient w-[50%] p-4 rounded-3xl text-2xl flex flex-col justify-between space-x-8"
           >
-            <h1 class="text-4xl">Other skills</h1>
+            <h1 class="text-4xl text-center">Other</h1>
+
             <p>Team leading</p>
             <p>Project management</p>
             <p>Scrum</p>
@@ -820,7 +849,7 @@ export default {
 
 hr {
   color: #ffa500;
-  margin: 4rem 0 4rem 0;
+  margin: 8rem 0 8rem 0;
 }
 
 .icon {
