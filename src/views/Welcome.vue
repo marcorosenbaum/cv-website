@@ -168,16 +168,25 @@ export default {
   },
   methods: {
     changeToHome() {
+      document.getElementById("cube3").classList.add("shakeCube");
       setTimeout(() => {
+        document.getElementById("cube4").classList.add("shakeCube");
+
         document.getElementById("cube3").classList.add("dropCube");
       }, 200);
       setTimeout(() => {
+        document.getElementById("cube5").classList.add("shakeCube");
+
         document.getElementById("cube4").classList.add("dropCube");
       }, 400);
       setTimeout(() => {
+        document.getElementById("cube2").classList.add("shakeCube");
+
         document.getElementById("cube5").classList.add("dropCube");
       }, 600);
       setTimeout(() => {
+        document.getElementById("cube1").classList.add("shakeCube");
+
         document.getElementById("cube2").classList.add("dropCube");
       }, 800);
       setTimeout(() => {
@@ -232,15 +241,15 @@ export default {
 }
 
 .fadeInName {
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
 .fadeInOccu {
-  animation: fadeIn 5s ease-in;
+  animation: fadeIn 4s ease-in;
 }
 
 .fadeInLink {
-  animation: fadeIn 7s ease-in;
+  animation: fadeIn 5s ease-in;
 }
 
 .cube1-wrapper {
@@ -265,6 +274,29 @@ export default {
   }
 }
 
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.shakeCube {
+  animation: shake 1s infinite;
+}
 .dropCube {
   animation: moveFromTop 1.9s ease-out; /* Apply animation */
 }
