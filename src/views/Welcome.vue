@@ -1,24 +1,97 @@
 <template>
-  <div class="cube3-wrapper text-3xl absolute top-[1%] right-[5%]">
+  <div class="cube2-wrapper text-xl rotate-12 absolute top-[5%] right-[50%]">
+    &lt;/html&gt;
+  </div>
+  <div class="cube3-wrapper text-2xl absolute -rotate-12 top-[0%] right-[40%]">
+    &lt;/section&gt;
+  </div>
+  <div class="cube5-wrapper text-2xl absolute top-[5%] right-[32%]">
+    &lt;body&gt;
+  </div>
+  <div class="cube1-wrapper text-xl rotate-12 absolute top-[0%] right-[20%]">
+    &lt;/a&gt;
+  </div>
+  <div class="cube2-wrapper text-2xl absolute top-[6%] right-[2%]">
+    &lt;/footer&gt;
+  </div>
+  <div class="cube4-wrapper text-2xl -rotate-12 absolute top-[0%] right-[0%]">
+    &lt;link&gt;
+  </div>
+  <div class="cube5-wrapper textxl rotate-12 absolute top-[10%] right-[40%]">
+    &lt;/span&gt;
+  </div>
+  <div class="cube1-wrapper text-2xl absolute top-[0%] right-[60%]">
+    &lt;a&gt;
+  </div>
+  <div class="cube2-wrapper text-2xl absolute top-[5%] right-[10%]">
+    &lt;/main&gt;
+  </div>
+  <div class="cube4-wrapper text-2xl -rotate-12 absolute top-[5%] right-[70%]">
+    &lt;/template&gt;
+  </div>
+  <div class="cube5-wrapper textxl rotate-12 absolute top-[2%] right-[82%]">
+    &lt;/span&gt;
+  </div>
+  <div class="cube1-wrapper text-2xl absolute top-[6%] right-[88%]">
+    &lt;style&gt;
+  </div>
+  <div class="cube2-wrapper text-2xl absolute top-[0%] right-[92%]">
+    &lt;header&gt;
+  </div>
+
+  <div class="cube2-wrapper text-xl rotate-12 absolute top-[15%] right-[52%]">
+    &lt;form&gt;
+  </div>
+  <div class="cube3-wrapper text-2xl absolute top-[20%] right-[90%]">
+    &lt;/section&gt;
+  </div>
+  <div class="cube5-wrapper text-2xl absolute top-[15%] right-[30%]">
+    &lt;/html&gt;
+  </div>
+  <div class="cube1-wrapper text-xl rotate-12 absolute top-[10%] right-[20%]">
+    &lt;style&gt;
+  </div>
+  <div class="cube2-wrapper text-2xl absolute top-[15%] right-[10%]">
+    &lt;/main&gt;
+  </div>
+  <div class="cube4-wrapper text-2xl -rotate-12 absolute top-[13%] right-[2%]">
+    &lt;input&gt;
+  </div>
+  <div class="cube5-wrapper textxl rotate-12 absolute top-[15%] right-[43%]">
+    &lt;script&gt;
+  </div>
+  <div class="cube1-wrapper text-2xl absolute top-[10%] right-[60%]">
+    &lt;body&gt;
+  </div>
+  <div class="cube2-wrapper text-2xl absolute top-[15%] right-[10%]">
+    &lt;/main&gt;
+  </div>
+  <div class="cube4-wrapper text-2xl -rotate-12 absolute top-[15%] right-[70%]">
+    &lt;link&gt;
+  </div>
+  <div class="cube5-wrapper text-xl rotate-12 absolute top-[10%] right-[80%]">
+    &lt;/html&gt;
+  </div>
+  <div class="cube1-wrapper text-2xl absolute top-[15%] right-[90%]">
     &lt;/div&gt;
   </div>
-  <div class="cube3-wrapper text-3xl absolute top-[5%] right-[2%]">
-    &lt;/div&gt;
+  <div class="cube2-wrapper text-xl absolute top-[10%] right-[92%]">
+    &lt;fieldset&gt;
   </div>
-  <div class="cube3-wrapper text-3xl absolute top-[10%] right-[8%]">
-    &lt;/div&gt;
+  <div class="cube2-wrapper text-2xl absolute top-[22%] right-[3%]">
+    &lt;/article&gt;
   </div>
-  <div class="cube3-wrapper text-3xl absolute top-[15%] right-[5%]">
-    &lt;/div&gt;
+  <div class="cube2-wrapper text-2xl absolute top-[28%] right-[1%]">
+    &lt;html&gt;
   </div>
-  <div class="cube3-wrapper text-3xl absolute top-[20%] right-[2%]">
-    &lt;/div&gt;
+  <div class="cube5-wrapper text-xl rotate-12 absolute top-[17%] right-[20%]">
+    &lt;/a&gt;
   </div>
-  <div class="cube3-wrapper text-3xl absolute top-[25%] right-[0%]">
-    &lt;/div&gt;
+  <div class="cube5-wrapper text-xl rotate-12 absolute top-[27%] right-[96%]">
+    &lt;/a&gt;
   </div>
-  <div class="cube3-wrapper text-3xl absolute top-[1%] right-[5%]">
-    &lt;/div&gt;
+  <div class="cube5-wrapper text-xl rotate-12 absolute top-[17%] right-[80%]">
+    &lt;/hr&gt;
   </div>
 
   <!-- <div class="cube1-wrapper absolute top-[10.5%] right-[16%]">
@@ -190,30 +263,30 @@ export default {
   },
   methods: {
     changeToHome() {
-      document.getElementById("cube3").classList.add("shakeCube");
-      setTimeout(() => {
-        document.getElementById("cube4").classList.add("shakeCube");
+      document.getElementsByClassName("cube3").classList.add("shakeCube");
+      // setTimeout(() => {
+      //   document.getElementByClassName("cube4").classList.add("shakeCube");
 
-        document.getElementById("cube3").classList.add("dropCube");
-      }, 200);
-      setTimeout(() => {
-        document.getElementById("cube5").classList.add("shakeCube");
+      //   document.getElementByClassName("cube3").classList.add("dropCube");
+      // }, 200);
+      // setTimeout(() => {
+      //   document.getElementByClassName("cube5").classList.add("shakeCube");
 
-        document.getElementById("cube4").classList.add("dropCube");
-      }, 400);
-      setTimeout(() => {
-        document.getElementById("cube2").classList.add("shakeCube");
+      //   document.getElementByClassName("cube4").classList.add("dropCube");
+      // }, 400);
+      // setTimeout(() => {
+      //   document.getElementByClassName("cube2").classList.add("shakeCube");
 
-        document.getElementById("cube5").classList.add("dropCube");
-      }, 600);
-      setTimeout(() => {
-        document.getElementById("cube1").classList.add("shakeCube");
+      //   document.getElementByClassName("cube5").classList.add("dropCube");
+      // }, 600);
+      // setTimeout(() => {
+      //   document.getElementByClassName("cube1").classList.add("shakeCube");
 
-        document.getElementById("cube2").classList.add("dropCube");
-      }, 800);
-      setTimeout(() => {
-        document.getElementById("cube1").classList.add("dropCube");
-      }, 1000);
+      //   document.getElementByClassName("cube2").classList.add("dropCube");
+      // }, 800);
+      // setTimeout(() => {
+      //   document.getElementByClassName("cube1").classList.add("dropCube");
+      // }, 1000);
 
       setTimeout(() => {
         this.$router.push("/home");
@@ -276,18 +349,23 @@ export default {
 
 .cube1-wrapper {
   animation: fadeIn 8s ease-in;
+  opacity: 0.5;
 }
 .cube2-wrapper {
   animation: fadeIn 10s ease-in;
+  opacity: 0.3;
 }
 .cube3-wrapper {
-  animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 7.5s ease-in;
+  opacity: 0.5;
 }
 .cube4-wrapper {
   animation: fadeIn 3s ease-in;
+  opacity: 0.7;
 }
 .cube5-wrapper {
   animation: fadeIn 5s ease-in;
+  opacity: 0.5;
 }
 
 @keyframes moveFromTop {
