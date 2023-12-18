@@ -5,28 +5,28 @@
     >
       <div id="nav" class="flex items-end gap-[3rem]">
         <a
-          class="transition-transform transform hover:scale-110 duration-300"
+          class="transition-transform hover:scale-110 duration-300"
           href="#aboutme"
           >About me</a
         >
         <a
-          class="transition-transform transform hover:scale-110 duration-300"
+          class="transition-transform hover:scale-110 duration-300"
           href="#skills"
           >Skills</a
         >
 
         <a
-          class="transition-transform transform hover:scale-110 duration-300"
+          class="transition-transform hover:scale-110 duration-300"
           href="#mywork"
           >My work</a
         >
         <a
-          class="transition-transform transform hover:scale-110 duration-300"
+          class="transition-transform hover:scale-110 duration-300"
           href="#experience"
           >Experience</a
         >
         <a
-          class="transition-transform transform hover:scale-110 duration-300"
+          class="transition-transform hover:scale-110 duration-300"
           href="#contact"
           >Contact</a
         >
@@ -54,7 +54,7 @@
             </p>
 
             <p
-              class="mt-[6rem] inline-block cursor-pointer transition-transform transform hover:scale-105 duration-300"
+              class="mt-[6rem] inline-block cursor-pointer transition-transform hover:scale-105 duration-300"
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
@@ -99,7 +99,7 @@
               />
             </svg>
             <a
-              class="pl-4 transition-transform transform hover:scale-110 duration-300"
+              class="pl-4 transition-transform hover:scale-110 duration-300"
               target="_blank"
               href="https://github.com/marcorosenbaum"
               >Github</a
@@ -120,7 +120,7 @@
               />
             </svg>
             <a
-              class="pl-4 transition-transform transform hover:scale-110 duration-300"
+              class="pl-4 transition-transform hover:scale-110 duration-300"
               target="_blank"
               href="https://www.linkedin.com/in/marcorosenbaum"
               >LinkedIn</a
@@ -134,7 +134,7 @@
               alt=""
             />
             <a
-              class="pl-4 transition-transform transform hover:scale-110 duration-300"
+              class="pl-4 transition-transform hover:scale-110 duration-300"
               target="_blank"
               href="https://www.codewars.com/users/marcorosenbaum"
               >Codewars</a
@@ -283,7 +283,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://github.com/marcorosenbaum/cv-website"
                   >Github</a
@@ -331,7 +331,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://github.com/coding-bootcamps-eu/final-project-2023-08-concert-compass"
                   >Github</a
@@ -389,7 +389,7 @@
                     />
                   </svg>
                   <a
-                    class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                    class="pl-4 transition-transform hover:scale-110 duration-300"
                     target="_blank"
                     href="https://cbe-concert-compass.netlify.app"
                     >Website</a
@@ -410,7 +410,7 @@
                     />
                   </svg>
                   <a
-                    class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                    class="pl-4 transition-transform hover:scale-110 duration-300"
                     target="_blank"
                     href="https://github.com/coding-bootcamps-eu/final-project-2023-08-concert-compass"
                     >Github</a
@@ -464,7 +464,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://github.com/marcorosenbaum/coding-bootcamp-tasks"
                   >Github</a
@@ -481,7 +481,7 @@
         <div class="flex flex-col gap-4 mt-[2rem]">
           <div
             v-on:click="codingIsOpen = !codingIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
           >
             <div class="flex w-full px-8 text-xl">
               <span class="w-[40%]">Coding Bootcamp</span>
@@ -490,7 +490,7 @@
               <span class="w-[20%] text-right">2023</span>
             </div>
             <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
               v-text="codingIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -528,7 +528,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://www.coding-bootcamps.eu/webentwickler-werden-bildungsgutschein/?utm_source=google&utm_medium=cpc&utm_campaign=17147411238&utm_term=online%20coding%20bootcamp&matchtype=p&device=c&gad_source=1&gclid=CjwKCAiA-P-rBhBEEiwAQEXhHzhOcFneeL2PLi0wO9wjSqBL1V6K-omSe5awQUTd7UqO48xUuj9szRoCcpcQAvD_BwE"
                   >Website</a
@@ -539,7 +539,7 @@
 
           <div
             v-on:click="futureIsOpen = !futureIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
               <span class="w-[40%]">Team leader - Installation</span>
@@ -548,7 +548,7 @@
               <span class="w-[20%] text-right">2022</span>
             </div>
             <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
               v-text="futureIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -586,7 +586,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://www.future-energy.co.nz/"
                   >Website</a
@@ -597,7 +597,7 @@
 
           <div
             v-on:click="travelIsOpen = !travelIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
               <span class="w-[40%]">Travel</span>
@@ -605,7 +605,7 @@
               <span class="w-[20%] text-right">2021 - 2023</span>
             </div>
             <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
               v-text="travelIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -635,7 +635,7 @@
 
           <div
             v-on:click="iquandoIsOpen = !iquandoIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
               <span class="w-[40%]">State certified technical engineer</span>
@@ -643,7 +643,7 @@
               <span class="w-[20%] text-right">2018 - 2020</span>
             </div>
             <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
               v-text="iquandoIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -684,7 +684,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://iquando.de/"
                   >Website</a
@@ -695,7 +695,7 @@
 
           <div
             v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
               <span class="w-[40%]">Team leader, technician</span>
@@ -705,7 +705,7 @@
               <span class="w-[20%] text-right">2012 - 2021</span>
             </div>
             <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
               v-text="teamLeadEgtsIsOpen ? '-' : '+'"
             ></div>
           </div>
@@ -744,7 +744,7 @@
                   />
                 </svg>
                 <a
-                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
                   href="https://www1.eurogate.de/Ueber-uns"
                   >Website</a
@@ -778,7 +778,7 @@
                 />
               </svg>
               <a
-                class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                class="pl-4 transition-transform hover:scale-110 duration-300"
                 href="mailto:contact.marco.website@gmail.com"
                 >E-mail</a
               >
@@ -797,7 +797,7 @@
                 />
               </svg>
               <a
-                class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                class="pl-4 transition-transform hover:scale-110 duration-300"
                 target="_blank"
                 href="https://www.linkedin.com/in/marcorosenbaum"
                 >LinkedIn</a
