@@ -197,7 +197,7 @@
         @click="changeToHome()"
         class="shadow-2xl p-2 rounded-3xl cursor-pointer mt-[4rem] fadeInLink transition-transform hover:scale-110 duration-300"
       >
-        Click here to view my portfolio
+        View portfolio
       </div>
     </div>
   </main>
@@ -220,7 +220,7 @@ export default {
       setTimeout(() => {
         document.getElementById(`tag31`).classList.add("dropCube");
         this.$router.push("/home");
-      }, 1900);
+      }, 1800);
     },
   },
 };

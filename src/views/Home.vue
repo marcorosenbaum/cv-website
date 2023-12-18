@@ -943,7 +943,7 @@ export default {
 }
 
 /* .heading {
-  color: white;
+  
 } */
 
 section {
