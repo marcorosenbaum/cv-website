@@ -3,25 +3,6 @@
     <div
       class="h-[5vh] bg-opacity-20 bg-background sticky top-0 flex justify-end"
     >
-      <!-- <div class="flex flex-col items-center">
-        <div class="waviy">
-          <span style="--i: 1">M</span>
-          <span style="--i: 2">a</span>
-          <span style="--i: 3">r</span>
-          <span style="--i: 4">c</span>
-          <span style="--i: 5">o</span>
-          <span class="ml-4" style="--i: 6">R</span>
-          <span style="--i: 7">o</span>
-          <span style="--i: 8">s</span>
-          <span style="--i: 9">e</span>
-          <span style="--i: 10">n</span>
-          <span style="--i: 11">b</span>
-          <span style="--i: 12">a</span>
-          <span style="--i: 13">u</span>
-          <span style="--i: 14">m</span>
-        </div>
-      </div> -->
-
       <div id="nav" class="flex items-end gap-[3rem]">
         <a
           class="transition-transform transform hover:scale-110 duration-300"
@@ -33,15 +14,16 @@
           href="#skills"
           >Skills</a
         >
-        <a
-          class="transition-transform transform hover:scale-110 duration-300"
-          href="#experience"
-          >Experience</a
-        >
+
         <a
           class="transition-transform transform hover:scale-110 duration-300"
           href="#mywork"
           >My work</a
+        >
+        <a
+          class="transition-transform transform hover:scale-110 duration-300"
+          href="#experience"
+          >Experience</a
         >
         <a
           class="transition-transform transform hover:scale-110 duration-300"
@@ -57,10 +39,10 @@
       <section id="aboutme" class="flex flex-col gap-[3rem]">
         <div id="aboutme-wrapper" class="flex gap-[2rem]">
           <div class="w-[100%]">
-            <h1 class="text-7xl mt-[2rem]">About me.</h1>
+            <h1 class="text-7xl mt-[2rem]">About me</h1>
             <h2 class="text-5xl mt-[2rem]">
-              I'm <span id="span-marco">Marco</span>. A&nbsp;developer, an
-              optimist and problem solver.
+              I'm <b>Marco</b>. A&nbsp;developer, an optimist and problem
+              solver.
             </h2>
             <p class="mt-[4rem] text-xl">
               I like the challenge to solve problems logically and I like to
@@ -169,7 +151,7 @@
       <hr />
 
       <section id="skills">
-        <h1 id="skills-header" class="text-7xl mt-[2rem]">Skills.</h1>
+        <h1 id="skills-header" class="text-7xl mt-[2rem]">Skills</h1>
         <div id="skills-wrapper" class="flex justify-around gap-16 mt-[2rem]">
           <div
             id="technical-wrapper"
@@ -262,197 +244,8 @@
         </div>
       </section>
       <hr />
-      <section class="">
-        <h1 id="experience" class="text-7xl mt-[2rem]">Experience.</h1>
-
-        <div class="flex flex-col gap-4 mt-[2rem]">
-          <div
-            v-on:click="codingIsOpen = !codingIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
-          >
-            <div class="flex w-full px-8 text-xl">
-              <span class="w-[40%]">Coding Bootcamp</span>
-
-              <span class="w-[40%]">@ Coding Bootcamps Europe, remote</span>
-              <span class="w-[20%] text-right">2023</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="codingIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-          <div v-if="codingIsOpen" class="h-[100px] border border-white-2">
-            During this training I learned the basics of frontend development
-            including JavaScript, Vue.js and Node.js. At the end of the course I
-            worked on a final project and learned how to build and deploy a
-            single page application in a team.
-          </div>
-
-          <div
-            v-on:click="futureIsOpen = !futureIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
-          >
-            <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Team leader - Installation</span>
-
-              <span class="w-[40%]">@ Future Energy, New Zealand</span>
-              <span class="w-[20%] text-right">2022</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="futureIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-
-          <div v-if="futureIsOpen" class="h-[100px] flex border border-white-2">
-            <div class="w-[75%]">
-              <p>Supervising employees on site</p>
-              <p>Installation and debugging of solar systems</p>
-            </div>
-            <div class="w-[25%]">
-              <!-- <img
-              class="h-[100px]"
-              src="../assets/images/future-energy-logo.png"
-              alt="future energy logo"
-            /> -->
-            </div>
-          </div>
-
-          <div
-            v-on:click="travelIsOpen = !travelIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
-          >
-            <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Travel</span>
-              <span class="w-[40%]">@ planet earth</span>
-              <span class="w-[20%] text-right">2021 - 2023</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="travelIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-          <div v-if="travelIsOpen" class="flex border border-white-2">
-            <div class="w-[50%]">
-              <p>
-                On this journey I traveled to Belgium, France, Spain, Indonesia,
-                Thailand, Rarotonga and Australia.
-              </p>
-              <p>
-                I also spent a year in New Zealand traveling the north and the
-                south. During this time I developed a great sense to organize
-                myself in stressful situations and increased my capability to
-                communicate fluently in english. The opportunity to live and
-                work in New Zealand was a very insightful and knowledgable
-                experience.
-              </p>
-              <p>
-                The globe on the right simulates my travel path. There is a blue
-                ball traveling my journey in a endless loop.
-              </p>
-              <p>Click on the globe to get a full screen view!</p>
-            </div>
-            <div class="w-[50%]"></div>
-          </div>
-
-          <div
-            v-on:click="iquandoIsOpen = !iquandoIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
-          >
-            <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">State certified technical engineer</span>
-              <span class="w-[40%]">@ IQuando GmbH, Germany</span>
-              <span class="w-[20%] text-right">2018 - 2020</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="iquandoIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-          <div v-if="iquandoIsOpen" class="h-[100px] border border-white-2">
-            hi FUTRE ERNERGY
-          </div>
-
-          <div
-            v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
-          >
-            <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Team leader</span>
-              <span class="w-[40%]"
-                >@ Eurogate Technical Services GmbH, Germany</span
-              >
-              <span class="w-[20%] text-right">2018 - 2021</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="teamLeadEgtsIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-          <div
-            v-if="teamLeadEgtsIsOpen"
-            class="h-[100px] border border-white-2"
-          >
-            <p>Supervising employees in different projects</p>
-            <p>Analysing systems and equipment and planning upgrades</p>
-            <p>Monitoring costs and appointments in projects</p>
-          </div>
-
-          <div
-            v-on:click="technicianEgtsIsOpen = !technicianEgtsIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
-          >
-            <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Electronic technician</span>
-              <span class="w-[40%]"
-                >@ Eurogate Technical Services GmbH, Germany</span
-              >
-              <span class="w-[20%] text-right">2016 - 2018</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="technicianEgtsIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-          <div
-            v-if="technicianEgtsIsOpen"
-            class="h-[100px] border border-white-2"
-          >
-            <p>Execution of maintenance and repairs</p>
-            <p>Debugging of equipment during operation</p>
-          </div>
-
-          <div
-            v-on:click="traineeIsOpen = !traineeIsOpen"
-            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
-          >
-            <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Mechatronics trainee</span>
-              <span class="w-[40%]"
-                >@ Eurogate Technical Services GmbH, Germany</span
-              >
-              <span class="w-[20%] text-right">2012 - 2016</span>
-            </div>
-            <div
-              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
-              v-text="traineeIsOpen ? '-' : '+'"
-            ></div>
-          </div>
-          <div v-if="traineeIsOpen" class="h-[100px] border border-white-2">
-            <p>Maintenance of mechatronic and hydraulic systems</p>
-            <p>Reparations of mechatronic and hydraulic systems</p>
-            <p>
-              Learning the basics of mechanical-, electrical, and
-              mechatronic-systems
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <section id="mywork" class="">
-        <h1 class="text-7xl mt-[2rem]">My work.</h1>
+      <section id="mywork">
+        <h1 class="text-7xl mt-[2rem]">My work</h1>
 
         <div id="mywork-wrapper" class="flex gap-[2rem] mt-[2rem]">
           <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
@@ -682,8 +475,289 @@
         </div>
       </section>
       <hr />
+      <section id="experience">
+        <h1 class="text-7xl mt-[2rem]">Experience</h1>
+
+        <div class="flex flex-col gap-4 mt-[2rem]">
+          <div
+            v-on:click="codingIsOpen = !codingIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
+          >
+            <div class="flex w-full px-8 text-xl">
+              <span class="w-[40%]">Coding Bootcamp</span>
+
+              <span class="w-[40%]">@ Coding Bootcamps Europe, remote</span>
+              <span class="w-[20%] text-right">2023</span>
+            </div>
+            <div
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              v-text="codingIsOpen ? '-' : '+'"
+            ></div>
+          </div>
+          <div v-if="codingIsOpen" class="flex border border-white-2">
+            <div class="w-[80%] p-4">
+              <p>During this course I learned the basics of web-development.</p>
+              <ul>
+                <li class="list-disc">HTML</li>
+                <li class="list-disc">CSS</li>
+                <li class="list-disc">Responsive design</li>
+
+                <li class="list-disc">JavaScript</li>
+                <li class="list-disc">Vue</li>
+                <li class="list-disc">Pinia</li>
+                <li class="list-disc">
+                  Implementation of testing (cypress, jest)
+                </li>
+                <li class="list-disc">Node</li>
+                <li class="list-disc">Git</li>
+              </ul>
+            </div>
+
+            <div class="w-[20%] justify-center my-auto">
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="2rem"
+                  height="2rem"
+                  fill="currentColor"
+                  class="bi bi-globe2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"
+                  />
+                </svg>
+                <a
+                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  target="_blank"
+                  href="https://www.coding-bootcamps.eu/webentwickler-werden-bildungsgutschein/?utm_source=google&utm_medium=cpc&utm_campaign=17147411238&utm_term=online%20coding%20bootcamp&matchtype=p&device=c&gad_source=1&gclid=CjwKCAiA-P-rBhBEEiwAQEXhHzhOcFneeL2PLi0wO9wjSqBL1V6K-omSe5awQUTd7UqO48xUuj9szRoCcpcQAvD_BwE"
+                  >Website</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-on:click="futureIsOpen = !futureIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
+            <div class="flex w-full justify-between px-8 text-xl">
+              <span class="w-[40%]">Team leader - Installation</span>
+
+              <span class="w-[40%]">@ Future Energy, New Zealand</span>
+              <span class="w-[20%] text-right">2022</span>
+            </div>
+            <div
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              v-text="futureIsOpen ? '-' : '+'"
+            ></div>
+          </div>
+
+          <div v-if="futureIsOpen" class="flex border border-white-2">
+            <div class="w-[80%] p-4">
+              <ul>
+                <li class="list-disc">Supervising employees on site</li>
+                <li class="list-disc">
+                  Installation of commercial and residential solar PV systems
+                </li>
+                <li class="list-disc">
+                  Installation of energy usage and solar generation monitoring
+                  equipment
+                </li>
+                <li class="list-disc">
+                  Installation and debugging of solar systems
+                </li>
+                <li class="list-disc">Site inspections</li>
+              </ul>
+            </div>
+
+            <div class="w-[20%] justify-center my-auto">
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="2rem"
+                  height="2rem"
+                  fill="currentColor"
+                  class="bi bi-globe2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"
+                  />
+                </svg>
+                <a
+                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  target="_blank"
+                  href="https://www.future-energy.co.nz/"
+                  >Website</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-on:click="travelIsOpen = !travelIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
+            <div class="flex w-full justify-between px-8 text-xl">
+              <span class="w-[40%]">Travel</span>
+              <span class="w-[40%]">@ planet earth</span>
+              <span class="w-[20%] text-right">2021 - 2023</span>
+            </div>
+            <div
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              v-text="travelIsOpen ? '-' : '+'"
+            ></div>
+          </div>
+          <div v-if="travelIsOpen" class="p-4 flex border border-white-2">
+            <div class="w-[30%]">
+              <p>Countries I visited:</p>
+              <ul>
+                <li class="list-disc">Belgium</li>
+                <li class="list-disc">France</li>
+                <li class="list-disc">Spain</li>
+                <li class="list-disc">Indonesia</li>
+                <li class="list-disc">Australia</li>
+                <li class="list-disc">New Zealand</li>
+                <li class="list-disc">Rarotonga</li>
+                <li class="list-disc">Thailand</li>
+              </ul>
+            </div>
+            <div class="w-[70%]">
+              <p>
+                During this time I developed a great sense to organize myself in
+                stressful situations and increased my capability to communicate
+                fluently in english. The opportunity to live and work in New
+                Zealand was a very insightful and knowledgable experience.
+              </p>
+            </div>
+          </div>
+
+          <div
+            v-on:click="iquandoIsOpen = !iquandoIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
+            <div class="flex w-full justify-between px-8 text-xl">
+              <span class="w-[40%]">State certified technical engineer</span>
+              <span class="w-[40%]">@ IQuando GmbH, Germany</span>
+              <span class="w-[20%] text-right">2018 - 2020</span>
+            </div>
+            <div
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              v-text="iquandoIsOpen ? '-' : '+'"
+            ></div>
+          </div>
+          <div v-if="iquandoIsOpen" class="flex border border-white-2">
+            <div class="w-[80%] p-4">
+              <ul>
+                <li class="list-disc">Project management</li>
+                <li class="list-disc">
+                  Initiate and implement suitable quality-assurance measures
+                </li>
+                <li class="list-disc">
+                  Market- and customer-oriented completion of management tasks
+                </li>
+                <li class="list-disc">
+                  Demonstrate ethical, economic and ecological awareness within
+                  the context of sustainable development
+                </li>
+                <li class="list-disc">
+                  Autonomous market and customer oriented implementation of new
+                  technologies
+                </li>
+              </ul>
+              <!-- <p>• Execution of maintenance and repairs</p>
+              <p>• Debugging of equipment during operation</p> -->
+            </div>
+            <div class="w-[20%] justify-center my-auto">
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="2rem"
+                  height="2rem"
+                  fill="currentColor"
+                  class="bi bi-globe2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"
+                  />
+                </svg>
+                <a
+                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  target="_blank"
+                  href="https://iquando.de/"
+                  >Website</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
+            class="transition-transform transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+          >
+            <div class="flex w-full justify-between px-8 text-xl">
+              <span class="w-[40%]">Team leader, technician</span>
+              <span class="w-[40%]"
+                >@ Eurogate Technical Services GmbH, Germany</span
+              >
+              <span class="w-[20%] text-right">2012 - 2021</span>
+            </div>
+            <div
+              class="text-2xl px-8 transition-transform transform hover:scale-150 duration-300 cursor-pointer"
+              v-text="teamLeadEgtsIsOpen ? '-' : '+'"
+            ></div>
+          </div>
+          <div v-if="teamLeadEgtsIsOpen" class="flex border border-white-2">
+            <div class="w-[80%] p-4">
+              <ul>
+                <li class="list-disc">
+                  Supervising employees in different projects
+                </li>
+                <li class="list-disc">
+                  Debugging of equipment during operation
+                </li>
+                <li class="list-disc">Execution of maintenance and repairs</li>
+                <li class="list-disc">
+                  Analysing systems and equipment and planning upgrades
+                </li>
+                <li class="list-disc">
+                  Monitoring costs and appointments in projects
+                </li>
+              </ul>
+              <!-- <p>• Execution of maintenance and repairs</p>
+              <p>• Debugging of equipment during operation</p> -->
+            </div>
+            <div class="w-[20%] justify-center my-auto">
+              <div class="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="2rem"
+                  height="2rem"
+                  fill="currentColor"
+                  class="bi bi-globe2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"
+                  />
+                </svg>
+                <a
+                  class="pl-4 transition-transform transform hover:scale-110 duration-300"
+                  target="_blank"
+                  href="https://www1.eurogate.de/Ueber-uns"
+                  >Website</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
       <section id="contact">
-        <h1 id="skills" class="text-7xl mt-[2rem]">Contact me.</h1>
+        <h1 id="skills" class="text-7xl mt-[2rem]">Contact me</h1>
         <div class="flex flex-col justify-around mt-[2rem]">
           <p class="text-xl mt-[2rem]">
             If you are interested in working or connecting with me, please do
@@ -773,27 +847,17 @@ export default {
 </script>
 
 <style>
+.abc {
+  z-index: -1;
+}
+
 #nav {
   color: #1f2b6a;
+  z-index: auto;
 }
 
 .orange {
   color: #001060;
-}
-
-#span-marco {
-  color: currentColor;
-}
-
-.waviy span {
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  font-size: 2rem;
-  _text-transform: uppercase;
-  animation: flip 0.5s infinite;
-  animation-iteration-count: 1;
-  animation-delay: calc(0.05s * var(--i));
 }
 
 .occupation span {
@@ -810,12 +874,6 @@ export default {
 }
 
 .bg-gradient {
-  /* background: linear-gradient(
-    20deg,
-    rgba(62, 62, 62) 0%,
-    rgba(253, 187, 45, 0.405) 50%,
-    rgba(253, 187, 45, 1) 100%
-  ); */
   background-color: #ebeeff;
 }
 
@@ -848,8 +906,8 @@ hr {
   width: 100%;
   height: 100%;
 
-  background-color: rgba(255, 255, 255, 0); /* Adjust opacity as needed */
-  z-index: 100; /* Ensure the overlay is on top of the Three.js component */
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 100;
 }
 
 .globe {

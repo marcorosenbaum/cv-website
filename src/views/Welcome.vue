@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="tag1"
-    class="cube2-wrapper text-xl rotate-12 absolute top-[5%] right-[50%]"
-  >
+  <div id="tag1" class="cube2-wrapper text-xl absolute top-[5%] right-[50%]">
     &lt;/html&gt;
   </div>
   <div id="tag2" class="cube3-wrapper text-2xl absolute top-[0%] right-[40%]">
