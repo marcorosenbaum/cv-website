@@ -502,15 +502,9 @@
               <p class="text-2xl text-center">3D Globe</p>
 
               <div class="relative" id="globe-container">
-                <globe class="globe" />
+                <!-- <globe class="globe" /> -->
                 <div class="overlay"></div>
               </div>
-
-              <!-- <router-link :to="{ name: 'myjourney' }">
-              <div class="relative" id="globe-container">
-                <globe class="globe" />
-                <div class="overlay"></div></div
-            ></router-link> -->
 
               <p>
                 This globe represents my travel in 2022/2023. I added the main
