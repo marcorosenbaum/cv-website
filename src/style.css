@@ -4,11 +4,10 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 body {
   background-color: #ffffff;
-  color: #001db0;
-  margin: 0 10rem 0 10rem;
+  color: #1a2535;
 }
