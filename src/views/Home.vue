@@ -1,7 +1,7 @@
 <template>
   <div class="fadeInHome">
     <div
-      class="h-[5vh] bg-opacity-50 bg-blackground sticky top-0 flex justify-end"
+      class="h-[5vh] bg-opacity-20 bg-background sticky top-0 flex justify-end"
     >
       <!-- <div class="flex flex-col items-center">
         <div class="waviy">
@@ -108,7 +108,7 @@
               xmlns="http://www.w3.org/2000/svg"
               width="40"
               height="40"
-              fill="white"
+              fill="currentColor"
               class="bi bi-github"
               viewBox="0 0 16 16"
             >
@@ -481,7 +481,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
                   height="2rem"
-                  fill="white"
+                  fill="currentColor"
                   class="bi bi-github"
                   viewBox="0 0 16 16"
                 >
@@ -506,12 +506,6 @@
                 <div class="overlay"></div>
               </div>
 
-              <!-- <router-link :to="{ name: 'myjourney' }">
-              <div class="relative" id="globe-container">
-                <globe class="globe" />
-                <div class="overlay"></div></div
-            ></router-link> -->
-
               <p>
                 This globe represents my travel in 2022/2023. I added the main
                 locations as data points on the globe. The blue ball moves on
@@ -535,7 +529,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
                   height="2rem"
-                  fill="white"
+                  fill="currentColor"
                   class="bi bi-github"
                   viewBox="0 0 16 16"
                 >
@@ -614,7 +608,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     width="2rem"
                     height="2rem"
-                    fill="white"
+                    fill="currentColor"
                     class="bi bi-github"
                     viewBox="0 0 16 16"
                   >
@@ -668,7 +662,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
                   height="2rem"
-                  fill="white"
+                  fill="currentColor"
                   class="bi bi-github"
                   viewBox="0 0 16 16"
                 >
@@ -780,15 +774,15 @@ export default {
 
 <style>
 #nav {
-  color: #ffc864;
+  color: #1f2b6a;
 }
 
 .orange {
-  color: orange;
+  color: #001060;
 }
 
 #span-marco {
-  color: orange;
+  color: currentColor;
 }
 
 .waviy span {
@@ -822,19 +816,19 @@ export default {
     rgba(253, 187, 45, 0.405) 50%,
     rgba(253, 187, 45, 1) 100%
   ); */
-  background-color: rgb(46, 46, 46);
+  background-color: #ebeeff;
 }
 
 hr {
-  color: #ffa500;
+  color: #001060;
   margin: 8rem 0 8rem 0;
 }
 
 .icon {
-  fill: currentColor;
-  stroke: currentColor;
+  fill: white;
+  stroke: white;
   color: currentColor;
-  background-color: currentColor;
+  background-color: white;
   border-radius: 8px;
 }
 
