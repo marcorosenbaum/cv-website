@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div
-      class="z-50 h-[5vh] bg-opacity-20 bg-gradient sticky top-0 flex justify-end"
+      class="z-40 h-[5vh] bg-opacity-20 bg-gradient sticky top-0 flex justify-end"
     >
       <div id="nav" class="flex items-end gap-[3rem]">
         <a
@@ -498,11 +498,17 @@
       </section>
 
       <section id="experience">
-        <h1 class="heading text-7xl mt-[2rem]">Experience</h1>
+        <h1 class="heading z-50 text-7xl mt-[2rem]">Experience</h1>
 
         <div class="flex flex-col gap-4 mt-[2rem]">
           <div
-            v-on:click="codingIsOpen = !codingIsOpen"
+            v-on:click="
+              (teamLeadEgtsIsOpen = false),
+                (iquandoIsOpen = false),
+                (futureIsOpen = false),
+                (travelIsOpen = false),
+                (codingIsOpen = !codingIsOpen)
+            "
             class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
           >
             <div class="flex w-full px-8 text-xl">
@@ -519,20 +525,17 @@
           <div v-if="codingIsOpen" class="flex border border-white-2">
             <div class="w-[80%] p-4">
               <p>During this course I learned the basics of web-development.</p>
-              <ul>
-                <li class="list-disc">HTML</li>
-                <li class="list-disc">CSS</li>
-                <li class="list-disc">Responsive design</li>
-
-                <li class="list-disc">JavaScript</li>
-                <li class="list-disc">Vue</li>
-                <li class="list-disc">Pinia</li>
-                <li class="list-disc">
-                  Implementation of testing (cypress, jest)
-                </li>
-                <li class="list-disc">Node</li>
-                <li class="list-disc">Git</li>
-              </ul>
+              <div class="flex flex-wrap gap-4 w-[80%] p-4">
+                <p>• HTML</p>
+                <p>• CSS</p>
+                <p>• Responsive design</p>
+                <p>• JavaScript</p>
+                <p>• Vue</p>
+                <p>• Pinia</p>
+                <p>• Implementation of testing (cypress, jest)</p>
+                <p>• Node</p>
+                <p>• Git</p>
+              </div>
             </div>
 
             <div class="w-[20%] justify-center my-auto">
@@ -560,7 +563,13 @@
           </div>
 
           <div
-            v-on:click="futureIsOpen = !futureIsOpen"
+            v-on:click="
+              (teamLeadEgtsIsOpen = false),
+                (iquandoIsOpen = false),
+                (futureIsOpen = !futureIsOpen),
+                (travelIsOpen = false),
+                (codingIsOpen = false)
+            "
             class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
@@ -576,21 +585,17 @@
           </div>
 
           <div v-if="futureIsOpen" class="flex border border-white-2">
-            <div class="w-[80%] p-4">
-              <ul>
-                <li class="list-disc">Supervising employees on site</li>
-                <li class="list-disc">
-                  Installation of commercial and residential solar PV systems
-                </li>
-                <li class="list-disc">
-                  Installation of energy usage and solar generation monitoring
-                  equipment
-                </li>
-                <li class="list-disc">
-                  Installation and debugging of solar systems
-                </li>
-                <li class="list-disc">Site inspections</li>
-              </ul>
+            <div class="flex flex-wrap gap-4 w-[80%] p-4">
+              <p>• Supervising employees on site</p>
+              <p>
+                • Installation of commercial and residential solar PV systems
+              </p>
+              <p>
+                • Installation of energy usage and solar generation monitoring
+                equipment
+              </p>
+              <p>• Debugging of electronic systems</p>
+              <p>• Site inspections</p>
             </div>
 
             <div class="w-[20%] justify-center my-auto">
@@ -618,7 +623,13 @@
           </div>
 
           <div
-            v-on:click="travelIsOpen = !travelIsOpen"
+            v-on:click="
+              (teamLeadEgtsIsOpen = false),
+                (iquandoIsOpen = false),
+                (futureIsOpen = false),
+                (travelIsOpen = !travelIsOpen),
+                (codingIsOpen = false)
+            "
             class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
@@ -631,32 +642,39 @@
               v-text="travelIsOpen ? '-' : '+'"
             ></div>
           </div>
-          <div v-if="travelIsOpen" class="p-4 flex border border-white-2">
-            <div class="w-[30%]">
-              <p>Countries I visited:</p>
-              <ul>
-                <li class="list-disc">Belgium</li>
-                <li class="list-disc">France</li>
-                <li class="list-disc">Spain</li>
-                <li class="list-disc">Indonesia</li>
-                <li class="list-disc">Australia</li>
-                <li class="list-disc">New Zealand</li>
-                <li class="list-disc">Rarotonga</li>
-                <li class="list-disc">Thailand</li>
-              </ul>
-            </div>
-            <div class="w-[70%]">
-              <p>
-                During this time I developed a great sense to organize myself in
-                stressful situations and increased my capability to communicate
-                fluently in english. The opportunity to live and work in New
-                Zealand was a very insightful and knowledgable experience.
-              </p>
+          <div
+            v-if="travelIsOpen"
+            class="p-4 flex flex-col border border-white-2"
+          >
+            <p>
+              During this time I developed a great sense to organize myself in
+              stressful situations and increased my capability to communicate
+              fluently in english. The opportunity to live and work in New
+              Zealand was a very insightful and knowledgable experience.
+            </p>
+            <div>
+              <p class="mt-4">Countries I visited:</p>
+              <div class="flex flex-wrap">
+                <p>• Belgium</p>
+                <p>• France</p>
+                <p>• Spain</p>
+                <p>• Indonesia</p>
+                <p>• Australia</p>
+                <p>• New Zealand</p>
+                <p>• Rarotonga</p>
+                <p>• Thailand</p>
+              </div>
             </div>
           </div>
 
           <div
-            v-on:click="iquandoIsOpen = !iquandoIsOpen"
+            v-on:click="
+              (teamLeadEgtsIsOpen = false),
+                (iquandoIsOpen = !iquandoIsOpen),
+                (futureIsOpen = false),
+                (travelIsOpen = false),
+                (codingIsOpen = false)
+            "
             class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
@@ -670,27 +688,24 @@
             ></div>
           </div>
           <div v-if="iquandoIsOpen" class="flex border border-white-2">
-            <div class="w-[80%] p-4">
-              <ul>
-                <li class="list-disc">Project management</li>
-                <li class="list-disc">
-                  Initiate and implement suitable quality-assurance measures
-                </li>
-                <li class="list-disc">
-                  Market- and customer-oriented completion of management tasks
-                </li>
-                <li class="list-disc">
-                  Demonstrate ethical, economic and ecological awareness within
-                  the context of sustainable development
-                </li>
-                <li class="list-disc">
-                  Autonomous market and customer oriented implementation of new
-                  technologies
-                </li>
-              </ul>
-              <!-- <p>• Execution of maintenance and repairs</p>
-              <p>• Debugging of equipment during operation</p> -->
+            <div class="flex flex-wrap gap-4 w-[80%] p-4">
+              <p>• Project management</p>
+              <p>
+                • Initiate and implement suitable quality-assurance measures
+              </p>
+              <p>
+                • Market- and customer-oriented completion of management tasks
+              </p>
+              <p>
+                • Demonstrate ethical, economic and ecological awareness within
+                the context of sustainable development
+              </p>
+              <p>
+                • Market and customer oriented implementation of new
+                technologies
+              </p>
             </div>
+
             <div class="w-[20%] justify-center my-auto">
               <div class="flex gap-2">
                 <svg
@@ -716,7 +731,13 @@
           </div>
 
           <div
-            v-on:click="teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen"
+            v-on:click="
+              (teamLeadEgtsIsOpen = !teamLeadEgtsIsOpen),
+                (iquandoIsOpen = false),
+                (futureIsOpen = false),
+                (travelIsOpen = false),
+                (codingIsOpen = false)
+            "
             class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
           >
             <div class="flex w-full justify-between px-8 text-xl">
@@ -732,22 +753,12 @@
             ></div>
           </div>
           <div v-if="teamLeadEgtsIsOpen" class="flex border border-white-2">
-            <div class="w-[80%] p-4">
-              <ul>
-                <li class="list-disc">
-                  Supervising employees in different projects
-                </li>
-                <li class="list-disc">
-                  Debugging of equipment during operation
-                </li>
-                <li class="list-disc">Execution of maintenance and repairs</li>
-                <li class="list-disc">
-                  Analysing systems and equipment and planning upgrades
-                </li>
-                <li class="list-disc">
-                  Monitoring costs and appointments in projects
-                </li>
-              </ul>
+            <div class="flex flex-wrap gap-4 w-[80%] p-4">
+              <p>• Supervising employees in different projects</p>
+              <p>• Debugging of equipment during operation</p>
+              <p>• Execution of maintenance and repairs</p>
+              <p>• Analysing systems and equipment and planning upgrades</p>
+              <p>• Monitoring costs and appointments in projects</p>
             </div>
             <div class="w-[20%] justify-center my-auto">
               <div class="flex gap-2">
@@ -842,8 +853,6 @@ export default {
       travelIsOpen: false,
       iquandoIsOpen: false,
       teamLeadEgtsIsOpen: false,
-      technicianEgtsIsOpen: false,
-      traineeIsOpen: false,
     };
   },
   computed: {},
@@ -940,9 +949,11 @@ export default {
   z-index: -1;
 }
 
-/* .heading {
-  
-} */
+.heading {
+  display: inline-block;
+  position: relative;
+  z-index: 50;
+}
 
 section {
   margin-bottom: 8rem;
