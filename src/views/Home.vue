@@ -339,7 +339,7 @@
                 <div class="">Three.js</div>
               </div>
 
-              <div class="flex gap-2 justify-center">
+              <!-- <div class="flex gap-2 justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -355,10 +355,10 @@
                 <a
                   class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
-                  href="https://github.com/coding-bootcamps-eu/final-project-2023-08-concert-compass"
+                  href=""
                   >Github</a
                 >
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -748,8 +748,6 @@
                   Monitoring costs and appointments in projects
                 </li>
               </ul>
-              <!-- <p>• Execution of maintenance and repairs</p>
-              <p>• Debugging of equipment during operation</p> -->
             </div>
             <div class="w-[20%] justify-center my-auto">
               <div class="flex gap-2">
