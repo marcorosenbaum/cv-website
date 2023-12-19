@@ -1,7 +1,7 @@
 <template>
-  <div class="fadeInHome">
+  <div class="home">
     <div
-      class="h-[5vh] bg-opacity-20 bg-background sticky top-0 flex justify-end"
+      class="z-50 h-[5vh] bg-opacity-20 bg-gradient sticky top-0 flex justify-end"
     >
       <div id="nav" class="flex items-end gap-[3rem]">
         <a
@@ -37,9 +37,15 @@
 
     <main>
       <section id="aboutme" class="flex flex-col gap-[3rem]">
+        <!-- <img
+          id="vector1"
+          class="absolute -left-[20rem] -top-[4rem]"
+          src="../assets/svg/vector1.svg"
+          alt="vector1"
+        /> -->
         <div id="aboutme-wrapper" class="flex gap-[2rem]">
-          <div class="w-[100%]">
-            <h1 class="text-7xl mt-[2rem]">About me</h1>
+          <div class="relative w-[100%]">
+            <h1 class="heading text-7xl mt-[2rem]">About me</h1>
             <h2 class="text-5xl mt-[2rem]">
               I'm <b>Marco</b>. A&nbsp;developer, an optimist and problem
               solver.
@@ -54,12 +60,12 @@
             </p>
 
             <p
-              class="mt-[6rem] inline-block cursor-pointer transition-transform hover:scale-105 duration-300"
+              id="read-more"
+              class="rounded-xl p-2 mt-[6rem] inline-block cursor-pointer transition-transform hover:scale-105 duration-300"
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
-              Click <span class="text-lightOrange">here</span> to read more
-              personal stuff about me.
+              Read more about me
             </p>
 
             <p v-if="aboutMePersonal" class="mt-[1rem] text-xl">
@@ -77,7 +83,7 @@
           <div id="photo-wrapper" class="w-[60%]">
             <img
               id="photo-marco"
-              class="w-[100%] rounded-xl block mx-auto mt-[2rem]"
+              class="w-[100%] block mx-auto mt-[2rem]"
               src="../assets/images/img001.jpeg"
               alt="photo marco"
             />
@@ -148,14 +154,19 @@
         /> -->
         </div>
       </section>
-      <hr />
 
-      <section id="skills">
-        <h1 id="skills-header" class="text-7xl mt-[2rem]">Skills</h1>
+      <section id="skills" class="relative">
+        <!-- <img
+          id="vector2"
+          class="absolute -left-[30rem] -top-[22rem]"
+          src="../assets/svg/vector2.svg"
+          alt="vector2"
+        /> -->
+        <h1 id="skills-header" class="heading text-7xl mt-[2rem]">Skills</h1>
         <div id="skills-wrapper" class="flex justify-around gap-16 mt-[2rem]">
           <div
             id="technical-wrapper"
-            class="bg-gradient w-[50%] p-4 rounded-3xl text-center"
+            class="bg-gradient w-[50%] p-4 text-center"
           >
             <h1 class="text-4xl">Technical</h1>
 
@@ -230,7 +241,7 @@
           </div>
           <div
             id="other-wrapper"
-            class="bg-gradient w-[50%] p-4 rounded-3xl text-2xl flex flex-col justify-between space-x-16"
+            class="bg-gradient w-[50%] p-4 text-2xl flex flex-col justify-between space-x-16"
           >
             <h1 class="text-4xl text-center">Other</h1>
 
@@ -243,13 +254,19 @@
           </div>
         </div>
       </section>
-      <hr />
-      <section id="mywork">
-        <h1 class="text-7xl mt-[2rem]">My work</h1>
+
+      <section class="relative" id="mywork">
+        <!-- <img
+          id="vector2"
+          class="absolute -left-[30rem] -top-[9rem]"
+          src="../assets/svg/vector1.svg"
+          alt="vector1"
+        /> -->
+        <h1 class="heading text-7xl mt-[2rem]">My work</h1>
 
         <div id="mywork-wrapper" class="flex gap-[2rem] mt-[2rem]">
           <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
-            <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
+            <div class="project-card bg-gradient p-4 flex flex-col">
               <p class="text-2xl text-center">My personal website</p>
 
               <img
@@ -291,10 +308,15 @@
               </div>
             </div>
 
-            <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
+            <div class="project-card bg-gradient p-4 flex flex-col">
               <p class="text-2xl text-center">3D Globe</p>
 
               <div class="relative" id="globe-container">
+                <img
+                  class="w-[100%]"
+                  src="../assets/images/3d-globe.png"
+                  alt="3d globe"
+                />
                 <!-- <globe class="globe" /> -->
                 <div class="overlay"></div>
               </div>
@@ -317,7 +339,7 @@
                 <div class="">Three.js</div>
               </div>
 
-              <div class="flex gap-2 justify-center">
+              <!-- <div class="flex gap-2 justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -333,15 +355,15 @@
                 <a
                   class="pl-4 transition-transform hover:scale-110 duration-300"
                   target="_blank"
-                  href="https://github.com/coding-bootcamps-eu/final-project-2023-08-concert-compass"
+                  href=""
                   >Github</a
                 >
-              </div>
+              </div> -->
             </div>
           </div>
 
           <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
-            <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
+            <div class="project-card bg-gradient p-4 flex flex-col">
               <p class="text-2xl text-center">Concert Compass</p>
               <div class="flex justify-center">
                 <div class="w-[100%] flex gap-4 justify-around">
@@ -418,7 +440,7 @@
                 </div>
               </div>
             </div>
-            <div class="project-card bg-gradient rounded-xl p-4 flex flex-col">
+            <div class="project-card bg-gradient p-4 flex flex-col">
               <p class="text-2xl text-center">Cooding Bootcamp tasks</p>
 
               <div class="flex w-[100%] gap-4 p-4 justify-around">
@@ -474,9 +496,9 @@
           </div>
         </div>
       </section>
-      <hr />
+
       <section id="experience">
-        <h1 class="text-7xl mt-[2rem]">Experience</h1>
+        <h1 class="heading text-7xl mt-[2rem]">Experience</h1>
 
         <div class="flex flex-col gap-4 mt-[2rem]">
           <div
@@ -726,8 +748,6 @@
                   Monitoring costs and appointments in projects
                 </li>
               </ul>
-              <!-- <p>• Execution of maintenance and repairs</p>
-              <p>• Debugging of equipment during operation</p> -->
             </div>
             <div class="w-[20%] justify-center my-auto">
               <div class="flex gap-2">
@@ -755,9 +775,8 @@
         </div>
       </section>
 
-      <hr />
       <section id="contact">
-        <h1 id="skills" class="text-7xl mt-[2rem]">Contact me</h1>
+        <h1 id="skills" class="heading text-7xl mt-[2rem]">Contact me</h1>
         <div class="flex flex-col justify-around mt-[2rem]">
           <p class="text-xl mt-[2rem]">
             If you are interested in working or connecting with me, please do
@@ -847,13 +866,13 @@ export default {
 </script>
 
 <style>
-.abc {
-  z-index: -1;
-}
-
 #nav {
   color: #1f2b6a;
-  z-index: auto;
+}
+
+#read-more {
+  background-color: #ff9142;
+  box-shadow: 0px 5px 5px rgb(96, 96, 96);
 }
 
 .orange {
@@ -874,12 +893,7 @@ export default {
 }
 
 .bg-gradient {
-  background-color: #ebeeff;
-}
-
-hr {
-  color: #001060;
-  margin: 8rem 0 8rem 0;
+  background-color: #fff6de;
 }
 
 .icon {
@@ -888,11 +902,6 @@ hr {
   color: currentColor;
   background-color: white;
   border-radius: 8px;
-}
-
-.xrounded {
-  border-radius: 0 1rem 0 1rem;
-  padding: 4px;
 }
 
 .project-card * {
@@ -914,8 +923,29 @@ hr {
   z-index: 1;
 }
 
-.fadeInHome {
+.home {
   animation: fadeIn 1s ease-in;
+  margin: 0 4rem 0 4rem;
+}
+
+#vector1 {
+  z-index: -1;
+  scale: 0.5;
+}
+#vector2 {
+  z-index: -1;
+  scale: 0.4;
+}
+#vector3 {
+  z-index: -1;
+}
+
+/* .heading {
+  
+} */
+
+section {
+  margin-bottom: 8rem;
 }
 
 @media screen and (max-width: 1100px) {
