@@ -191,14 +191,13 @@
         <span style="--i: 36">e</span>
         <span style="--i: 37">r</span>
       </div>
-
-      <div
-        id="portfolio"
-        @click="changeToHome()"
+      <button
+        id="btn-portfolio"
+        v-on:click="changeToHome"
         class="shadow-2xl p-2 rounded-3xl cursor-pointer mt-[4rem] fadeInLink transition-transform hover:scale-110 duration-300"
       >
         View portfolio
-      </div>
+      </button>
     </div>
   </main>
 </template>
@@ -210,15 +209,18 @@ export default {
   },
   methods: {
     changeToHome() {
-      for (let i = 1; i < 31; i++) {
+      for (let i = 1; i < 30; i++) {
         setTimeout(() => {
           document.getElementById(`tag${i + 1}`).classList.add("shakeCube");
-
           document.getElementById(`tag${i}`).classList.add("dropCube");
         }, 60 * i);
       }
+
       setTimeout(() => {
-        document.getElementById(`tag31`).classList.add("dropCube");
+        for (let i = 1; i < 30; i++) {
+          document.getElementById(`tag${i + 1}`).classList.remove("shakeCube");
+          document.getElementById(`tag${i}`).classList.remove("dropCube");
+        }
         this.$router.push("/home");
       }, 1800);
     },
@@ -227,20 +229,20 @@ export default {
 </script>
 
 <style>
-/* * {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-} */
+}
 
 #main {
   background-color: #fff6de;
   margin: 0;
-  width: 100wh;
+  width: 100vw;
   height: 100vh;
 }
 
-#portfolio {
+#btn-portfolio {
   background-color: #ff9142;
   box-shadow: 0px 5px 5px rgb(96, 96, 96);
 }
@@ -331,6 +333,7 @@ export default {
 
 .shakeCube {
   animation: shake 1s infinite;
+  animation-iteration-count: 1;
 }
 .dropCube {
   animation: moveFromTop 2s ease-out;
