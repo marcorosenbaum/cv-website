@@ -253,7 +253,6 @@ export default {
         path8.points.forEach((point) => travelPath.points.push(point));
         path9.points.forEach((point) => travelPath.points.push(point));
         path10.points.forEach((point) => travelPath.points.push(point));
-        console.log(travelPath);
       }
       createWholePath();
 

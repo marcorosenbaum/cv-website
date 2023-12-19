@@ -59,14 +59,14 @@
               not trained to do motivates me to continous learn.
             </p>
 
-            <p
+            <button
               id="read-more"
               class="rounded-xl p-2 mt-[6rem] inline-block cursor-pointer transition-transform hover:scale-105 duration-300"
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
               Read more about me
-            </p>
+            </button>
 
             <p v-if="aboutMePersonal" class="mt-[1rem] text-xl">
               Apart from coding I try to spend as much time in nature as
@@ -329,8 +329,8 @@
 
               <router-link :to="{ name: 'myjourney' }">
                 <p>
-                  Click <strong>here</strong> to view the globe on full screen
-                  and enable rotation with your mouse.
+                  Click <strong class="text-callToAction">here</strong> to view
+                  the globe on full screen and enable rotation with your mouse.
                 </p>
               </router-link>
 

@@ -222,7 +222,7 @@ export default {
           document.getElementById(`tag${i}`).classList.remove("dropCube");
         }
         this.$router.push("/home");
-      }, 1800);
+      }, 1700);
     },
   },
 };
