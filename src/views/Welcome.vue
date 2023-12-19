@@ -173,7 +173,7 @@
         <span style="--i: 14">m</span>
       </div>
       <div class="waviy occu fadeInOccu mt-[1rem]">
-        <span class="ml-4" style="--i: 21">F</span>
+        <span style="--i: 21">F</span>
         <span style="--i: 22">r</span>
         <span style="--i: 23">o</span>
         <span style="--i: 24">n</span>
@@ -342,6 +342,11 @@ export default {
 @media screen and (max-width: 800px) {
   .fadeInName {
     margin-top: 65%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .waviy span {
+    font-size: 2rem;
   }
 }
 </style>
