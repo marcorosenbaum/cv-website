@@ -11,3 +11,9 @@ body {
   background-color: #ffffff;
   color: #1a2535;
 }
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 10px;
+  }
+}

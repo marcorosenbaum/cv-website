@@ -338,4 +338,10 @@ export default {
 .dropCube {
   animation: moveFromTop 2s ease-out;
 }
+
+@media screen and (max-width: 800px) {
+  .fadeInName {
+    margin-top: 65%;
+  }
+}
 </style>

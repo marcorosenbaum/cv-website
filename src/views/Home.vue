@@ -962,10 +962,4 @@ section {
     width: 100%;
   }
 }
-
-@media screen and (max-width: 800px) {
-  html {
-    font-size: 10px;
-  }
-}
 </style>
