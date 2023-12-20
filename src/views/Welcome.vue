@@ -290,19 +290,19 @@ export default {
 }
 
 .cube1-wrapper {
-  opacity: 0.4;
+  animation: fadeIn 5s ease-in;
 }
 .cube2-wrapper {
-  opacity: 0.3;
+  animation: fadeIn 6s ease-in;
 }
 .cube3-wrapper {
-  opacity: 0.4;
+  animation: fadeIn 7s ease-in;
 }
 .cube4-wrapper {
-  opacity: 0.2;
+  animation: fadeIn 5s ease-in;
 }
 .cube5-wrapper {
-  opacity: 0.4;
+  animation: fadeIn 4s ease-in;
 }
 
 @keyframes moveFromTop {

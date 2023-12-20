@@ -312,12 +312,7 @@
               <p class="text-2xl text-center">3D Globe</p>
 
               <div class="relative" id="globe-container">
-                <img
-                  class="w-[100%]"
-                  src="../assets/images/3d-globe.png"
-                  alt="3d globe"
-                />
-                <!-- <globe class="globe" /> -->
+                <globe class="globe" />
                 <div class="overlay"></div>
               </div>
 
@@ -445,14 +440,8 @@
 
               <div class="flex w-[100%] gap-4 p-4 justify-around">
                 <img
-                  class="w-[50%]"
                   src="../assets/images/shopping-layout.png"
                   alt="shopping layout"
-                />
-                <img
-                  class="w-[40%]"
-                  src="../assets/images/todo-app.png"
-                  alt="todo app"
                 />
               </div>
 
