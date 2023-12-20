@@ -36,7 +36,6 @@
     </div>
 
     <main>
-      <a href="../assets/CV.pdf" target="_blank">Download PDF</a>
       <section id="aboutme" class="flex flex-col gap-[3rem]">
         <!-- <img
           id="vector1"
