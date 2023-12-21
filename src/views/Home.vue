@@ -893,7 +893,7 @@ export default {
   margin: 0 4rem 0 4rem;
 }
 
-#vector1 {
+/* #vector1 {
   z-index: -1;
   scale: 0.5;
 }
@@ -903,7 +903,7 @@ export default {
 }
 #vector3 {
   z-index: -1;
-}
+} */
 
 .heading {
   display: inline-block;

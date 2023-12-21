@@ -1,5 +1,5 @@
 <template>
-  <main id="main">
+  <main id="main" class="bg-background w-screen h-screen">
     <div id="tag1" class="tag2-wrapper text-xl absolute top-[5%] right-[50%]">
       &lt;/html&gt;
     </div>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="flex flex-col items-center">
-      <div class="waviy fadeInName mt-[15rem]">
+      <div class="waviy text-6xl fadeInName mt-[15rem]">
         <span style="--i: 1">M</span>
         <span style="--i: 2">a</span>
         <span style="--i: 3">r</span>
@@ -133,7 +133,7 @@
         <span style="--i: 13">u</span>
         <span style="--i: 14">m</span>
       </div>
-      <div class="waviy occu fadeInOccu mt-[1rem]">
+      <div class="waviy text-4xl fadeInOccu mt-[2rem]">
         <span style="--i: 21">F</span>
         <span style="--i: 22">r</span>
         <span style="--i: 23">o</span>
@@ -155,7 +155,7 @@
       <button
         id="btn-portfolio"
         v-on:click="changeToHome"
-        class="shadow-2xl p-2 rounded-3xl cursor-pointer mt-[4rem] fadeInLink transition-transform hover:scale-110 duration-300"
+        class="bg-callToAction p-2 rounded-3xl cursor-pointer mt-[4rem] fadeInLink transition-transform hover:scale-110 duration-300"
       >
         View portfolio
       </button>
@@ -196,94 +196,17 @@ export default {
 </script>
 
 <style>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-#main {
-  background-color: #fff6de;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
 #btn-portfolio {
-  background-color: #ff9142;
   box-shadow: 0px 5px 5px rgb(96, 96, 96);
 }
-.waviy span {
+.fadeInName span,
+.fadeInOccu span {
   display: inline-block;
-  color: currentColor;
-  font-size: 4rem;
+
   text-transform: uppercase;
   animation: flip 2s infinite;
   animation-iteration-count: 1;
   animation-delay: calc(0.05s * var(--i));
-}
-
-.occu span {
-  font-size: 2rem;
-}
-@keyframes flip {
-  0%,
-  80% {
-    transform: rotateY(360deg);
-  }
-}
-
-@-webkit-keyframes flip {
-  0%,
-  80% {
-    -webkit-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-}
-
-@-moz-keyframes flip {
-  0%,
-  80% {
-    -moz-transform: rotateY(360deg);
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateZ(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateZ(-100px);
-    transform: translateZ(-100px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -moz-transform: translateZ(-100px);
-    transform: translateZ(-100px);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: translateZ(0);
-    transform: translateZ(0);
-  }
 }
 
 .fadeInName {
@@ -291,27 +214,34 @@ export default {
 }
 
 .fadeInOccu {
-  animation: fadeIn 4s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 .fadeInLink {
-  animation: fadeIn 5s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 .tag1-wrapper {
-  animation: fadeIn 5s ease-in;
+  animation: fadeIn 4s ease-in;
 }
 .tag2-wrapper {
-  animation: fadeIn 6s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 .tag3-wrapper {
-  animation: fadeIn 7s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 .tag4-wrapper {
-  animation: fadeIn 5s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 .tag5-wrapper {
   animation: fadeIn 4s ease-in;
+}
+
+.shakeTag {
+  animation: shake 1s infinite;
+}
+.dropTag {
+  animation: moveFromTop 2s ease-out;
 }
 
 @keyframes moveFromTop {
@@ -400,14 +330,6 @@ export default {
   }
 }
 
-.shakeTag {
-  animation: shake 1s infinite;
-  animation-iteration-count: 1;
-}
-.dropTag {
-  animation: moveFromTop 2s ease-out;
-}
-
 @media screen and (max-width: 800px) {
   .fadeInName {
     margin-top: 65%;
@@ -416,6 +338,66 @@ export default {
 @media screen and (max-width: 500px) {
   .waviy span {
     font-size: 2rem;
+  }
+}
+
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes flip {
+  0%,
+  80% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@-moz-keyframes flip {
+  0%,
+  80% {
+    -moz-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateZ(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateZ(-100px);
+    transform: translateZ(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateZ(-100px);
+    transform: translateZ(-100px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
 </style>
