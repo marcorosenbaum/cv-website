@@ -30,8 +30,6 @@
           href="#contact"
           >Contact</a
         >
-
-        <!-- <router-link :to="{ name: 'myjourney' }">My travel journey</router-link> -->
       </div>
     </div>
 
@@ -94,7 +92,7 @@
           <div class="flex gap-2 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
+              width="2.5rem"
               height="40"
               fill="currentColor"
               class="bi bi-github"
@@ -115,7 +113,7 @@
           <div class="flex gap-2 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
+              width="2.5rem"
               height="40"
               fill="currentColor"
               class="bi bi-linkedin"
@@ -135,9 +133,9 @@
 
           <div class="flex gap-2 items-center">
             <img
-              class="icon w-[40px]"
+              class="icon w-10"
               src="../assets/svg/codewars.svg"
-              alt=""
+              alt="codewars icon"
             />
             <a
               class="pl-4 transition-transform hover:scale-110 duration-300"
@@ -146,12 +144,6 @@
               >Codewars</a
             >
           </div>
-
-          <!-- <img
-          class="w-10 h-10"
-          src="../assets/svg/scroll-down.svg"
-          alt="scroll icon"
-        /> -->
         </div>
       </section>
 
@@ -269,11 +261,7 @@
             <div class="project-card bg-gradient p-4 flex flex-col">
               <p class="text-2xl text-center">My personal website</p>
 
-              <img
-                class=""
-                src="../assets/images/cv-website.png"
-                alt="website photo"
-              />
+              <img src="../assets/images/cv-website.png" alt="website photo" />
 
               <p>
                 This website represents my cv and its purpose is to give the
@@ -330,30 +318,9 @@
               </router-link>
 
               <div class="flex justify-around">
-                <div class="">JavaScript</div>
-                <div class="">Three.js</div>
+                <div>JavaScript</div>
+                <div>Three.js</div>
               </div>
-
-              <!-- <div class="flex gap-2 justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="2rem"
-                  height="2rem"
-                  fill="currentColor"
-                  class="bi bi-github"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"
-                  />
-                </svg>
-                <a
-                  class="pl-4 transition-transform hover:scale-110 duration-300"
-                  target="_blank"
-                  href=""
-                  >Github</a
-                >
-              </div> -->
             </div>
           </div>
 
@@ -782,12 +749,12 @@
             If you are interested in working or connecting with me, please do
             not hesitate to contact me.
           </p>
-          <div class="flex justify-around my-[2rem]">
-            <div class="flex gap-2 items-center mt-[2rem]">
+          <div class="flex justify-around mt-[4rem]">
+            <div class="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
+                width="2.5rem"
+                height="2.5rem"
                 fill="currentColor"
                 class="bi bi-envelope-fill"
                 viewBox="0 0 16 16"
@@ -805,8 +772,8 @@
             <div class="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
+                width="2.5rem"
+                height="2.5rem"
                 fill="currentColor"
                 class="bi bi-linkedin"
                 viewBox="0 0 16 16"
