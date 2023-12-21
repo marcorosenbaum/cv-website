@@ -233,6 +233,22 @@ export default {
   }
 }
 
+@-webkit-keyframes flip {
+  0%,
+  80% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@-moz-keyframes flip {
+  0%,
+  80% {
+    -moz-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -240,6 +256,32 @@ export default {
   }
   100% {
     opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateZ(-100px);
+    transform: translateZ(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateZ(-100px);
+    transform: translateZ(-100px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateZ(0);
     transform: translateZ(0);
   }
 }
@@ -278,6 +320,20 @@ export default {
   }
 }
 
+@-webkit-keyframes moveFromTop {
+  to {
+    -webkit-transform: translateY(5000%);
+    transform: translateY(5000%);
+  }
+}
+
+@-moz-keyframes moveFromTop {
+  to {
+    -moz-transform: translateY(5000%);
+    transform: translateY(5000%);
+  }
+}
+
 @keyframes shake {
   0%,
   100% {
@@ -294,6 +350,52 @@ export default {
   40%,
   60%,
   80% {
+    transform: translateX(5px);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+}
+
+@-moz-keyframes shake {
+  0%,
+  100% {
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -moz-transform: translateX(5px);
     transform: translateX(5px);
   }
 }

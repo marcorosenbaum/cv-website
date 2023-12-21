@@ -610,7 +610,7 @@
             </p>
             <div>
               <p class="mt-4">Countries I visited:</p>
-              <div class="flex flex-wrap">
+              <div class="flex flex-wrap gap-4">
                 <p>• Belgium</p>
                 <p>• France</p>
                 <p>• Spain</p>
