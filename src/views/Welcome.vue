@@ -1,157 +1,118 @@
 <template>
   <main id="main">
-    <div id="tag1" class="cube2-wrapper text-xl absolute top-[5%] right-[50%]">
+    <div id="tag1" class="tag2-wrapper text-xl absolute top-[5%] right-[50%]">
       &lt;/html&gt;
     </div>
-    <div id="tag2" class="cube3-wrapper text-2xl absolute top-[0%] right-[40%]">
+    <div id="tag2" class="tag3-wrapper text-2xl absolute top-[0%] right-[40%]">
       &lt;/section&gt;
     </div>
-    <div id="tag3" class="cube5-wrapper text-2xl absolute top-[5%] right-[32%]">
+    <div id="tag3" class="tag5-wrapper text-2xl absolute top-[5%] right-[32%]">
       &lt;body&gt;
     </div>
-    <div id="tag4" class="cube1-wrapper text-xl absolute top-[0%] right-[20%]">
+    <div id="tag4" class="tag1-wrapper text-xl absolute top-[0%] right-[20%]">
       &lt;/a&gt;
     </div>
-    <div id="tag5" class="cube2-wrapper text-2xl absolute top-[6%] right-[4%]">
+    <div id="tag5" class="tag2-wrapper text-2xl absolute top-[6%] right-[4%]">
       &lt;/footer&gt;
     </div>
-    <div id="tag6" class="cube4-wrapper text-2xl absolute top-[0%] right-[0%]">
+    <div id="tag6" class="tag4-wrapper text-2xl absolute top-[0%] right-[0%]">
       &lt;link&gt;
     </div>
-    <div id="tag7" class="cube5-wrapper textxl absolute top-[10%] right-[40%]">
+    <div id="tag7" class="tag5-wrapper text-xl absolute top-[10%] right-[40%]">
       &lt;/span&gt;
     </div>
-    <div id="tag8" class="cube1-wrapper text-2xl absolute top-[0%] right-[60%]">
+    <div id="tag8" class="tag1-wrapper text-2xl absolute top-[0%] right-[60%]">
       &lt;a&gt;
     </div>
-    <div id="tag9" class="cube2-wrapper text-2xl absolute top-[5%] right-[14%]">
+    <div id="tag9" class="tag2-wrapper text-2xl absolute top-[5%] right-[14%]">
       &lt;/main&gt;
     </div>
-    <div
-      id="tag10"
-      class="cube4-wrapper text-2xl absolute top-[5%] right-[65%]"
-    >
+    <div id="tag10" class="tag4-wrapper text-2xl absolute top-[5%] right-[65%]">
       &lt;/template&gt;
     </div>
-    <div id="tag11" class="cube5-wrapper textxl absolute top-[2%] right-[82%]">
+    <div id="tag11" class="tag5-wrapper textxl absolute top-[2%] right-[82%]">
       &lt;/span&gt;
     </div>
-    <div
-      id="tag12"
-      class="cube1-wrapper text-2xl absolute top-[6%] right-[88%]"
-    >
+    <div id="tag12" class="tag1-wrapper text-2xl absolute top-[6%] right-[88%]">
       &lt;style&gt;
     </div>
-    <div
-      id="tag13"
-      class="cube2-wrapper text-2xl absolute top-[0%] right-[92%]"
-    >
+    <div id="tag13" class="tag2-wrapper text-2xl absolute top-[0%] right-[92%]">
       &lt;header&gt;
     </div>
 
-    <div
-      id="tag14"
-      class="cube2-wrapper text-xl absolute top-[15%] right-[52%]"
-    >
+    <div id="tag14" class="tag2-wrapper text-xl absolute top-[15%] right-[52%]">
       &lt;form&gt;
     </div>
     <div
       id="tag15"
-      class="cube3-wrapper text-2xl absolute top-[20%] right-[90%]"
+      class="tag3-wrapper text-2xl absolute top-[20%] right-[90%]"
     >
       &lt;/section&gt;
     </div>
     <div
       id="tag16"
-      class="cube5-wrapper text-2xl absolute top-[15%] right-[30%]"
+      class="tag5-wrapper text-2xl absolute top-[15%] right-[30%]"
     >
       &lt;/html&gt;
     </div>
-    <div
-      id="tag17"
-      class="cube1-wrapper text-xl absolute top-[10%] right-[20%]"
-    >
+    <div id="tag17" class="tag1-wrapper text-xl absolute top-[10%] right-[20%]">
       &lt;style&gt;
     </div>
     <div
       id="tag18"
-      class="cube2-wrapper text-2xl absolute top-[15%] right-[10%]"
+      class="tag2-wrapper text-2xl absolute top-[15%] right-[10%]"
     >
       &lt;/main&gt;
     </div>
-    <div
-      id="tag19"
-      class="cube4-wrapper text-2xl absolute top-[13%] right-[2%]"
-    >
+    <div id="tag19" class="tag4-wrapper text-2xl absolute top-[13%] right-[2%]">
       &lt;input&gt;
     </div>
-    <div id="tag20" class="cube5-wrapper textxl absolute top-[15%] right-[43%]">
+    <div id="tag20" class="tag5-wrapper textxl absolute top-[15%] right-[43%]">
       &lt;script&gt;
     </div>
     <div
       id="tag21"
-      class="cube1-wrapper text-2xl absolute top-[10%] right-[60%]"
+      class="tag1-wrapper text-2xl absolute top-[10%] right-[60%]"
     >
       &lt;body&gt;
     </div>
     <div
       id="tag22"
-      class="cube2-wrapper text-2xl absolute top-[15%] right-[10%]"
+      class="tag2-wrapper text-2xl absolute top-[15%] right-[10%]"
     >
       &lt;/main&gt;
     </div>
     <div
       id="tag23"
-      class="cube4-wrapper text-2xl absolute top-[15%] right-[70%]"
+      class="tag4-wrapper text-2xl absolute top-[15%] right-[70%]"
     >
       &lt;link&gt;
     </div>
-    <div
-      id="tag24"
-      class="cube5-wrapper text-xl absolute top-[10%] right-[80%]"
-    >
+    <div id="tag24" class="tag5-wrapper text-xl absolute top-[10%] right-[80%]">
       &lt;/html&gt;
     </div>
     <div
       id="tag25"
-      class="cube1-wrapper text-2xl absolute top-[15%] right-[90%]"
+      class="tag1-wrapper text-2xl absolute top-[15%] right-[90%]"
     >
       &lt;/div&gt;
     </div>
-    <div
-      id="tag26"
-      class="cube2-wrapper text-xl absolute top-[10%] right-[92%]"
-    >
+    <div id="tag26" class="tag2-wrapper text-xl absolute top-[10%] right-[92%]">
       &lt;fieldset&gt;
     </div>
-    <div
-      id="tag27"
-      class="cube2-wrapper text-2xl absolute top-[22%] right-[3%]"
-    >
+    <div id="tag27" class="tag2-wrapper text-2xl absolute top-[22%] right-[3%]">
       &lt;/article&gt;
     </div>
-    <div
-      id="tag28"
-      class="cube2-wrapper text-2xl absolute top-[28%] right-[1%]"
-    >
+    <div id="tag28" class="tag2-wrapper text-2xl absolute top-[28%] right-[1%]">
       &lt;html&gt;
     </div>
-    <div
-      id="tag29"
-      class="cube5-wrapper text-xl absolute top-[17%] right-[20%]"
-    >
+    <div id="tag29" class="tag5-wrapper text-xl absolute top-[17%] right-[20%]">
       &lt;/a&gt;
     </div>
-    <div
-      id="tag30"
-      class="cube5-wrapper text-xl absolute top-[27%] right-[96%]"
-    >
+    <div id="tag30" class="tag5-wrapper text-xl absolute top-[27%] right-[96%]">
       &lt;/a&gt;
     </div>
-    <div
-      id="tag31"
-      class="cube5-wrapper text-xl absolute top-[17%] right-[80%]"
-    >
+    <div id="tag31" class="tag5-wrapper text-xl absolute top-[17%] right-[80%]">
       &lt;/hr&gt;
     </div>
 
@@ -209,20 +170,26 @@ export default {
   },
   methods: {
     changeToHome() {
-      for (let i = 1; i < 30; i++) {
+      for (let i = 1; i <= 31; i++) {
         setTimeout(() => {
-          document.getElementById(`tag${i + 1}`).classList.add("shakeCube");
-          document.getElementById(`tag${i}`).classList.add("dropCube");
+          if (i < 31) {
+            document.getElementById(`tag${i + 1}`).classList.add("shakeTag");
+          }
+
+          document.getElementById(`tag${i}`).classList.add("dropTag");
         }, 60 * i);
       }
 
       setTimeout(() => {
-        for (let i = 1; i < 30; i++) {
-          document.getElementById(`tag${i + 1}`).classList.remove("shakeCube");
-          document.getElementById(`tag${i}`).classList.remove("dropCube");
+        for (let i = 1; i <= 31; i++) {
+          if (i < 31) {
+            document.getElementById(`tag${i + 1}`).classList.remove("shakeTag");
+          }
+
+          document.getElementById(`tag${i}`).classList.remove("dropTag");
         }
         this.$router.push("/home");
-      }, 1700);
+      }, 2000);
     },
   },
 };
@@ -289,19 +256,19 @@ export default {
   animation: fadeIn 5s ease-in;
 }
 
-.cube1-wrapper {
+.tag1-wrapper {
   animation: fadeIn 5s ease-in;
 }
-.cube2-wrapper {
+.tag2-wrapper {
   animation: fadeIn 6s ease-in;
 }
-.cube3-wrapper {
+.tag3-wrapper {
   animation: fadeIn 7s ease-in;
 }
-.cube4-wrapper {
+.tag4-wrapper {
   animation: fadeIn 5s ease-in;
 }
-.cube5-wrapper {
+.tag5-wrapper {
   animation: fadeIn 4s ease-in;
 }
 
@@ -331,11 +298,11 @@ export default {
   }
 }
 
-.shakeCube {
+.shakeTag {
   animation: shake 1s infinite;
   animation-iteration-count: 1;
 }
-.dropCube {
+.dropTag {
   animation: moveFromTop 2s ease-out;
 }
 
