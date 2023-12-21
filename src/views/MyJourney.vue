@@ -1,5 +1,5 @@
 <template>
-  <div class="globe-view">
+  <div class="mx-16 bg-background">
     <div class="z-50 bg-opacity-20 bg-gradient sticky top-0 flex">
       <div id="header" class="py-4 flex gap-[3rem] items-center">
         <router-link :to="{ name: 'home' }"
@@ -17,7 +17,7 @@
         </p>
       </div>
     </div>
-    <div id="globe-container">
+    <div class="w-full h-full">
       <globe ref="globeRef" />
     </div>
   </div>
@@ -35,15 +35,6 @@ export default {
 </script>
 
 <style>
-#globe-container {
-  width: 100%;
-  height: 100%;
-}
-
-.globe-view {
-  margin: 0 4rem 0 4rem;
-}
-
 @media screen and (max-width: 1100px) {
   #header {
     display: flex;

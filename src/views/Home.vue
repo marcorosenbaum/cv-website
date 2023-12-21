@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <div
-      class="z-40 h-[5vh] bg-opacity-20 bg-gradient sticky top-0 flex justify-end"
-    >
-      <div id="nav" class="flex items-end gap-[3rem]">
+    <div class="z-40 h-[5vh] bg-background sticky top-0 flex justify-end">
+      <div id="nav" class="flex bg-background items-end gap-12">
         <a
           class="transition-transform hover:scale-110 duration-300"
           href="#aboutme"
@@ -34,39 +32,39 @@
     </div>
 
     <main>
-      <section id="aboutme" class="flex flex-col gap-[3rem]">
+      <section id="aboutme" class="flex flex-col gap-12 ga">
         <!-- <img
           id="vector1"
           class="absolute -left-[20rem] -top-[4rem]"
           src="../assets/svg/vector1.svg"
           alt="vector1"
         /> -->
-        <div id="aboutme-wrapper" class="flex gap-[2rem]">
-          <div class="relative w-[100%]">
-            <h1 class="heading text-7xl mt-[2rem]">About me</h1>
-            <h2 class="text-5xl mt-[2rem]">
+        <div id="aboutme-wrapper" class="flex gap-8">
+          <div class="relative w-full">
+            <h1 class="heading text-7xl mt-8">About me</h1>
+            <h2 class="text-5xl mt-8">
               I'm <b>Marco</b>. A&nbsp;developer, an optimist and problem
               solver.
             </h2>
-            <p class="mt-[4rem] text-xl">
+            <p class="mt-16 text-xl">
               I like the challenge to solve problems logically and I like to
               build things.
             </p>
-            <p class="mt-[1rem] text-xl">
+            <p class="mt-4 text-xl">
               Believing that there is nothing I cannot do but only things I am
               not trained to do motivates me to continous learn.
             </p>
 
             <button
               id="read-more"
-              class="rounded-xl p-2 mt-[6rem] inline-block cursor-pointer transition-transform hover:scale-105 duration-300"
+              class="my-24 rounded-xl p-2 inline-block cursor-pointer transition-transform hover:scale-105 duration-300"
               @click="aboutMePersonal = !aboutMePersonal"
               v-if="!aboutMePersonal"
             >
               Read more about me
             </button>
 
-            <p v-if="aboutMePersonal" class="mt-[1rem] text-xl">
+            <p v-if="aboutMePersonal" class="mt-4 text-xl">
               Apart from coding I try to spend as much time in nature as
               possible. I enjoy reading books like "Unlimited Memory" by Kevin
               Horsley or "Limitless" by Jim Kwik.<br />In my holidays I like to
@@ -81,7 +79,7 @@
           <div id="photo-wrapper" class="w-[60%]">
             <img
               id="photo-marco"
-              class="w-[100%] block mx-auto mt-[2rem]"
+              class="w-full block mx-auto mt-8"
               src="../assets/images/img001.jpeg"
               alt="photo marco"
             />
@@ -151,19 +149,19 @@
         <!-- <img
           id="vector2"
           class="absolute -left-[30rem] -top-[22rem]"
-          src="../assets/svg/vector2.svg"
+          src="../assets/svg/vector2.svg
           alt="vector2"
         /> -->
         <h1 id="skills-header" class="heading text-7xl mt-[2rem]">Skills</h1>
         <div id="skills-wrapper" class="flex justify-around gap-16 mt-[2rem]">
           <div
             id="technical-wrapper"
-            class="bg-gradient w-[50%] p-4 text-center"
+            class="bg-background w-1/2 p-4 text-center"
           >
             <h1 class="text-4xl">Technical</h1>
 
             <div class="flex">
-              <div class="w-[50%]">
+              <div class="w-1/2">
                 <div class="flex gap-2 items-center p-4">
                   <img
                     class="w-10"
@@ -201,7 +199,7 @@
                 </div>
               </div>
 
-              <div class="w-[50%]">
+              <div class="w-1/2">
                 <div class="flex gap-2 items-center p-4">
                   <img
                     class="w-10"
@@ -233,7 +231,7 @@
           </div>
           <div
             id="other-wrapper"
-            class="bg-gradient w-[50%] p-4 text-2xl flex flex-col justify-between space-x-16"
+            class="bg-background w-1/2 p-4 text-2xl flex flex-col justify-between space-x-16"
           >
             <h1 class="text-4xl text-center">Other</h1>
 
@@ -256,9 +254,9 @@
         /> -->
         <h1 class="heading text-7xl mt-[2rem]">My work</h1>
 
-        <div id="mywork-wrapper" class="flex gap-[2rem] mt-[2rem]">
-          <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
-            <div class="project-card bg-gradient p-4 flex flex-col">
+        <div id="mywork-wrapper" class="flex gap-8 mt-8">
+          <div class="project-card-wrapper w-1/2 flex flex-col gap-8">
+            <div class="project-card bg-background p-4 flex flex-col">
               <p class="text-2xl text-center">My personal website</p>
 
               <img src="../assets/images/cv-website.png" alt="website photo" />
@@ -296,7 +294,7 @@
               </div>
             </div>
 
-            <div class="project-card bg-gradient p-4 flex flex-col">
+            <div class="project-card bg-background p-4 flex flex-col">
               <p class="text-2xl text-center">3D Globe</p>
 
               <div class="relative" id="globe-container">
@@ -324,23 +322,23 @@
             </div>
           </div>
 
-          <div class="project-card-wrapper w-[50%] flex flex-col gap-[2rem]">
-            <div class="project-card bg-gradient p-4 flex flex-col">
+          <div class="project-card-wrapper w-1/2 flex flex-col gap-8">
+            <div class="project-card bg-background p-4 flex flex-col">
               <p class="text-2xl text-center">Concert Compass</p>
               <div class="flex justify-center">
-                <div class="w-[100%] flex gap-4 justify-around">
+                <div class="w-full flex gap-2 justify-around">
                   <img
-                    class="w-[30%]"
+                    class="w-1/3"
                     src="../assets/images/concert-compass-1.png"
                     alt=""
                   />
                   <img
-                    class="w-[30%]"
+                    class="w-1/3"
                     src="../assets/images/concert-compass-2.png"
                     alt=""
                   />
                   <img
-                    class="w-[30%]"
+                    class="w-1/3"
                     src="../assets/images/concert-compass-3.png"
                     alt=""
                   />
@@ -402,7 +400,7 @@
                 </div>
               </div>
             </div>
-            <div class="project-card bg-gradient p-4 flex flex-col">
+            <div class="project-card bg-background p-4 flex flex-col">
               <p class="text-2xl text-center">Cooding Bootcamp tasks</p>
 
               <div class="flex w-[100%] gap-4 p-4 justify-around">
@@ -454,9 +452,9 @@
       </section>
 
       <section id="experience">
-        <h1 class="heading z-50 text-7xl mt-[2rem]">Experience</h1>
+        <h1 class="heading z-50 text-7xl mt-8">Experience</h1>
 
-        <div class="flex flex-col gap-4 mt-[2rem]">
+        <div class="flex flex-col gap-4 mt-8">
           <div
             v-on:click="
               (teamLeadEgtsIsOpen = false),
@@ -465,13 +463,13 @@
                 (travelIsOpen = false),
                 (codingIsOpen = !codingIsOpen)
             "
-            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex py-4 justify-between bg-background"
           >
             <div class="flex w-full px-8 text-xl">
               <span class="w-[40%]">Coding Bootcamp</span>
 
-              <span class="w-[40%]">@ Coding Bootcamps Europe, remote</span>
-              <span class="w-[20%] text-right">2023</span>
+              <span class="w-2/5">@ Coding Bootcamps Europe, remote</span>
+              <span class="w-1/5 text-right">2023</span>
             </div>
             <div
               class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
@@ -479,7 +477,7 @@
             ></div>
           </div>
           <div v-if="codingIsOpen" class="flex border border-white-2">
-            <div class="w-[80%] p-4">
+            <div class="w-4/5 p-4">
               <p>During this course I learned the basics of web-development.</p>
               <div class="flex flex-wrap gap-4 w-[80%] p-4">
                 <p>• HTML</p>
@@ -494,7 +492,7 @@
               </div>
             </div>
 
-            <div class="w-[20%] justify-center my-auto">
+            <div class="w-1/5 justify-center my-auto">
               <div class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -526,13 +524,13 @@
                 (travelIsOpen = false),
                 (codingIsOpen = false)
             "
-            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-background"
           >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Team leader - Installation</span>
+              <span class="w-2/5">Team leader - Installation</span>
 
-              <span class="w-[40%]">@ Future Energy, New Zealand</span>
-              <span class="w-[20%] text-right">2022</span>
+              <span class="w-2/5">@ Future Energy, New Zealand</span>
+              <span class="w-1/5 text-right">2022</span>
             </div>
             <div
               class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
@@ -541,7 +539,7 @@
           </div>
 
           <div v-if="futureIsOpen" class="flex border border-white-2">
-            <div class="flex flex-wrap gap-4 w-[80%] p-4">
+            <div class="flex flex-wrap gap-4 w-4/5 p-4">
               <p>• Supervising employees on site</p>
               <p>
                 • Installation of commercial and residential solar PV systems
@@ -554,7 +552,7 @@
               <p>• Site inspections</p>
             </div>
 
-            <div class="w-[20%] justify-center my-auto">
+            <div class="w-1/5 justify-center my-auto">
               <div class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -586,12 +584,12 @@
                 (travelIsOpen = !travelIsOpen),
                 (codingIsOpen = false)
             "
-            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-background"
           >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Travel</span>
-              <span class="w-[40%]">@ planet earth</span>
-              <span class="w-[20%] text-right">2021 - 2023</span>
+              <span class="w-2/5">Travel</span>
+              <span class="w-2/5">@ planet earth</span>
+              <span class="w-1/5 text-right">2021 - 2023</span>
             </div>
             <div
               class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
@@ -631,12 +629,12 @@
                 (travelIsOpen = false),
                 (codingIsOpen = false)
             "
-            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-background"
           >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">State certified technical engineer</span>
-              <span class="w-[40%]">@ IQuando GmbH, Germany</span>
-              <span class="w-[20%] text-right">2018 - 2020</span>
+              <span class="w-2/5">State certified technical engineer</span>
+              <span class="w-2/5">@ IQuando GmbH, Germany</span>
+              <span class="w-1/5 text-right">2018 - 2020</span>
             </div>
             <div
               class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
@@ -644,7 +642,7 @@
             ></div>
           </div>
           <div v-if="iquandoIsOpen" class="flex border border-white-2">
-            <div class="flex flex-wrap gap-4 w-[80%] p-4">
+            <div class="flex flex-wrap gap-4 w-4/5 p-4">
               <p>• Project management</p>
               <p>
                 • Initiate and implement suitable quality-assurance measures
@@ -662,7 +660,7 @@
               </p>
             </div>
 
-            <div class="w-[20%] justify-center my-auto">
+            <div class="w-1/5 justify-center my-auto">
               <div class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -694,14 +692,14 @@
                 (travelIsOpen = false),
                 (codingIsOpen = false)
             "
-            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-gradient"
+            class="transition-transform hover:scale-[98%] duration-300 cursor-pointer flex justify-between py-4 bg-background"
           >
             <div class="flex w-full justify-between px-8 text-xl">
-              <span class="w-[40%]">Team leader, technician</span>
-              <span class="w-[40%]"
+              <span class="w-2/5">Team leader, technician</span>
+              <span class="w-2/5"
                 >@ Eurogate Technical Services GmbH, Germany</span
               >
-              <span class="w-[20%] text-right">2012 - 2021</span>
+              <span class="w-1/5 text-right">2012 - 2021</span>
             </div>
             <div
               class="text-2xl px-8 transition-transform hover:scale-150 duration-300 cursor-pointer"
@@ -709,14 +707,14 @@
             ></div>
           </div>
           <div v-if="teamLeadEgtsIsOpen" class="flex border border-white-2">
-            <div class="flex flex-wrap gap-4 w-[80%] p-4">
+            <div class="flex flex-wrap gap-4 w-4/5 p-4">
               <p>• Supervising employees in different projects</p>
               <p>• Debugging of equipment during operation</p>
               <p>• Execution of maintenance and repairs</p>
               <p>• Analysing systems and equipment and planning upgrades</p>
               <p>• Monitoring costs and appointments in projects</p>
             </div>
-            <div class="w-[20%] justify-center my-auto">
+            <div class="w-1/5 justify-center my-auto">
               <div class="flex gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -743,13 +741,13 @@
       </section>
 
       <section id="contact">
-        <h1 id="skills" class="heading text-7xl mt-[2rem]">Contact me</h1>
-        <div class="flex flex-col justify-around mt-[2rem]">
-          <p class="text-xl mt-[2rem]">
+        <h1 id="skills" class="heading text-7xl mt-8">Contact me</h1>
+        <div class="flex flex-col justify-around mt-8">
+          <p class="text-xl mt-8">
             If you are interested in working or connecting with me, please do
             not hesitate to contact me.
           </p>
-          <div class="flex justify-around mt-[4rem]">
+          <div class="flex justify-around mt-16">
             <div class="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -857,9 +855,9 @@ export default {
   width: 100%;
 }
 
-.bg-gradient {
+/* .bg-gradient {
   background-color: #fff6de;
-}
+} */
 
 .icon {
   fill: white;
@@ -893,7 +891,7 @@ export default {
   margin: 0 4rem 0 4rem;
 }
 
-#vector1 {
+/* #vector1 {
   z-index: -1;
   scale: 0.5;
 }
@@ -903,7 +901,7 @@ export default {
 }
 #vector3 {
   z-index: -1;
-}
+} */
 
 .heading {
   display: inline-block;
