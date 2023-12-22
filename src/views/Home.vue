@@ -401,7 +401,7 @@
               </div>
             </div>
             <div class="project-card bg-background p-4 flex flex-col">
-              <p class="text-2xl text-center">Cooding Bootcamp tasks</p>
+              <p class="text-2xl text-center">Coding Bootcamp tasks</p>
 
               <div class="flex w-[100%] gap-4 p-4 justify-around">
                 <img
