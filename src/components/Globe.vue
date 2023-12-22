@@ -45,7 +45,6 @@ export default {
 
       this.$refs.sceneContainer.appendChild(renderer.domElement);
 
-      // globe
       const geometry = new THREE.SphereGeometry(1, 100, 100);
       const material = new THREE.ShaderMaterial({
         vertexShader,
@@ -61,7 +60,6 @@ export default {
 
       const globe = new THREE.Mesh(geometry, material);
 
-      // atmosphere
       const atmosphere = new THREE.Mesh(
         new THREE.SphereGeometry(1, 100, 100),
         new THREE.ShaderMaterial({
@@ -73,7 +71,6 @@ export default {
       );
       atmosphere.scale.set(1.2, 1.2, 1.2);
 
-      // stars
       const starGeometry = new THREE.BufferGeometry();
       const starMaterial = new THREE.PointsMaterial({
         color: 0xffffff,
@@ -93,7 +90,6 @@ export default {
       );
       const stars = new THREE.Points(starGeometry, starMaterial);
 
-      //  group
       const group = new THREE.Group();
       group.add(globe, atmosphere);
 
@@ -112,19 +108,16 @@ export default {
         render();
       }
 
-      // Orbit conbtrol
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.minDistance = 3.5;
       controls.maxDistance = 10;
       controls.update();
 
-      // Function to add a data point to the globe
       function addDataPoint(latitude, longitude) {
         const phi = (90 - latitude) * (Math.PI / 180);
         const theta = longitude - 140 * (Math.PI / 180);
-        const radius = 1; // Adjust the radius of the sphere
+        const radius = 1;
 
-        // Create a point
         const pointGeometry = new THREE.SphereGeometry(0.01);
         const pointMaterial = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
         const point = new THREE.Mesh(pointGeometry, pointMaterial);
@@ -145,19 +138,19 @@ export default {
       const rarotonga = { lat: -13, long: -1.15 };
       const thailand = { lat: 13.5, long: 0.7 };
 
-      addDataPoint(bremerhaven.lat, bremerhaven.long); // Bremerhaven - germany
-      addDataPoint(france.lat, france.long); // Bidart - france
-      addDataPoint(spain.lat, spain.long); // spain
-      addDataPoint(bali.lat, bali.long); // bali
-      addDataPoint(sydney.lat, sydney.long); // Sydney
-      addDataPoint(newzealand.lat, newzealand.long); // newzealand
-      addDataPoint(rarotonga.lat, rarotonga.long); // rarotonga
-      addDataPoint(thailand.lat, thailand.long); // thailand
+      addDataPoint(bremerhaven.lat, bremerhaven.long);
+      addDataPoint(france.lat, france.long);
+      addDataPoint(spain.lat, spain.long);
+      addDataPoint(bali.lat, bali.long);
+      addDataPoint(sydney.lat, sydney.long);
+      addDataPoint(newzealand.lat, newzealand.long);
+      addDataPoint(rarotonga.lat, rarotonga.long);
+      addDataPoint(thailand.lat, thailand.long);
 
       function convertPointData(latitude, longitude) {
         const phi = (90 - latitude) * (Math.PI / 180);
         const theta = longitude - 140 * (Math.PI / 180);
-        const radius = 1; // Adjust the radius of the sphere
+        const radius = 1;
 
         return {
           x: radius * Math.sin(phi) * Math.cos(theta),
@@ -166,7 +159,6 @@ export default {
         };
       }
 
-      // Ball object for moving along the path
       const ballGeometry = new THREE.SphereGeometry(0.01, 100, 100);
       const ballMaterial = new THREE.MeshBasicMaterial({ color: 0x00e5ff });
 
@@ -177,7 +169,6 @@ export default {
 
       group.add(ball);
 
-      // paths
       function getPath(p1, p2) {
         let v1 = new THREE.Vector3(p1.x, p1.y, p1.z);
         let v2 = new THREE.Vector3(p2.x, p2.y, p2.z);
@@ -239,7 +230,6 @@ export default {
         convertPointData(bremerhaven.lat, bremerhaven.long)
       );
 
-      // animate ball path
       let travelPath = { points: [] };
 
       function createWholePath() {
@@ -276,15 +266,6 @@ export default {
       scene.add(group, stars);
       group.rotation.y = 4.4;
 
-      // function globeZoomAnimation() {
-      //   for (let i = 0; i <= 61; i++) {
-      //     setTimeout(() => {
-      //       camera.position.z -= 1;
-      //     }, i * 40);
-      //   }
-      // }
-      // globeZoomAnimation();
-
       const animate = function () {
         requestAnimationFrame(animate);
 
@@ -313,9 +294,5 @@ export default {
 #globecanvas {
   width: inherit;
   height: inherit;
-}
-
-* {
-  margin: 0;
 }
 </style>
