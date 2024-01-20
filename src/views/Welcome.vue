@@ -195,7 +195,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #btn-portfolio {
   box-shadow: 0px 5px 5px rgb(96, 96, 96);
 }
