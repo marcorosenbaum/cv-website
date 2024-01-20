@@ -10,6 +10,8 @@
             go back to portfolio
           </button></router-link
         >
+
+        >
         <p>Click and move your mouse to rotate the globe.</p>
         <p>
           Locations: Germany, Spain, France, Indonesia, Australia, New Zealand,
