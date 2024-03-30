@@ -1,6 +1,6 @@
 # CV Website Marco Rosenbaum
 
-## Website still in building process
+## Website replaced by a new Portfolio Website, see link below
 
 https://marcorosenbaum.netlify.app/
 
